@@ -72,10 +72,13 @@ The purpose of the site is to sell the products on offer by the Inner Purr as we
 - User Story A: As a customer I would like to be able to buy Inner Purr Merchandise.
 - User Story B: As a customer I would like to be able to donate to the Inner Purr.
 - User Story C: As a customer I would like to be able to view information on the cafe such as opening hours and menu.
+- User Story D: As a customer I would the site to be easily navigable from any device, desktop, tablet or phone. For the content to look good and be useable on all of these devices.
 
 ### Admin Stories
 
 - Admin Story A: As an admin I would like to be able to easily add/edit/delete products.
+- Admin Story B: As an admin I would to provide links to my social media platforms.
+- Admin Story C: As an admin I would to provide links to the main PCR resources.
 
 ---
 
