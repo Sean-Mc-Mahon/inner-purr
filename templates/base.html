@@ -26,8 +26,8 @@
             <link rel="preconnect" href="https://fonts.gstatic.com" />
             <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet" />
             <!-- materialize -->
-            <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-            <link href="{% static 'css/base.css' %}" type="text/css" rel="stylesheet" media="screen,projection" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+            <link rel="stylesheet" href="{% static 'css/base.css' %}">
         {% endblock %}
 
         {% block extra_css %}
@@ -258,12 +258,10 @@
                 </a>
             </div>
             <div class="center blue-grey-text text-darken-3 flex-col">
-                <a href="{% url 'home' %}">
                     <h5 class="logo-header text-shadow-2 mv-half m0">The Inner Purr</h5>
                     <h6 class="logo-sub-header text-shadow-2">
                     Saving Cats & Serving Coffee
                     </h6>
-                </a>
             </div>
             <!-- LINKS -->
             <div class="nav-links right-align">
@@ -272,18 +270,18 @@
                 <ul class="right hide-on-med-and-down nav-links">
                 <li>
                     <a class="blue-grey-text text-darken-3" id="menu" href="">
-                    <img src="./static/images/paw.png" alt="paw">
+                    <img src="../media/paw.png" alt="paw">
                     Menu
                     </a>
                     
                 </li>
                 <li>
                     <a class="blue-grey-text text-darken-3" id="menu" href="">
-                    <img src="./static/images/paw.png" alt="paw">Cats</a>
+                    <img src="../media/paw.png" alt="paw">Cats</a>
                 </li>
                 <li>
                     <a class="blue-grey-text text-darken-3" id="menu" href="">
-                    <img src="./static/images/paw.png" alt="paw">Contact</a>
+                    <img src="../media/paw.png" alt="paw">Contact</a>
                 </li>
                 </ul>
             </div>
