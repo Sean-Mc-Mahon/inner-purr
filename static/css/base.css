@@ -8,6 +8,19 @@
   font-size: 18px;
 }
 
+html {
+    --text: #37474F;
+    --light-green: #A5CB8D;
+    --bright-green: #5BEB00;
+    --medium-green: #447924;
+    --dark-green: #50862E;
+    color: var(--text);
+}
+
+a, img {
+    color: var(--dark-green);
+}
+
 body {
   display: flex;
   min-height: 100vh;
@@ -43,10 +56,11 @@ p {
 }
 
 /*FONT STYLES*/
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', cursive;
   font-weight: 400;
   text-transform: uppercase;
+  color: var(--dark-green);
 }
 
 .bold {
@@ -205,9 +219,10 @@ nav .brand-logo {
 }
 nav ul a {
   padding: 0 5px;
+  color: var(--dark-green);
 }
 .sidenav-trigger {
-  color: #263238;
+  color: var(--text);
 }
 .profile-drop {
     position: relative;
@@ -215,7 +230,7 @@ nav ul a {
 
 .profile-dropped {
     position: absolute;
-    border: 1px solid #607d8b;
+    border: 1px solid var(--text);
     z-index: 5;
     background-color: #fff;
     border-radius: 0.3rem;
@@ -227,7 +242,7 @@ nav ul a {
     transform: translateY(-1rem);
 }
 #dropdown-arrow{
-    color: #607d8b !important;
+    color: var(--text) !important;
     font-size: 0.9rem;
 }
 .profile:hover ul {
@@ -276,8 +291,9 @@ nav ul a:hover {
   bottom: 51px;
   width: 0%;
   height: 1px;
-  background-color: #37474F;
+  background-color: var(--text);
   transition: all 0.45s;
+  color: var(--text);
 }
 .main-links li:hover a::after {
   left: 0%;
@@ -348,8 +364,12 @@ nav ul a:hover {
   position: absolute;
 }
 
+.slider .indicators .indicator-item {
+    background-color: var(--light-green);
+}
+
 .slider .indicators .indicator-item.active {
-  background-color: #2b332b;
+  background-color: var(--dark-green);
 }
 
 /*Parralax*/
@@ -440,6 +460,9 @@ nav ul a:hover {
 }
 
 /** FOOTER **/
+.page-footer {
+    background-color: var(--medium-green);
+}
 footer .row {
   margin-bottom: 0;
 }
@@ -461,13 +484,13 @@ footer .row {
 }
 #formContact input {
   background-color: white;
-  color: #37474F;
+  color: var(--text);
 }
 #submit {
   padding: 0 1rem;
   background-color: white;
   border: none;
-  color: #37474F;
+  color: var(--text);
   border: none;
 }
 #emailaddress {
