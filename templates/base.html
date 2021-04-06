@@ -264,25 +264,65 @@
                     </h6>
             </div>
             <!-- LINKS -->
-            <div class="nav-links right-align">
+            <div class="nav-links right-align flex all-links">
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
                 <i class="material-icons right">menu</i></a>
-                <ul class="right hide-on-med-and-down nav-links">
-                <li>
-                    <a class="blue-grey-text text-darken-3" id="menu" href="">
-                    <img src="../media/paw.png" alt="paw">
-                    Menu
-                    </a>
+                <ul class="right hide-on-med-and-down nav-links main-links">
+                    <li>
+                        <a class="blue-grey-text text-darken-3" id="menu" href="">
+                            <img id="paw" src="../media/paw.png" alt="paw">Menu
+                        </a>
+                        
+                    </li>
+                    <li>
+                        <a class="blue-grey-text text-darken-3" id="cats" href="">
+                            <img id="paw" src="../media/paw.png" alt="paw">Cats
+                        </a>
+                    </li>
+                    <li>
+                        <a class="blue-grey-text text-darken-3" id="shop" href="">
+                            <img id="paw" src="../media/paw.png" alt="paw">Shop
+                        </a>
+                    </li>
+                    <li>
+                        <a class="blue-grey-text text-darken-3" id="contact" href="">
+                            <img id="paw" src="../media/paw.png" alt="paw">Contact
+                        </a>
+                    </li>
+                </ul>
+                <!-- BAG AND PROFILE -->
+                <ul class="right flex">
+                    <li onclick="show()" class="profile-drop line1">
+                        <a class="flex profile">
+                            <img class="blue-grey-text" src="../media/icons/profile-20-blue.png" alt="profile"> 
+                            <span id="dropdown-arrow"> &#9660; </span>
+                            <ul class="profile-dropped">
+                                {% if request.user.is_authenticated %}
+                                    {% if request.user.is_superuser %}
+                                        <a class="blue-grey-text" href="">Product Management</a>
+                                    {% endif %}
+                                    <a class="blue-grey-text" href="">My Profile</a>
+                                    <a class="blue-grey-text" href="">Logout</a>
+                                {% else %}
+                                    <li><a class="blue-grey-text" href="">Login</a></li>
+                                    <li><a class="blue-grey-text" href="">Register</a></li>
+                                {% endif %}
+                            </ul>
+                        </a>
+                    </li>
+                    <li class="line1">
+                        <a class="blue-grey-text" href="">
+                            <div id="bag-icon" class="flex">
+                                <img class="mr-half" src="../media/icons/bag-20-blue.png" alt="shopping bag">
+                                {% if grand_total %}
+                                    ${{ grand_total|floatformat:2 }}
+                                {% else %}
+                                    €0.00
+                                {% endif %}
+                            </div>
+                        </a>
+                    </li>
                     
-                </li>
-                <li>
-                    <a class="blue-grey-text text-darken-3" id="menu" href="">
-                    <img src="../media/paw.png" alt="paw">Cats</a>
-                </li>
-                <li>
-                    <a class="blue-grey-text text-darken-3" id="menu" href="">
-                    <img src="../media/paw.png" alt="paw">Contact</a>
-                </li>
                 </ul>
             </div>
             </div>

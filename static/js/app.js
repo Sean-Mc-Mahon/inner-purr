@@ -44,6 +44,25 @@ document.addEventListener("mousemove", (e) => {
 });
 
 
+//FOCUS DROPDOWN MENU
+function show() {
+    const arrow = document.querySelector('#dropdown-arrow')
+    const dropped = document.querySelector('.profile-dropped')
+    dropped.classList.toggle('show')
+    arrow.classList.toggle('rotated')
+}
+
+document.addEventListener('click', function(e) {
+    const arrow = document.querySelector('#dropdown-arrow')
+    const dropped = document.querySelector('.profile-dropped')
+    if (e.target.closest('.profile-drop')) return
+    dropped.classList.remove('show')
+    arrow.classList.remove('rotated')
+})
+    
+
+
+
 //SCROLL EFFECTS
 function scrollAppear() {
   const menuText = document.querySelector(".menu-text");

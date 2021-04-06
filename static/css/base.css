@@ -14,6 +14,11 @@ body {
   flex-direction: column;
 }
 
+/*LINE HEIGHT*/
+.line1 {
+    line-height: 1.2rem !important;
+}
+
 /* used to make footer sticky */
 main {
   flex: 1 0 auto;
@@ -174,6 +179,9 @@ h1, h2, h3, h4, h5 {
 }
 
 /** Nav **/
+.all-links{
+    transform: translateY(-5px);
+}
 nav {
   min-height: 64px;
 }
@@ -201,13 +209,50 @@ nav ul a {
 .sidenav-trigger {
   color: #263238;
 }
+.profile-drop {
+    position: relative;
+}
+
+.profile-dropped {
+    position: absolute;
+    border: 1px solid #607d8b;
+    z-index: 5;
+    background-color: #fff;
+    border-radius: 0.3rem;
+    margin-top: 0.3rem;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    padding: 0.2rem;
+    transform: translateY(-1rem);
+}
+#dropdown-arrow{
+    color: #607d8b !important;
+    font-size: 0.9rem;
+}
+.profile:hover ul {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0px);
+}
+.show {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0px);
+}
+#dropdown-arrow {
+    transition:all 0.4s ease;
+}
+.rotated {
+  transform: rotate(180deg)
+}
 /*Paw animation*/
 .nav-links li a {
   position: relative;
 }
-.nav-links li img {
+.nav-links li #paw {
   position: absolute;
-  bottom: -80px;
+  bottom: -85px;
   left: 0;
   right: 0;
   margin-left: auto;
@@ -224,7 +269,7 @@ nav ul a:hover {
 .nav-links li {
   position: relative;
 }
-.nav-links li a::after {
+.main-links li a::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -234,23 +279,15 @@ nav ul a:hover {
   background-color: #37474F;
   transition: all 0.45s;
 }
-.nav-links li:hover a::after {
+.main-links li:hover a::after {
   left: 0%;
   right: 0%;
   width: 80%;
   margin: 0 auto;
 }
-.nav-links li a:hover img {
+.nav-links li a:hover #paw {
   animation: paw 0.2s ease-out forwards;
 }
-/* @keyframes link {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-5px);
-  }
-} */
 @keyframes paw {
   from {
     transform: translateY(0px);
@@ -284,6 +321,7 @@ nav ul a:hover {
     transform: translateY(0px);
   }
 }
+
 /*Logo Text*/
 .logo-header {
   font-family: 'Architects Daughter', cursive;
@@ -488,6 +526,7 @@ color: #449bff;
     flex: 1 1 0;
     padding: 16px;
   }
+  
   /*welcome*/
   .welcome-title {
   top: 30%;

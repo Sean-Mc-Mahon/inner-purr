@@ -344,6 +344,10 @@ To deploy the project to [Heroku](https://heroku.com/) the following steps need 
 
 7.  Button icons sourced from [Fontawesome](https://fontawesome.com/)
 
+8.  Profile icon sourced from Raj Dev @ [freeicons](https://freeicons.io/user-and-profile-icons/forward-user-profile-icon-6314#)
+
+8.  Bag icon sourced from Soni Sokell @ [freeicons](https://freeicons.io/business-13/bag-cart-shop-shopping-shopping-bag-ecommerce-icon-52830#)
+
  
 
 ### Acknowledgements
