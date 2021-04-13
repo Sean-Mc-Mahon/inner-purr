@@ -54,6 +54,26 @@ p {
   line-height: 2rem;
 }
 
+/* Cards and Buttons */
+.border {
+  border:2px solid #263238;
+}
+.no-border {
+  border: none;
+}
+
+/* Labels and Inputs */
+/* label {
+    font-size: .8rem;
+} */
+.input-field>label,
+.select-wrapper input.select-dropdown {
+    color: #000;
+    font-weight: 500;
+    font-size: 1rem;
+    font-family: 'Montserrat';
+}
+
 /*FONT STYLES*/
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', cursive;
@@ -68,8 +88,11 @@ h1, h2, h3, h4, h5, h6 {
 .small {
   font-size: 0.9rem;
 }
-.large {
-  font-weight: 1.1rem;
+.medium {
+  font-size: 3rem;
+}
+.larger {
+  font-size: 2rem;
 }
 .justify {
   text-align: justify;
@@ -411,6 +434,15 @@ nav ul a:hover {
   background-color: var(--dark-green);
 }
 
+/*Banner*/
+#banner {
+  background-color: var(--medium-green);
+}
+#banner h4 {
+  color: #fff;
+  margin: 1rem 0;
+}
+
 /*Parralax*/
 .parallax-container {
   min-height: 250px;
@@ -551,6 +583,14 @@ color: #449bff;
 
 /*PRODUCTS*/
 /* used to give columns equal height */
+#search-button {
+  color: var(--dark-green);
+}
+
+#products .medium {
+  font-size: 3rem;
+}
+
 .all-products .row {
   display: flex;
   flex-wrap: wrap;
