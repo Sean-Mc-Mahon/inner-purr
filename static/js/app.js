@@ -83,5 +83,18 @@ function scrollAppear() {
   }
 }
 
+function zoomIn(event) {
+  
+  let pre = document.querySelector('#preview')
+  let source = pre.getAttribute('src');
+  var posX = event.offsetX;
+  var posY = event.offsetY;
+  
+  console.log(source);
+  pre.style.backgroundImage = source;
+  pre.style.backgroundPosition=(-posX*2.5)+"px "+(-posY*5.5)+"px";
+
+}
+
 
 window.addEventListener("scroll", scrollAppear);

@@ -69,11 +69,12 @@ The purpose of the site is to sell the products on offer by the Inner Purr as we
 
 ### User Stories
 
-- User Story A: As a customer I would like to be able to buy Inner Purr Merchandise.
-- User Story B: As a customer I would like to be able to donate to the Inner Purr.
-- User Story C: As a customer I would like to be able to view information on the cafe such as opening hours and menu.
-- User Story D: As a customer I would the site to be easily navigable from any device, desktop, tablet or phone. For the content to look good and be useable on all of these devices.
-- User Story E: As a customer I would to be able to create an account that I may edit so that my information is always up to date and checkout is a smooth process.
+- User Story A: As a customer I would like to be able to view merchandise.
+- User Story B: As a customer I would like to be able to buy Inner Purr Merchandise.
+- User Story C: As a customer I would like to be able to donate to the Inner Purr.
+- User Story D: As a customer I would like to be able to view information on the cafe such as opening hours and menu.
+- User Story E: As a customer I would the site to be easily navigable from any device, desktop, tablet or phone. For the content to look good and be useable on all of these devices.
+- User Story F: As a customer I would to be able to create an account that I may edit so that my information is always up to date and checkout is a smooth process.
 
 ### Admin Stories
 

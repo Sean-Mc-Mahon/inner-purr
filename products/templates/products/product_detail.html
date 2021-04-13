@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title%} {{ product.name }} {% endblock %}
+
+{% block content %}
+    <div class="white-overlay">
+        <div class="container all-products">
+            <div class="row">
+                <div class="col s12 m6 l4">
+                    <div class="gallery-item">
+                        <div class="square">
+                            <div class="gallery-image content">
+                                {% if product.image %}
+                                    <a href="{{ product.image.url }}" target="_blank">
+                                        <img id="preview" onmousemove="zoomIn(event)" class="" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    </a>
+                                {% elif product.image_url %}
+                                    <a href="{{ product.image_url }}" target="_blank">
+                                        <img class="" src="{{ product.image_url }}" alt="{{ product.name }}">
+                                    </a>
+                                {% else %}
+                                    <a href="">
+                                        <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">    
+                    <div class="mt1">
+                        <div class="bold small product-name">
+                            {{ product.name }}
+                        </div>
+                        <div class="small product-description">
+                            {{ product.description }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12 flex-space">
+                            <p class="small">
+                                €{{ product.price }}
+                            </p>
+                            <p class="small">
+                            {% if product.rating %}
+                                <small class=""><i class="fas fa-star right-align"></i> {{ product.rating }} / 5</small>
+                            {% else %}
+                                <small class="">No rating</small>
+                            {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                    
+                
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}

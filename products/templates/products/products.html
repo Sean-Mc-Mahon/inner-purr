@@ -3,57 +3,61 @@
 {% block extra_title%}Products{% endblock %}
 
 {% block content %}
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h2>Products</h2>
-            </div> 
-        </div>
-        <div class="row">
-            {% for product in products %}
-                <div class="col m6 xl3 mh1">
-                    <div class="card gallery-item">
-                        <div class="card-image square">
-                            <div class="gallery-image content">
-                                {% if product.image %}
-                                    <a href="">
-                                        <img class="" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                    </a>
-                                {% elif product.image_url %}
-                                    <a href="">
-                                        <img class="" src="{{ product.image_url }}" alt="{{ product.name }}">
-                                    </a>
-                                {% else %}
-                                    <a href="">
-                                        <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                    </a>
-                                {% endif %}
-                            </div>
-                        </div>
-                        
-                        <div class="card-content">
-                            <div>
-                                {{ product.name }}
-                            </div>
-                        </div>
-                        <div class="card-action">
-                            <div class="row">
-                                <div class="col">
-                                    <p class="">
-                                         €{{ product.price}}
-                                    </p>
-                                    {% if product.rating %}
-                                        <small class=""><i class="fas fa-star"></i> {{ product.rating }} / 5</small>
+    <div class="white-overlay">
+        <div class="container all-products">
+            <div class="row">
+                <div class="col">
+                    <h2>Products</h2>
+                </div> 
+            </div>
+            <div class="row">
+                {% for product in products %}
+                    <div class="col s12 m6 l4 xl3 p1">
+                        <div class="gallery-item">
+                            <div class="square">
+                                <div class="gallery-image content">
+                                    {% if product.image %}
+                                        <a href="{% url 'product_detail' product.id %}">
+                                            <img id="preview" onmousemove="zoomIn(event)" class="" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                        </a>
+                                    {% elif product.image_url %}
+                                        <a href="{% url 'product_detail' product.id %}">
+                                            <img class="" src="{{ product.image_url }}" alt="{{ product.name }}">
+                                        </a>
                                     {% else %}
-                                        <small class="">No rating</small>
+                                        <a href="{% url 'product_detail' product.id %}">
+                                            <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                        </a>
                                     {% endif %}
                                 </div>
                             </div>
+                            
+                            <div class="mt1">
+                                <div class="bold small product-name">
+                                    {{ product.name }}
+                                </div>
+                                <div class="small product-description">
+                                    {{ product.description }}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s12 flex-space">
+                                    <p class="small">
+                                        €{{ product.price }}
+                                    </p>
+                                    <p class="small">
+                                    {% if product.rating %}
+                                        <small class=""><i class="fas fa-star right-align"></i> {{ product.rating }} / 5</small>
+                                    {% else %}
+                                        <small class="">No rating</small>
+                                    {% endif %}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
         </div>
     </div>
     

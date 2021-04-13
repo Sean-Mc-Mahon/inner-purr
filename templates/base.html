@@ -13,7 +13,7 @@
         {% block extra_meta %}
         {% endblock %}
 
-        <link rel="shortcut icon" type="image/png" href="../media/mr-buttons-120.png" />
+        <link rel="shortcut icon" type="image/png" href="../media/icons/mr-buttons-120.png" />
 
         <title>The Inner Purr {% block extra_title%}{% endblock %}</title>
 
@@ -55,24 +55,24 @@
                 <i class="material-icons right">menu</i></a>
                 <ul class="right hide-on-med-and-down nav-links main-links">
                     <li>
-                        <a class="text-darken-3" id="menu" href="">
-                            <img id="paw" src="../media/paw.png" alt="paw">Menu
+                        <a id="menu" href="">
+                            <img id="paw" src="../media/icons/paw.png" alt="paw">Menu
                         </a>
                         
                     </li>
                     <li>
-                        <a class="text-darken-3" id="cats" href="">
-                            <img id="paw" src="../media/paw.png" alt="paw">Cats
+                        <a id="cats" href="">
+                            <img id="paw" src="../media/icons/paw.png" alt="paw">Cats
                         </a>
                     </li>
                     <li>
-                        <a class="text-darken-3" id="shop" href="">
-                            <img id="paw" src="../media/paw.png" alt="paw">Shop
+                        <a id="shop" href="{% url 'products' %}">
+                            <img id="paw" src="../media/icons/paw.png" alt="paw">Shop
                         </a>
                     </li>
                     <li>
-                        <a class="text-darken-3" id="contact" href="">
-                            <img id="paw" src="../media/paw.png" alt="paw">Contact
+                        <a id="contact" href="">
+                            <img id="paw" src="../media/icons/paw.png" alt="paw">Contact
                         </a>
                     </li>
                 </ul>
@@ -119,6 +119,7 @@
             <li><a tabindex="-1" href="">Home</a></li>
             <li><a tabindex="-1" href="">Menu</a></li>
             <li><a tabindex="-1" href="">Cats</a></li>
+            <li><a tabindex="-1" href="{% url 'products' %}">Shop</a></li>
             <li><a tabindex="-1" href="">Contact</a></li>
         </ul>
         </header>

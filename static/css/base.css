@@ -36,18 +36,6 @@ body {
 main {
   flex: 1 0 auto;
 }
-/* used to give columns equal height */
-.row {
-  display: flex;
-}
-.col {
-  flex: 1;
-}
-
-/*ROWS & COLUMNS*/
-.row .col {
-  padding: 0;
-}
 
 /*WIDTH STYLES*/
 .w-100{
@@ -55,6 +43,10 @@ main {
 }
 .w-80{
   width: 80%;
+}
+/* Height Styles*/
+.h40 {
+  min-height: 40px;
 }
 
 /*PARAGRAPHS*/
@@ -74,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 .small {
-  font-weight: 0.9rem;
+  font-size: 0.9rem;
 }
 .large {
   font-weight: 1.1rem;
@@ -237,6 +229,7 @@ display: block;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+
 /** Nav **/
 .all-links{
     transform: translateY(-5px);
@@ -318,6 +311,7 @@ nav ul a {
   margin-left: auto;
   margin-right: auto;
   width: 30px;
+  z-index: -10;
 }
 nav ul a:hover {
   background-color: transparent !important;
@@ -336,9 +330,9 @@ nav ul a:hover {
   bottom: 51px;
   width: 0%;
   height: 1px;
-  background-color: var(--text);
+  background-color: var(--dark-green);
   transition: all 0.45s;
-  color: var(--text);
+  color: var(--dark-green);
 }
 .main-links li:hover a::after {
   left: 0%;
@@ -555,6 +549,22 @@ color: #449bff;
   color: white;
 }
 
+/*PRODUCTS*/
+/* used to give columns equal height */
+.all-products .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rating {
+  right: 0;
+}
+
+/*ROWS & COLUMNS*/
+.all-products .row .col {
+  padding: 0.5rem;
+}
+
 /* m tablet */
 @media screen and (min-width: 601px) {
   /*Logo Text*/
@@ -563,6 +573,10 @@ color: #449bff;
   }
   .logo-sub-header {
   font-size: 1.3rem;
+  }
+  /* products */
+  .product-description {
+    min-height: 40px;
   }
 }
 /* l desktop */
@@ -579,6 +593,7 @@ color: #449bff;
   }
   nav {
     min-height: 120px;
+    overflow: hidden;
   }
   header {
     max-height: 120px;
@@ -606,6 +621,13 @@ color: #449bff;
   .carousel .indicators .indicator-item {
   height: 24px;
   width: 24px;
+  }
+}
+
+/* l desktop */
+@media screen and (min-width: 1201px) {
+  .product-name {
+    min-height: 40px;
   }
 }
 
