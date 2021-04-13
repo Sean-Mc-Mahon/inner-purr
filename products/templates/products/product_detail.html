@@ -5,7 +5,7 @@
 {% block content %}
     <div class="white-overlay">
         <div class="container all-products">
-            <div class="row">
+            <div class="row mt2">
                 <div class="col s12 m6 l4">
                     <div class="gallery-item">
                         <div class="square">
@@ -29,26 +29,31 @@
                 </div>
                 <div class="col s12 m6 l4">    
                     <div class="mt1">
-                        <div class="bold small product-name">
+                        <div class="bold product-name">
                             {{ product.name }}
                         </div>
                         <div class="small product-description">
                             {{ product.description }}
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col s12 flex-space">
-                            <p class="small">
-                                €{{ product.price }}
-                            </p>
-                            <p class="small">
-                            {% if product.rating %}
-                                <small class=""><i class="fas fa-star right-align"></i> {{ product.rating }} / 5</small>
-                            {% else %}
-                                <small class="">No rating</small>
-                            {% endif %}
-                            </p>
-                        </div>
+                    <p>
+                        €{{ product.price }}
+                    </p>
+                    <div class="flex-space">
+                        {% if product.category %}
+                                    <p>
+                                        <a class="small" href="{% url 'products' %}?category={{ product.category.name}}">
+                                            <i class="fas fa-tag mr1"></i> {{ product.category.friendly_name }}
+                                        </a>
+                                    </p>
+                                {% endif %}
+                        <p class="small">
+                        {% if product.rating %}
+                            <small class="rating"><i class="fas fa-star right-align"></i> {{ product.rating }} / 5</small>
+                        {% else %}
+                            <small class="">No rating</small>
+                        {% endif %}
+                        </p>
                     </div>
                 </div>
                     

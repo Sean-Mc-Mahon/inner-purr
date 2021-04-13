@@ -557,7 +557,7 @@ color: #449bff;
 }
 
 .rating {
-  right: 0;
+  color: var(--dark-green);
 }
 
 /*ROWS & COLUMNS*/

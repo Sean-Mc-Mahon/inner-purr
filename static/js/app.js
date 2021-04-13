@@ -2,6 +2,7 @@
 $(document).ready(function () {
   $('.sidenav').sidenav({edge: "right",inDuration: 1000});
   $('.parallax').parallax();
+  $('.dropdown-trigger').dropdown();
   $("#carousel-small").carousel();
   $('.slider').slider({
     interval: 10000,
@@ -9,6 +10,9 @@ $(document).ready(function () {
   $("#carousel-full").carousel({
     fullWidth: true,
     indicators: true,
+  });
+  $(document).ready(function(){
+    $('select').formSelect();
   });
 });
 
