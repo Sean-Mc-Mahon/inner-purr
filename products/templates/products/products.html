@@ -2,6 +2,16 @@
 {% load static %}
 {% block extra_title%}Products{% endblock %}
 
+{% block page_header %}
+    <div class="container header-container">
+        <div id="delivery-banner" class="row text-center">
+            <div class="col">
+                <h4 class="mv1">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>                
+            </div>            
+        </div>
+    </div>
+{% endblock %}
+
 {% block content %}
     <div class="white-overlay">
         <div class="container all-products">
