@@ -21,7 +21,7 @@
 
                 <!-- Product Sort -->
                 <div class="input-field col s12 m6 l4 xl3">
-                    <select>
+                    <select id="sort-selector">
                         <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
                         <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
                         <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
@@ -70,7 +70,7 @@
                                 <div class="gallery-image content">
                                     {% if product.image %}
                                         <a href="{% url 'product_detail' product.id %}">
-                                            <img id="preview" onmousemove="zoomIn(event)" class="" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                            <img class="" src="{{ product.image.url }}" alt="{{ product.name }}">
                                         </a>
                                     {% elif product.image_url %}
                                         <a href="{% url 'product_detail' product.id %}">
@@ -118,4 +118,30 @@
         </div>
     </div>
     
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super}}
+    <script>
+        $('#sort-selector').change(function() {
+            var selector = $(this)
+            var currentUrl = new URL(window.location);
+    
+            var selectedVal = selector.val();
+            if(selectedVal != 'reset'){
+                var sort = selectedVal.split('_')[0];
+                var direction = selectedVal.split('_')[1];
+    
+                currentUrl.searchParams.set('sort', sort);
+                currentUrl.searchParams.set('direction', direction);
+    
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete('sort');
+                currentUrl.searchParams.delete('direction');
+    
+                window.location.replace(currentUrl);
+            }
+        })
+    </script>
 {% endblock %}

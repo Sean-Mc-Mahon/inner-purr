@@ -63,42 +63,16 @@ document.addEventListener('click', function(e) {
     dropped.classList.remove('show')
     arrow.classList.remove('rotated')
 })
-    
 
-
-
-//SCROLL EFFECTS
-function scrollAppear() {
-  const menuText = document.querySelector(".menu-text");
-  const menuPosition = menuText.getBoundingClientRect().top;
-  const catText = document.querySelector(".cat-text");
-  const catPosition = catText.getBoundingClientRect().top;
-  const catCarousel = document.querySelector("#carousel-small");
-  const carouselPosition = catCarousel.getBoundingClientRect().top;
-  var screenPosition = window.innerHeight / 1.3;
-  if (menuPosition < screenPosition) {
-    menuText.classList.add("text-appear");
-  }
-  if (catPosition < screenPosition) {
-    catText.classList.add("text-appear");
-  }
-  if (carouselPosition < screenPosition) {
-    catCarousel.classList.add("text-appear");
-  }
-}
-
-function zoomIn(event) {
+// function zoomIn(event) {
   
-  let pre = document.querySelector('#preview')
-  let source = pre.getAttribute('src');
-  var posX = event.offsetX;
-  var posY = event.offsetY;
+//   let pre = document.querySelector('#preview')
+//   let source = pre.getAttribute('src');
+//   var posX = event.offsetX;
+//   var posY = event.offsetY;
   
-  console.log(source);
-  pre.style.backgroundImage = source;
-  pre.style.backgroundPosition=(-posX*2.5)+"px "+(-posY*5.5)+"px";
+//   console.log(source);
+//   pre.style.backgroundImage = source;
+//   pre.style.backgroundPosition=(-posX*2.5)+"px "+(-posY*5.5)+"px";
 
-}
-
-
-window.addEventListener("scroll", scrollAppear);
+// }

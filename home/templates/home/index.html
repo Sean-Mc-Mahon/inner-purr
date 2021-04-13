@@ -186,3 +186,32 @@
         </div>
       </div>
 {% endblock %}
+
+{% block postloadjs %}
+    {{ block.super}}
+    <script>
+        //SCROLL EFFECTS
+        function scrollAppear() {
+          const menuText = document.querySelector(".menu-text");
+          const menuPosition = menuText.getBoundingClientRect().top;
+          const catText = document.querySelector(".cat-text");
+          const catPosition = catText.getBoundingClientRect().top;
+          const catCarousel = document.querySelector("#carousel-small");
+          const carouselPosition = catCarousel.getBoundingClientRect().top;
+          var screenPosition = window.innerHeight / 1.3;
+          if (menuPosition < screenPosition) {
+            menuText.classList.add("text-appear");
+          }
+          if (catPosition < screenPosition) {
+            catText.classList.add("text-appear");
+          }
+          if (carouselPosition < screenPosition) {
+            catCarousel.classList.add("text-appear");
+          }
+        }
+
+        window.addEventListener("scroll", scrollAppear);
+    </script>
+{% endblock %}
+
+
