@@ -598,7 +598,7 @@ color: #449bff;
   header {
     max-height: 120px;
   }
-  svg {
+  #mr-buttons {
     width:150px; 
     height:120px;
   }
