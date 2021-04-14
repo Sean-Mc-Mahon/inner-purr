@@ -13,8 +13,85 @@
         <div class="row">
             <div class="col">
                 {% if bag_items %}
+                    {{ bag_items }}
+                    <br>
+                    <br>
+                    {{ request.session.bag }}
                     <table class="responsive-table highlight">
-                        {{ bag_items }}
+                        <thead>
+                            <tr>
+                                <th scope="col">Product Info</th>
+                                <th scope="col"></th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col">Subtotal</th>
+                            </tr>
+                        </thead>
+                        {% for item in bag_items %}
+                            <tr>
+                                <td>
+                                    <div class="gallery-item">
+                                        <div class="square">
+                                            <div class="gallery-image content">
+                                                {% if item.product.image %}
+                                                    <a href="{{ product.image.url }}" target="_blank">
+                                                        <img class="" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                                    </a>
+                                                {% elif item.product.image_url %}
+                                                    <a href="{{ product.image_url }}" target="_blank">
+                                                        <img class="" src="{{ item.product.image_url }}" alt="{{ item.product.name }}">
+                                                    </a>
+                                                {% else %}
+                                                    <a href="">
+                                                        <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                                    </a>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p><strong>{{ item.product.name }}</strong></p>
+                                    <p><strong>Size:</strong> {% if item.product.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}</p>
+                                    <p><strong>SKU: {{ item.product.sku|upper }}</strong></p>
+                                </td>
+                                <td>
+                                    <p>{{ item.product.price }}</p>   
+                                </td>
+                                <td>      
+                                    <p>{{ item.quantity }}</p>          
+                                </td> 
+                                <td>
+                                    <p>{{ item.product.price }}</p>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <td>
+                                <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
+                                <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
+                                <h4>Grand Total: €{{ grand_total|floatformat:2 }}</h4>
+                                {% if free_delivery_delta > 0 %}
+                                    <p>You could get free delivery by spending just <strong>€{{ free_delivery_delta }}</strong> more!</p>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="{% url 'products' %}" class="btn">
+                                    <span class="icon">
+                                        <i class="fas fa-chevron-left"></i>
+                                    </span>
+                                    <span class="text-uppercase">Keep Shopping</span>
+                                </a>
+                                <a href="" class="btn">
+                                    <span class="text-uppercase">Secure Checkout</span>
+                                    <span class="icon">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                </a>
+                            </td>
+                        </tr>
                     </table>
                 {% else %}
                     <p>
