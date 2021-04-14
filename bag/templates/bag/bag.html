@@ -13,10 +13,6 @@
         <div class="row">
             <div class="col">
                 {% if bag_items %}
-                    {{ bag_items }}
-                    <br>
-                    <br>
-                    {{ request.session.bag }}
                     <table class="responsive-table highlight">
                         <thead>
                             <tr>
@@ -29,6 +25,7 @@
                         </thead>
                         {% for item in bag_items %}
                             <tr>
+                                <!--Image-->
                                 <td>
                                     <div class="gallery-item">
                                         <div class="square">
@@ -50,23 +47,59 @@
                                         </div>
                                     </div>
                                 </td>
+                                <!--Name, Size & SKU-->
                                 <td>
+                                    <!--Name-->
                                     <p><strong>{{ item.product.name }}</strong></p>
+                                    <!--Size-->
                                     <p><strong>Size:</strong> {% if item.product.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}</p>
+                                    <!--SKU-->
                                     <p><strong>SKU: {{ item.product.sku|upper }}</strong></p>
                                 </td>
+                                <!--Price-->
                                 <td>
                                     <p>{{ item.product.price }}</p>   
                                 </td>
+                                <!--Quantity-->
                                 <td>      
-                                    <p>{{ item.quantity }}</p>          
-                                </td> 
+                                    <form class="form update-form" method="POST" action="">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <div class="input-group flex">
+                                                <div class="input-group-prepend">
+                                                    <button class="decrement-qty btn" 
+                                                        data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                        <span>
+                                                            <i class="fas fa-minus fa-sm"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                                <div class="input-group-append">
+                                                    <button class="increment-qty btn"
+                                                        data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                        <span>
+                                                            <i class="fas fa-plus fa-sm"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                {% if item.product.has_sizes %}
+                                                    <input type="hidden" name="product_size" value="{{ item.size }}">
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    </form>    
+                                    <a class="update-link pointer"><small>Update</small></a>      
+                                    <a class="remove-item pointer" id="remove_{{ item.item_id }}" data-size="{{ item.size }}"><small>Remove</small></a>      
+                                </td>
+                                <!--Bag Total--> 
                                 <td>
                                     <p>{{ item.product.price }}</p>
                                 </td>
                             </tr>
                         {% endfor %}
                         <tr>
+                            <!--Total Price-->
                             <td>
                                 <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
                                 <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
@@ -107,6 +140,27 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/quantity_input_script.html' %}
+
+<script>
+    //Update quantity on click
+    $('.update-link').click(function(e) {
+        var form = $(this).prev('.update-form');
+        form.submit();
+    })
+    //Remove Item and reload on click
+    $('.remove-item').click(function(e) {
+        var csrfToken = "{{ csrf_token }}";
+        var itemId = $(this).attr('id').split('remove_')[1];
+        var size = $(this).data('size');
+        var url = `/bag/remove/${itemId}`;
+        var data = {'csrfmiddlewaretoken': csrfToken, 'size': size};
+    })
+</script>
 {% endblock %}
 
 

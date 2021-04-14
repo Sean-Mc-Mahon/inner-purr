@@ -37,6 +37,11 @@ main {
   flex: 1 0 auto;
 }
 
+/*POINTER*/
+.pointer {
+  cursor: pointer;
+}
+
 /*WIDTH STYLES*/
 .w-100{
   width: 100%;
