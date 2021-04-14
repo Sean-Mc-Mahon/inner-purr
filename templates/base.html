@@ -101,7 +101,7 @@
                             <div id="bag-icon" class="flex">
                                 <img class="mr-half" src="../media/icons/bag-20-blue.png" alt="shopping bag">
                                 {% if grand_total %}
-                                    ${{ grand_total|floatformat:2 }}
+                                    €{{ grand_total|floatformat:2 }}
                                 {% else %}
                                     €0.00
                                 {% endif %}
