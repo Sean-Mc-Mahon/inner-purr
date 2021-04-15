@@ -67,6 +67,18 @@ p {
   border: none;
 }
 
+.btn,
+.btn-small {
+  background-color: var(--dark-green);
+  border: solid 2px var(--dark-green);
+}
+.btn:hover, .btn-large:hover, .btn-small:hover,
+.btn:focus, .btn-large:focus, .btn-small:focus, .btn-floating:focus {
+  background-color: #fff;
+  color: var(--dark-green);
+  border: solid 2px var(--dark-green);
+}
+
 /* Labels and Inputs */
 /* label {
     font-size: .8rem;
@@ -77,6 +89,21 @@ p {
     font-weight: 500;
     font-size: 1rem;
     font-family: 'Montserrat';
+}
+
+.input-group input {
+  min-width: 3rem;
+  text-align: center;
+}
+
+/*TABLES*/
+tr {
+  display: table-row;
+  vertical-align: top;
+  border-color: inherit;
+}
+td {
+  vertical-align: top;
 }
 
 /*FONT STYLES*/
@@ -610,6 +637,12 @@ color: #449bff;
   padding: 0.5rem;
 }
 
+/*BAG*/
+.gallery-item.bag-image {
+  max-width: 300px;
+  max-height: 300px;
+}
+
 /* m tablet */
 @media screen and (min-width: 601px) {
   /*Logo Text*/
@@ -703,6 +736,13 @@ color: #449bff;
   .food .menu-item {
   min-height: 54px;
   padding: 0 1rem;
+  }
+}
+
+@media only screen and (max-width : 992px) {
+  .table, .table tbody, .table tr, .table td {
+    display: block;
+    width: 100%;
   }
 }
 
