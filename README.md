@@ -75,6 +75,9 @@ The purpose of the site is to sell the products on offer by the Inner Purr as we
 - User Story D: As a customer I would like to be able to view information on the cafe such as opening hours and menu.
 - User Story E: As a customer I would the site to be easily navigable from any device, desktop, tablet or phone. For the content to look good and be useable on all of these devices.
 - User Story F: As a customer I would to be able to create an account that I may edit so that my information is always up to date and checkout is a smooth process.
+- User Story G: As a customer I would to be able to see the value of items in my basket while shopping.
+- User Story H: As a customer I would to be able to adjust the quantities of items in my bag.
+- User Story I: As a customer I would to be able to be notified when I add/remove items from my basket.
 
 ### Admin Stories
 

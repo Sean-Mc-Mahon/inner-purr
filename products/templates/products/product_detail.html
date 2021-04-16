@@ -13,7 +13,7 @@
                             <div class="gallery-image content">
                                 {% if product.image %}
                                     <a href="{{ product.image.url }}" target="_blank">
-                                        <img id="preview" onmousemove="zoomIn(event)" class="" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                        <img class="" src="{{ product.image.url }}" alt="{{ product.name }}">
                                     </a>
                                 {% elif product.image_url %}
                                     <a href="{{ product.image_url }}" target="_blank">

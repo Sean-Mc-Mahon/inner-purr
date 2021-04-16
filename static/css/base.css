@@ -27,6 +27,15 @@ body {
   flex-direction: column;
 }
 
+.hidden {
+  display: none;
+}
+
+.toasted {
+  background-color: #449bff;
+  color: #fff;
+}
+
 /*LINE HEIGHT*/
 .line1 {
     line-height: 1.2rem !important;
@@ -78,6 +87,9 @@ p {
   color: var(--dark-green);
   border: solid 2px var(--dark-green);
 }
+.btn.disabled, .disabled.btn-large, .disabled.btn-small, .btn-floating.disabled, .btn-large.disabled, .btn-small.disabled, .btn-flat.disabled, .btn:disabled, .btn-large:disabled, .btn-small:disabled, .btn-floating:disabled, .btn-large:disabled, .btn-small:disabled, .btn-flat:disabled, .btn[disabled], .btn-large[disabled], .btn-small[disabled], .btn-floating[disabled], .btn-large[disabled], .btn-small[disabled], .btn-flat[disabled] {
+  border: solid 2px #DFDFDF;
+}
 
 /* Labels and Inputs */
 /* label {
@@ -104,6 +116,22 @@ tr {
 }
 td {
   vertical-align: top;
+}
+
+/*MESSAGES*/
+.message-container.rounded {
+  position: fixed;
+  top: 10%;
+  right: 5%;
+  z-index: 999;
+}
+
+.custom-toast {
+  overflow: visible;
+}
+
+.toast-capper {
+  height: 2px;
 }
 
 /*FONT STYLES*/
