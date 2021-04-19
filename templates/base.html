@@ -36,62 +36,76 @@
     </head>
     <body>
         <header>
-        <!-- Top Nav Bar -->
-        <nav class="nav-extended white">
-            <div class="nav-wrapper flex-space">
-            <!-- LOGO -->
-            <div class="left">
-                {% include 'includes/mr-buttons.html' %}
-            </div>
-            <div class="center flex-col">
-                    <h5 class="logo-header text-shadow-2 mv-half m0">The Inner Purr</h5>
-                    <h6 class="logo-sub-header text-shadow-2">
-                    Saving Cats & Serving Coffee
-                    </h6>
-            </div>
-            <!-- LINKS -->
-            <div class="nav-links right-align flex all-links">
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
-                <i class="material-icons right">menu</i></a>
-                <ul class="right hide-on-med-and-down nav-links main-links">
-                    <li>
-                        <a id="menu" href="">
-                            <img id="paw" src="../media/icons/paw.png" alt="paw">Menu
+            <!-- Top Banner -->
+            <nav class="nav-extended white">
+                <div class="nav-wrapper flex">
+                    <!-- LOGO -->
+                    <div class="logo-image">
+                        {% include 'includes/mr-buttons.html' %}
+                    </div>
+                    <div class="logo-text center flex-col">
+                        <a href="{% url 'home' %}">
+                            <h5 class="logo-header text-shadow-2 mv-half m0">The Inner Purr</h5>
+                            <h6 class="logo-sub-header text-shadow-2">
+                            Saving Cats & Serving Coffee
+                            </h6>
                         </a>
-                        
-                    </li>
-                    <li>
-                        <a id="cats" href="">
-                            <img id="paw" src="../media/icons/paw.png" alt="paw">Cats
-                        </a>
-                    </li>
-                    <li>
-                        <a id="shop" href="{% url 'products' %}">
-                            <img id="paw" src="../media/icons/paw.png" alt="paw">Shop
-                        </a>
-                    </li>
-                    <li>
-                        <a id="contact" href="">
-                            <img id="paw" src="../media/icons/paw.png" alt="paw">Contact
-                        </a>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Side Nav Bar -->
+            <ul class="sidenav" id="mobile-demo">
+                <li><a tabindex="-1" href="{% url 'home' %}">Home</a></li>
+                <li><a tabindex="-1" href="">Menu</a></li>
+                <li><a tabindex="-1" href="">Cats</a></li>
+                <li><a tabindex="-1" href="{% url 'products' %}">Shop</a></li>
+                <li><a tabindex="-1" href="">Contact</a></li>
+            </ul>
+        </header>
+        {% block page_header %}
+        {% endblock %}
+
+        <!-- LINKS -->
+        
+        <div id="under-menu" class="nav-links flex-space all-links">
+            <ul class="w-100 mh2 nav-links flex-space">
+                <li class="main-link flex hide-on-small-only">
+                    <a id="menu" href="">
+                        <img id="paw" src="../media/icons/paw.png" alt="paw"><span class="center-align w-100">Menu</span>
+                    </a>
+                </li>
+                <li class="main-link flex hide-on-small-only">
+                    <a id="cats" href="">
+                        <img id="paw" src="../media/icons/paw.png" alt="paw"><span class="center-align w-100">Cats</span>
+                    </a>
+                </li>
+                <li class="main-link flex hide-on-small-only">
+                    <a id="shop" href="{% url 'products' %}">
+                        <img id="paw" src="../media/icons/paw.png" alt="paw"><span class="center-align w-100">Shop</span>
+                    </a>
+                </li>
+                <li class="main-link flex hide-on-small-only">
+                    <a id="contact" href="">
+                        <img id="paw" src="../media/icons/paw.png" alt="paw"><span class="center-align w-100">Contact</span>
+                    </a>
+                </li>
                 <!-- BAG AND PROFILE -->
-                <ul class="right flex">
+                <ul class="right flex mobile-nav">
                     <li onclick="show()" class="profile-drop line1">
-                        <a class="flex profile">
-                            <img class="" src="../media/icons/profile-20-blue.png" alt="profile"> 
+                        <a class="flex profile pointer">
+                            <img src="../media/icons/profile-20-blue.png" alt="profile"> 
                             <span id="dropdown-arrow"> &#9660; </span>
-                            <ul class="profile-dropped">
+                            <ul class="profile-dropped p1">
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
-                                        <a class="" href="">Product Management</a>
+                                        <a href="">Product Management</a>
                                     {% endif %}
-                                    <a class="" href="">My Profile</a>
-                                    <a class="" href="">Logout</a>
+                                    <a href="">My Profile</a>
+                                    <a href="">Logout</a>
                                 {% else %}
-                                    <li><a class="" href="">Login</a></li>
-                                    <li><a class="" href="">Register</a></li>
+                                    <li><a href="">Login</a></li>
+                                    <li><a href="">Register</a></li>
                                 {% endif %}
                             </ul>
                         </a>
@@ -108,23 +122,16 @@
                             </div>
                         </a>
                     </li>
-                    
+                    <div class="nav-links right-align flex all-links hide-on-med-and-up">
+                        <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
+                        <i class="material-icons right">menu</i></a>
+                    </div>
                 </ul>
-            </div>
-            </div>
-        </nav>
-
-        <!-- Side Nav Bar -->
-        <ul class="sidenav" id="mobile-demo">
-            <li><a tabindex="-1" href="">Home</a></li>
-            <li><a tabindex="-1" href="">Menu</a></li>
-            <li><a tabindex="-1" href="">Cats</a></li>
-            <li><a tabindex="-1" href="{% url 'products' %}">Shop</a></li>
-            <li><a tabindex="-1" href="">Contact</a></li>
-        </ul>
-        </header>
-        {% block page_header %}
-        {% endblock %}
+            </ul>
+        </div>
+        <div id="banner" class="center-align">
+            <h4 class="mv1 center-align">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>            
+        </div>
 
         {% if messages %}
             <div class="message-container">
@@ -145,6 +152,7 @@
         {% endif %}
 
         {% block page-header %}
+        
             
         {% endblock %}
 
@@ -154,7 +162,7 @@
         </main>
 
         <!-- FOOTER -->
-        <footer class="page-footer">
+        <footer class="page-footer p1">
             <div class="row container">
                 <!-- Newsletter -->
                 <div class="col s12 l4 mb1 center">

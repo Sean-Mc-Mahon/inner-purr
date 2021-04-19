@@ -147,6 +147,13 @@
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 
+<!-- Free Delivery Banner -->
+{% block page_header %}
+        <div id="banner" class="center-align">
+            <h4 class="mv1 center-align">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>            
+        </div>
+{% endblock %}
+
 <script>
     //Update quantity on click
     $('.update-link').click(function(e) {

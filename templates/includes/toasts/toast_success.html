@@ -1,4 +1,4 @@
 <script>
-    var toastHTML = '<span class="w-100 flex-space">Success <i class="fas fa-times"></span></i> <div><p>{{ message }}</p></div>';
-  M.toast({html: toastHTML, displayLength: 500000, classes: 'message-container rounded flex-col'});
+    var toastHTML = '<span class="w-100 flex-space mb1">Success <i onclick="M.Toast.dismissAll()" class="fas fa-times pointer"></span></i><div><p class="toast-font">{{ message }}</p></div><div class="divider mv-half"></div>{% if grand_total %}<div class="bag-notification-wrapper">{% for item in bag_items %}<div class="row flex"><div class="toast-image">{% if item.product.image %}<img class="toast-image mr-half" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">{% elif item.product.image_url %}<img class="toast-image" src="{{ item.product.image_url }}" alt="{{ item.product.name }}">{% else %}<img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">{% endif %}</div><div class="ml-half"><p class="mv0 toast-font"><strong>{{ item.product.name }}</strong></p>{% if item.product.has_sizes %}<p class="mv0 toast-font">Size: {{ item.size|upper }}{% endif %}</p><p class="my-0 toast-font">Qty: {{ item.quantity }}</p></div></div>{% endfor %}{% endif %}</div>';
+  M.toast({html: toastHTML, displayLength: 500000, classes: 'message-container flex-col'});
 </script>
