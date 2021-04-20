@@ -54,6 +54,9 @@ main {
 .h40 {
   min-height: 40px;
 }
+.h100 {
+  height: 100%;
+}
 
 /*PARAGRAPHS*/
 p {
@@ -458,6 +461,9 @@ nav ul a {
   font-weight: 500;
   position: relative;
   height: 100%;
+}
+.main-link {
+  overflow: hidden;
 }
 .nav-links li a {
   position: relative;

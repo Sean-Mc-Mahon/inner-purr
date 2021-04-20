@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% load static %}
+{% load bag_tools %}
+
+{% block extra_css%}
+<link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block extra_title%}Checkout{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col">
+            <h2>Shopping Bag</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            {% for item in bag_items %}
+                <div class="row">
+                    <div class="col s2 mb1">
+                        <div class="gallery-item bag-image">
+                            <div class="square">
+                                <div class="gallery-image content">
+                                    {% if item.product.image %}
+                                        <a href="{{ product.image.url }}" target="_blank">
+                                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                                        </a>
+                                    {% elif item.product.image_url %}
+                                        <a href="{{ product.image_url }}" target="_blank">
+                                            <img class="" src="{{ item.product.image_url }}" alt="{{ item.product.name }}">
+                                        </a>
+                                    {% else %}
+                                        <a href="">
+                                            <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s7">
+                        <!--Name, Size & Quantity-->
+                        <!--Name-->
+                        <p><strong>{{ item.product.name }}</strong></p>
+                        <!--Size-->
+                        <p><strong>Size:</strong> {% if item.product.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}</p>
+                        <!--Quantity-->
+                        <p><strong>Qty:</strong>{{ item.quantity }}</p>
+                    </div>
+
+                    <div class="col s3">
+                        <!--Bag Total-->
+                        <p>€{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="col s12 l6">
+            <p>Please fill out the form below to complete your order</p>
+            <form action="{% url 'checkout' %}" method="POST" id="payment-form">
+                {% csrf_token %}
+                <fieldset>
+                    <legend>Details</legend>
+                    {{ order_form.full_name }}
+                    {{ order_form.email }}
+                </fieldset>
+                <fieldset>
+                    <legend>Delivery</legend>
+                    {{ order_form.phone_number }}
+                    {{ order_form.country }}
+                    {{ order_form.postcode }}
+                    {{ order_form.town_or_city }}
+                    {{ order_form.street_adress1 }}
+                    {{ order_form.street_adress2 }}
+                    {{ order_form.county }}
+                    <div class="form-check">
+                        {% if user.is_authenticated %}
+                            <label for="id-save-info">Save this delivery information to my profile</label>
+                            <input type="checkbox" id="id-save-info" name="save-info" checked>
+                        {% else %}
+                            <label for="id-save-info">
+                                <a href="{% url 'account_signup' %}" class="text-info">Create an account</a>
+                                <a href="{% url 'account_login' %}" class="text-info">Login to save this information</a>
+                            </label>
+                        {% endif %}
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Payment</legend>
+                    <!--A stripe Card element will go here-->
+                    <div id="card-element"></div>
+
+                    <!--Used to display form errors-->
+                    <div id="card-errors" role="alert"></div>
+                </fieldset>
+                <div>
+                    <a href="{% url 'view_bag' %}">
+                        <span>
+                            <i class="fas-fa-chevron-left"></i>
+                        </span>
+                        <span>Adjust Bag</span>
+                    </a>
+                    <button id="submit-button" class="btn">
+                        <span>Complete Order</span>
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </button>
+                    <p>
+                        <span>
+                            <i class="fas fa-exclamation-circle"></i>
+                        </span>
+                        <span>Your card will be charged <strong>€{{ grand_total|floatformat:2 }}</strong></span>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+
+

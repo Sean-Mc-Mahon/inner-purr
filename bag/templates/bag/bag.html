@@ -118,7 +118,7 @@
                                 </span>
                                 <span class="text-uppercase">Keep Shopping</span>
                             </a>
-                            <a href="" class="btn">
+                            <a href="{% url 'checkout' %}" class="btn">
                                 <span class="text-uppercase">Secure Checkout</span>
                                 <span class="icon">
                                     <i class="fas fa-lock"></i>
@@ -149,9 +149,6 @@
 
 <!-- Free Delivery Banner -->
 {% block page_header %}
-        <div id="banner" class="center-align">
-            <h4 class="mv1 center-align">Free delivery on orders over €{{ free_delivery_threshold }}!</h4>            
-        </div>
 {% endblock %}
 
 <script>
