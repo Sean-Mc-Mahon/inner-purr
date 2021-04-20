@@ -13,12 +13,12 @@ html {
     --light-green: #A5CB8D;
     --bright-green: #5BEB00;
     --medium-green: #447924;
-    --dark-green: #50862E;
+    --dark-green: #4b7730;
     color: var(--text);
     font-size: 18px;
 }
 
-a, img {
+a, img, .large-icon {
     color: var(--dark-green);
 }
 
@@ -433,7 +433,7 @@ nav ul a {
     transform: translateY(-1rem);
 }
 #dropdown-arrow{
-    color: var(--text) !important;
+    color: var(--dark-green) !important;
     font-size: 0.9rem;
 }
 .profile:hover ul {
@@ -453,7 +453,7 @@ nav ul a {
   transform: rotate(180deg)
 }
 /*Paw animation*/
-.nav-links li {
+.main-link {
   width: 80px;
   font-weight: 500;
   position: relative;
@@ -700,6 +700,10 @@ footer .row {
 /* Social Icons */
 .social-links {
   display: flex;
+}
+.social-links li i {
+  /* border: 2px solid #000; */
+  background-color: red;
 }
 .social-links li i:hover {
 color: #449bff;
