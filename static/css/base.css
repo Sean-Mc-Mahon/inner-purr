@@ -105,11 +105,25 @@ hr {
     font-size: 1rem;
     font-family: 'Montserrat';
 }
+.select-wrapper input.select-dropdown:focus,
+input[type=email]:not(.browser-default):focus:not([readonly]),
+input[type=text]:not(.browser-default):focus:not([readonly]) {
+  border-bottom: 1px solid var(--dark-green);
+  box-shadow: 0 1px 0 0 var(--dark-green);
+  color: var(--dark-green);
+}
+input[type=text]:not(.browser-default):focus:not([readonly])+label{
+  color: var(--dark-green);
+}
+input[type=text]:not(.browser-default):focus.invalid ~ label{
+  color: var(--dark-green);
+}
 
 .input-group input {
   min-width: 3rem;
   text-align: center;
 }
+
 
 /*TABLES*/
 tr {
@@ -119,6 +133,10 @@ tr {
 }
 td {
   vertical-align: top;
+}
+input[type=email]:not(.browser-default) {
+  border-bottom: 1px solid var(--dark-green);
+  color: var(--dark-green);
 }
 
 /*MESSAGES*/
@@ -438,6 +456,8 @@ nav ul a {
 .nav-links li {
   width: 80px;
   font-weight: 500;
+  position: relative;
+  height: 100%;
 }
 .nav-links li a {
   position: relative;
@@ -459,10 +479,6 @@ nav ul a:hover {
   font-weight: 600;
   animation: link 0.2s ease-out forwards;
 }
-.nav-links li {
-  position: relative;
-  height: 100%;
-}
 /* .main-link:hover a span {
   animation: link 0.2s ease-out forwards;
 } */
@@ -474,20 +490,15 @@ nav ul a:hover {
     transform: translateY(0px);
   }
   to {
-    transform: translateY(-35px);
+    transform: translateY(-45px);
   }
 }
-/* @keyframes link {
-  from {
-    transform: translateY(0px);
-  }
-  to {
-    transform: translateY(-15px);
-  }
-} */
 
 /*LOGO*/
 /*SVG*/ 
+svg {
+  overflow: visible;
+}
 #head {
   animation: rise 2s ease-out;
 }
@@ -661,12 +672,19 @@ footer .row {
   border-radius: 20px;
   overflow: hidden;
 }
+#form_contact:active {
+  background-color: rgb(232, 240, 254) !important;
+}
 .text-newsletter {
   max-width: 320px;
 }
 #formContact input {
   background-color: white;
-  color: var(--text);
+  color: #000;
+}
+#formContact input[placeholder] {
+  background-color: white;
+  color: rgb(255, 0, 0);
 }
 #submit {
   padding: 0 1rem;
@@ -677,7 +695,7 @@ footer .row {
 }
 #emailaddress {
   padding: 0rem;
-  margin: 0 0 1rem 1rem;
+  margin: 0 0 0.75rem 0.75rem;
 }
 /* Social Icons */
 .social-links {
@@ -693,6 +711,9 @@ color: #449bff;
 }
 
 /*PRODUCTS*/
+.dropdown-content li>a, .dropdown-content li>span {
+  color: var(--dark-green);
+}
 #search-button {
   color: var(--dark-green);
 }
@@ -756,7 +777,7 @@ color: #449bff;
   }
   nav {
     min-height: 120px;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
   header {
     max-height: 120px;

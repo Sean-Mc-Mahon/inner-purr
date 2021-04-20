@@ -39,16 +39,24 @@
                 </div>
 
                 <!-- Search -->
-                <div class="col s12 l4 xl6">
+                <div class="col s12 l4 xl6 flex-space">
                     <form method="GET" action="{% url 'products' %}">
                         <div class="input-field flex">
-                            <input class="validate" type="text" name="q" required>
-                            <label class="flex-space" for="query">Search our Products</label>
+                            <input class="validate" type="text" id="q" name="q" required>
+                            <label class="flex-space" for="q">Search</label>
                             <button id="search-button" tabindex="0" aria-label="search" type="submit" class="transparent no-border focus-outline">
                                 <i class="fas fa-search left"></i>
                             </button>
                         </div>
                     </form>
+                    <!-- <form method="GET" action="{% url 'products' %}" class="flex">
+                        <input class="larger" type="text" name="q" id="emailaddress" placeholder="Search" required />
+                        <label for="q" class="valign-wrapper">
+                            <button id="submit" aria-label="submit" type="submit" class="focus-outline" >
+                                <i class="fas fa-search left"></i>
+                            </button>
+                        </label>
+                    </form> -->
                 </div>
             </div>
 
