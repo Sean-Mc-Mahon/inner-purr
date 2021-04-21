@@ -282,7 +282,13 @@ The footer features:
 - All clickable elements are focusable with classes such as `.focus-outline`, `.focus-background` etc... added in `style.css` in order to make the site smoothly navigable without the use of a mouse.
   
 # Testing
-All testing and validation is contained within a separate .md file. <br> [View TESTING.md](TESTING.md)
+All testing and validation is contained within a separate .md file. 
+
+### Problems and Solutions
+- Problem: User agent style sheets overrriding my own style sheet for paragraphs on the index file.
+- Solution:
+
+<br> [View TESTING.md](TESTING.md)
 
 # Deployment
 
