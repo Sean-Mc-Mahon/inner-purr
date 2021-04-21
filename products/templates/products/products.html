@@ -11,7 +11,7 @@
         <div class="container all-products">
             <div class="row flex">
                 <!-- Product Categories -->
-                <div class="input-field col s12 m6 l4 xl3">
+                <div class="input-field col s12 m6 l4 xl3 ph-half">
                     <!-- Dropdown Trigger -->
                     <a id="products" class='dropdown-trigger flex bold larger ' href='#' data-target='dropdown1'>Products <i class="medium material-icons ml1">expand_more</i></a>
                     <!-- Dropdown Structure -->
@@ -24,7 +24,7 @@
                 </div>
 
                 <!-- Product Sort -->
-                <div class="input-field col s12 m6 l4 xl3">
+                <div class="input-field col s12 m6 l4 xl3 ph-half">
                     <select id="sort-selector">
                         <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort By...</option>
                         <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
@@ -39,8 +39,8 @@
                 </div>
 
                 <!-- Search -->
-                <div class="col s12 l4 xl6 flex-space">
-                    <form method="GET" action="{% url 'products' %}">
+                <div class="col s12 l4 xl6 flex-space ph-half">
+                    <form method="GET" action="{% url 'products' %}" class="w-100">
                         <div class="input-field flex">
                             <input class="validate" type="text" id="q" name="q" required>
                             <label class="flex-space" for="q">Search</label>
@@ -49,14 +49,6 @@
                             </button>
                         </div>
                     </form>
-                    <!-- <form method="GET" action="{% url 'products' %}" class="flex">
-                        <input class="larger" type="text" name="q" id="emailaddress" placeholder="Search" required />
-                        <label for="q" class="valign-wrapper">
-                            <button id="submit" aria-label="submit" type="submit" class="focus-outline" >
-                                <i class="fas fa-search left"></i>
-                            </button>
-                        </label>
-                    </form> -->
                 </div>
             </div>
 
@@ -94,7 +86,7 @@
                                 </div>
                             </div>
                             
-                            <div class="mt1">
+                            <div class="mv-half">
                                 <div class="bold small product-name">
                                     {{ product.name }}
                                 </div>
@@ -102,10 +94,10 @@
                                     {{ product.description }}
                                 </div>
                             </div>
-                            <p>
+                            <p class="mv-half">
                                 €{{ product.price }}
                             </p>
-                            <div class="flex-space">    
+                            <div class="flex-space mb1">    
                                 {% if product.category %}
                                     <p class="small">
                                         <a class="small" href="{% url 'products' %}?category={{ product.category.name}}">
@@ -122,8 +114,11 @@
                                 </p>
                             </div>
                         </div>
+                        <div class="divider center m-auto"></div>
                     </div>
+                    
                 {% endfor %}
+                
             </div>
         </div>
     </div>

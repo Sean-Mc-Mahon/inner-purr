@@ -5,9 +5,10 @@
 {% block extra_title%}Bag{% endblock %}
 
 {% block content %}
+<div class="container">
     <div class="row">
         <div class="col">
-            <h2>Shopping Bag</h2>
+            <h4>Shopping Bag</h4>
         </div>
     </div>
     <div class="row">
@@ -54,11 +55,11 @@
                                 <!--Size-->
                                 <p><strong>Size:</strong> {% if item.product.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}</p>
                                 <!--SKU-->
-                                <p><strong>SKU: {{ item.product.sku|upper }}</strong></p>
+                                <p><strong>SKU:</strong> {{ item.product.sku|upper }}</p>
                             </td>
                             <!--Price-->
                             <td>
-                                <p>€{{ item.product.price }}</p>   
+                                <p><strong>€{{ item.product.price }}</strong></p>   
                             </td>
                             <!--Quantity-->
                             <td>      
@@ -69,7 +70,7 @@
                                             <div class="input-group-prepend">
                                                 <button class="decrement-qty btn-small" 
                                                     data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                                                    <span>
+                                                    <span class="flex">
                                                         <i class="fas fa-minus fa-sm"></i>
                                                     </span>
                                                 </button>
@@ -78,7 +79,7 @@
                                             <div class="input-group-append">
                                                 <button class="increment-qty btn-small"
                                                     data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                                                    <span>
+                                                    <span class="flex">
                                                         <i class="fas fa-plus fa-sm"></i>
                                                     </span>
                                                 </button>
@@ -95,13 +96,13 @@
                             </td>
                             <!--Bag Total--> 
                             <td>
-                                <p>€{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                <p><strong>€{{ item.product.price | calc_subtotal:item.quantity }}</strong></p>
                             </td>
                         </tr>
                     {% endfor %}
                     <tr>
                         <!--Total Price-->
-                        <td>
+                        <td class="w-100">
                             <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
                             <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
                             <h4>Grand Total: €{{ grand_total|floatformat:2 }}</h4>
@@ -110,23 +111,21 @@
                             {% endif %}
                         </td>
                     </tr>
-                    <tr>
-                        <td>
-                            <a href="{% url 'products' %}" class="btn">
-                                <span class="icon">
-                                    <i class="fas fa-chevron-left"></i>
-                                </span>
-                                <span class="text-uppercase">Keep Shopping</span>
-                            </a>
-                            <a href="{% url 'checkout' %}" class="btn">
-                                <span class="text-uppercase">Secure Checkout</span>
-                                <span class="icon">
-                                    <i class="fas fa-lock"></i>
-                                </span>
-                            </a>
-                        </td>
-                    </tr>
                 </table>
+                <div class="flex mt1">
+                    <a href="{% url 'products' %}" class="btn flex mr1">
+                        <span class="icon flex">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase ml-half">Keep Shopping</span>
+                    </a>
+                    <a href="{% url 'checkout' %}" class="btn flex">
+                        <span class="text-uppercase mr-half">Secure Checkout</span>
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </a>
+                </div>
                 
             {% else %}
                 <p>
@@ -141,6 +140,8 @@
             {% endif %}
         </div>
     </div>
+</div>
+    
 {% endblock %}
 
 {% block postloadjs %}
