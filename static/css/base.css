@@ -88,8 +88,11 @@ hr {
 .btn-small {
   background-color: var(--dark-green);
   border: solid 2px var(--dark-green);
-  line-height: 0.8rem;
-  font-size: 11px;
+  line-height: 0.65rem;
+  font-size: 10px;
+}
+.btn-small i, .btn i {
+  font-size: 1rem;
 }
 .btn:hover, .btn-large:hover, .btn-small:hover,
 .btn:focus, .btn-large:focus, .btn-small:focus, .btn-floating:focus {
@@ -101,7 +104,7 @@ hr {
   border: solid 2px #DFDFDF;
 }
 .border-half {
-  border-radius: 0.5rem;
+  border-radius: 0.2rem 0.2rem 0.5rem 0.5rem;
 }
 
 /* Labels and Inputs */
@@ -210,6 +213,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .toast-font {
   font-size: 12px !important;
+}
+.toast-font-header {
+  font-size: 13px !important;
 }
 
 /* Flex Rules */
@@ -859,11 +865,10 @@ legend {
     flex: 1 1 0;
     padding: 16px;
   }
-  .btn,
-  .btn-small {
-  font-size: 14px;
-  /* line-height: 1.5rem; */
-}
+  .btn {
+  font-size: 12px;
+  }
+
   
   /*welcome*/
   .welcome-title {
