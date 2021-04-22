@@ -12,7 +12,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col">
+        <div class="col s12 xl8">
             {% if bag_items %}
                 <table class="table highlight">
                     <thead class="hide-on-med-and-down">
@@ -100,32 +100,7 @@
                             </td>
                         </tr>
                     {% endfor %}
-                    <tr>
-                        <!--Total Price-->
-                        <td class="w-100">
-                            <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
-                            <h6>Delivery: €{{ delivery|floatformat:2 }}</h6>
-                            <h4>Grand Total: €{{ grand_total|floatformat:2 }}</h4>
-                            {% if free_delivery_delta > 0 %}
-                                <p>You could get free delivery by spending just <strong>€{{ free_delivery_delta }}</strong> more!</p>
-                            {% endif %}
-                        </td>
-                    </tr>
                 </table>
-                <div class="flex mt1">
-                    <a href="{% url 'products' %}" class="btn flex mr1">
-                        <span class="icon flex">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase ml-half">Keep Shopping</span>
-                    </a>
-                    <a href="{% url 'checkout' %}" class="btn flex">
-                        <span class="text-uppercase mr-half">Secure Checkout</span>
-                        <span class="icon">
-                            <i class="fas fa-lock"></i>
-                        </span>
-                    </a>
-                </div>
                 
             {% else %}
                 <p>
@@ -138,6 +113,32 @@
                     </a>
                 </p>
             {% endif %}
+        </div>
+        <div class="col xl4">
+            <!--Total Price-->
+            <div class="w-100">
+                <h6><strong>Bag Total: €{{ total|floatformat:2 }}</strong></h6>
+                <h6><strong>Delivery: €{{ delivery|floatformat:2 }}</strong></h6>
+                <h5>Grand Total: €{{ grand_total|floatformat:2 }}</h5>
+                {% if free_delivery_delta > 0 %}
+                    <p>You could get free delivery by spending just <strong>€{{ free_delivery_delta }}</strong> more!</p>
+                {% endif %}
+            </div>
+            <!--Buttons-->
+            <div class="flex mt1">
+                <a href="{% url 'products' %}" class="btn flex mr1">
+                    <span class="icon flex">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase ml-half">Keep Shopping</span>
+                </a>
+                <a href="{% url 'checkout' %}" class="btn flex">
+                    <span class="text-uppercase mr-half">Secure Checkout</span>
+                    <span class="icon">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </a>
+            </div>
         </div>
     </div>
 </div>

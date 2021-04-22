@@ -776,18 +776,7 @@ color: #449bff;
   max-height: 250px;
 }
 
-/*Checkout*/
-fieldset {
-  border: 2px solid var(--dark-green);
-  border-radius: 0.5rem;
-}
-legend {
-  color: var(--dark-green);
-  font-weight: 400;
-}
-.row .col+.p0 {
-  padding: 0;
-}
+
 
 
 
