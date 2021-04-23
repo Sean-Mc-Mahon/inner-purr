@@ -287,6 +287,8 @@ All testing and validation is contained within a separate .md file.
 ### Problems and Solutions
 - Problem: User agent style sheets overrriding my own style sheet for paragraphs on the index file.
 - Solution:
+- Problem: Media files not loading on checkout success
+- Solution:
 
 <br> [View TESTING.md](TESTING.md)
 
