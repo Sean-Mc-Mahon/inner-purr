@@ -134,6 +134,11 @@ input[type=text]:not(.browser-default):focus.invalid ~ label{
   text-align: center;
 }
 
+[type="checkbox"]:checked+span:not(.lever):before {
+  border-right: 2px solid var(--dark-green);
+  border-bottom: 2px solid var(--dark-green);
+}
+
 
 /*TABLES*/
 tr {

@@ -289,6 +289,8 @@ All testing and validation is contained within a separate .md file.
 - Solution:
 - Problem: Media files not loading on checkout success
 - Solution:
+- Problem: url not found for checkouts although all urls seemed in order in the checkouts url file
+- Solution: A typo in the project level urls which was also copied and pasted into the stripe endpoints was the source of the problem.
 
 <br> [View TESTING.md](TESTING.md)
 
@@ -359,6 +361,8 @@ To deploy the project to [Heroku](https://heroku.com/) the following steps need 
 8.  Profile icon sourced from Raj Dev @ [freeicons](https://freeicons.io/user-and-profile-icons/forward-user-profile-icon-6314#)
 
 8.  Bag icon sourced from Soni Sokell @ [freeicons](https://freeicons.io/business-13/bag-cart-shop-shopping-shopping-bag-ecommerce-icon-52830#)
+
+9.  Background texture image from [freepik.com](https://www.freepik.com/photos/background)
 
  
 

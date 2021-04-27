@@ -41,11 +41,13 @@
                     <!--Save Details Options-->
                     <div class="form-check">
                         {% if user.is_authenticated %}
-                            <label for="id-save-info">Save this delivery information to my profile</label>
-                            <input type="checkbox" id="id-save-info" name="save-info" checked>
+                            <label for="id-save-info">
+                                <input type="checkbox" id="id-save-info" name="save-info">
+                                <span>Save this delivery information to my profile</span>
+                            </label>
                         {% else %}
                             <label for="id-save-info">
-                                <a href="{% url 'account_signup' %}" class="text-info">Create an account</a>
+                                <a href="{% url 'account_signup' %}" class="text-info">Create an account</a> or 
                                 <a href="{% url 'account_login' %}" class="text-info">Login to save this information</a>
                             </label>
                         {% endif %}
