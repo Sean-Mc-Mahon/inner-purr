@@ -73,3 +73,15 @@ fieldset {
   width: 90px;
   height: 90px;
 }
+input {
+  color: var(--text);
+}
+.input-field>label, .select-wrapper input.select-dropdown {
+  color: rgb(170 170 170) !important;
+  font-size: 16px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+.select-dropdown,
+select option {
+  
+}
