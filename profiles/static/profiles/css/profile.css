@@ -32,3 +32,9 @@ input:-internal-autofill-selected {
     color: var(--text) !important;
 }
 
+/*Order History*/
+.order-history {
+  max-height: 465px; /*height of delivery details form*/
+  overflow-y: auto;
+}
+
