@@ -291,6 +291,8 @@ All testing and validation is contained within a separate .md file.
 - Solution:
 - Problem: Unable to locate form used in login template
 - Solution:
+- Problem: Console error triggered by Materialize 'M' function
+- Solution:
 - Problem: url not found for checkouts although all urls seemed in order in the checkouts url file
 - Solution: A typo in the project level urls which was also copied and pasted into the stripe endpoints was the source of the problem.
 
