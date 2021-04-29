@@ -100,11 +100,11 @@
                                     {% if request.user.is_superuser %}
                                         <a href="">Product Management</a>
                                     {% endif %}
-                                    <a href="">My Profile</a>
-                                    <a href="">Logout</a>
+                                    <a href="{% url 'profile' %}">My Profile</a>
+                                    <a href="{% url 'account_logout' %}">Logout</a>
                                 {% else %}
-                                    <li><a href="">Login</a></li>
-                                    <li><a href="">Register</a></li>
+                                    <li><a href="{% url 'account_login' %}">Login</a></li>
+                                    <li><a href="{% url 'account_signup' %}">Register</a></li>
                                 {% endif %}
                             </ul>
                         </a>

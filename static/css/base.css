@@ -10,6 +10,7 @@
 
 html {
     --text: #37474F;
+    --text-light: #37474F;
     --light-green: #A5CB8D;
     --bright-green: #5BEB00;
     --medium-green: #447924;
@@ -139,6 +140,15 @@ input[type=text]:not(.browser-default):focus.invalid ~ label{
   border-bottom: 2px solid var(--dark-green);
 }
 
+/*Allauth form formatting*/
+.allauth-form-inner-content label:not([for='id_remember']) {
+  display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+  color: var(--dark-green);
+}
+
 
 /*TABLES*/
 tr {
@@ -152,10 +162,12 @@ td {
 td p {
   line-height: 1.2rem;
 }
-input[type=email]:not(.browser-default) {
+
+/*UNNECCESARY?*/
+/* input[type=email]:not(.browser-default) {
   border-bottom: 1px solid var(--dark-green);
   color: var(--dark-green);
-}
+} */
 
 /*MESSAGES*/
 .message-container {

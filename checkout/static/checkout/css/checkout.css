@@ -1,56 +1,27 @@
-/* .StripeElement,
-.stripe-style-input {
-  box-sizing: border-box;
-  height: 40px;
-  padding: 10px 12px;
-  border: 1px solid transparent;
-  border-radius: 0px;
-  background-color: white;
-  box-shadow: 0 1px 3px 0 #e6ebf1;
-  -webkit-transition: box-shadow 150ms ease;
-  transition: box-shadow 150ms ease;
-} */
-.StripeElement,
-.stripe-style-input {
-  height: 40px;
-  border-bottom: 1px solid #9e9e9e;
-}
-.StripeElement:focus,
-.stripe-style-input:focus {
-  height: 40px;
-  border-bottom: 2px solid var(--dark-green);
-}
-
-/* .StripeElement--focus,
-.stripe-style-input:focus,
-.stripe-style-input:active {
-  box-shadow: 0 1px 3px 0 #cfd7df;
-} */
-
-.StripeElement--webkit-autofill {
-  background-color: #fefde5 !important;
-}
-
-.stripe-style-input::placeholder {
-    color: #aab7c4;
-}
-.stripe-style-input:focus {
-    color: var(--dark-green);
-}
-
 /*Checkout*/
 fieldset {
     border: 2px solid var(--dark-green);
     border-radius: 0.5rem;
-  }
-  legend {
-    color: var(--dark-green);
-    font-weight: 400;
-  }
-  .row .col+.p0 {
-    padding: 0;
-  }
+}
+legend {
+  color: var(--dark-green);
+  font-weight: 400;
+}
+.row .col+.p0 {
+  padding: 0;
+}
 
+.input-field>label, .select-wrapper input.select-dropdown {
+  color: var(--text-light);
+  font-size: 16px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+}
+
+input[type=text]::placeholder {
+  color: var(--text-light);
+}
+
+/*Preloader*/  
 #loading-overlay {
   display: none;
   position: fixed;
@@ -73,15 +44,26 @@ fieldset {
   width: 90px;
   height: 90px;
 }
-input {
-  color: var(--text);
+
+/*Stripe*/
+.StripeElement,
+.stripe-style-input {
+  height: 40px;
+  border-bottom: 1px solid #9e9e9e;
 }
-.input-field>label, .select-wrapper input.select-dropdown {
-  color: rgb(170 170 170) !important;
-  font-size: 16px;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+.StripeElement:focus,
+.stripe-style-input:focus {
+  height: 40px;
+  border-bottom: 2px solid var(--dark-green);
 }
-.select-dropdown,
-select option {
-  
+
+.StripeElement--webkit-autofill {
+  background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
+.stripe-style-input:focus {
+    color: var(--dark-green);
 }
