@@ -13,10 +13,10 @@ class CatAdmin(admin.ModelAdmin):
 
     ordering = ('name',)
 
-class StatusAdmin(admin.ModelAdmin):
-    list_display = (
-        'status',
-    )
+# class StatusAdmin(admin.ModelAdmin):
+#     list_display = (
+#         'status',
+#     )
 
 class SexAdmin(admin.ModelAdmin):
     list_display = (
@@ -24,5 +24,5 @@ class SexAdmin(admin.ModelAdmin):
     )
 
 admin.site.register(Cat, CatAdmin)
-admin.site.register(Status, StatusAdmin)
+# admin.site.register(Status, StatusAdmin)
 admin.site.register(Sex, SexAdmin)

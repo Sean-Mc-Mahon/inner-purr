@@ -58,7 +58,7 @@
             <ul class="sidenav" id="mobile-demo">
                 <li><a tabindex="-1" href="{% url 'home' %}">Home</a></li>
                 <li><a tabindex="-1" href="">Menu</a></li>
-                <li><a tabindex="-1" href="">Cats</a></li>
+                <li><a tabindex="-1" href="{% url 'cats' %}">Cats</a></li>
                 <li><a tabindex="-1" href="{% url 'products' %}">Shop</a></li>
                 <li><a tabindex="-1" href="">Contact</a></li>
             </ul>
@@ -75,7 +75,7 @@
                     </a>
                 </li>
                 <li class="main-link flex hide-on-small-only h100">
-                    <a id="cats" href="">
+                    <a id="cats" href="{% url 'cats' %}">
                         <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Cats</span>
                     </a>
                 </li>

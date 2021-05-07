@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title%}{{ cat.name }}{% endblock %}
+
+<!-- Free Delivery Banner -->
+{% block page_header %}
+{% endblock %}
+
+{% block content %}
+    <div class="white-overlay">
+        <div class="row mt1">
+            <!-- Image -->
+            <div class="col s12 m6 l4 p1">
+                <div class="gallery-item">
+                    <div class="square">
+                        <div class="gallery-image content">
+                            {% if cat.image %}
+                                <a href="{{ cat.image.url }}" target="_blank">
+                                    <img class="" src="{{ cat.image.url }}" alt="{{ cat.name }}">
+                                </a>
+                            {% elif cat.image_url %}
+                                <a href="{{ cat.image.url_url }}" target="_blank">
+                                    <img class="" src="{{ cat.image_url }}" alt="{{ cat.name }}">
+                                </a>
+                            {% else %}
+                                <a href="">
+                                    <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ cat.name }}">
+                                </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Info -->
+            <div class="col s12 m6 l8 p1">
+                <!-- Name -->
+                <h2 class="cursive m0">
+                    {{ cat.name }}
+                </h2>
+                <!-- Sex -->
+                <div class="">
+                    <span class="bold">Sex:</span> {{ cat.sex }}
+                </div>
+                <!-- Description -->
+                <div class="">
+                    {{ cat.description }}
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super}}
+    <script>
+        $('#sort-selector').change(function() {
+            var selector = $(this)
+            var currentUrl = new URL(window.location);
+    
+            var selectedVal = selector.val();
+            if(selectedVal != 'reset'){
+                var sort = selectedVal.split('_')[0];
+                var direction = selectedVal.split('_')[1];
+    
+                currentUrl.searchParams.set('sort', sort);
+                currentUrl.searchParams.set('direction', direction);
+    
+                window.location.replace(currentUrl);
+            } else {
+                currentUrl.searchParams.delete('sort');
+                currentUrl.searchParams.delete('direction');
+    
+                window.location.replace(currentUrl);
+            }
+        })
+    </script>
+{% endblock %}
