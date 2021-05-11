@@ -133,6 +133,7 @@ h1, h2, h3, h4, h5, h6 {
 .p2 {
   padding: 2rem;
 }
+
 /* MARGIN STYLES */
 .m-auto {
   margin: 0 auto;
@@ -185,11 +186,17 @@ h1, h2, h3, h4, h5, h6 {
 .mb2 {
   margin-bottom: 2rem;
 }
+.ml-q {
+  margin-left: 0.25rem;
+}
 .ml-half {
   margin-left: 0.5rem;
 }
 .ml1 {
   margin-left: 1rem;
+}
+.mr-q {
+  margin-right: 0.25rem;
 }
 .mr-half {
   margin-right: 0.5rem;
@@ -272,6 +279,12 @@ hr {
 
 /* Green Links and Icons */
 a, img, .large-icon {
+  color: var(--dark-green);
+}
+.btn a{
+  color: var(--cream);
+}
+.btn:hover a{
   color: var(--dark-green);
 }
 
@@ -874,7 +887,10 @@ color: #449bff;
   max-height: 250px;
 }
 
-
+/*Cat Details*/
+.row .bio {
+  padding: 0;
+}
 
 
 
@@ -918,6 +934,10 @@ color: #449bff;
   /* products */
   .product-description {
     min-height: 40px;
+  }
+  /*Cat Details*/
+  .row .bio {
+    padding: 0 2rem;
   }
 }
 
@@ -969,6 +989,7 @@ color: #449bff;
   height: 24px;
   width: 24px;
   }
+  
 }
 
 /* l desktop */

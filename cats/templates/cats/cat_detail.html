@@ -7,11 +7,13 @@
 {% endblock %}
 
 {% block content %}
+<div class="container">
     <div class="white-overlay">
         <div class="row mt1">
-            <!-- Image -->
-            <div class="col s12 m6 l4 p1">
-                <div class="gallery-item">
+            <!-- Details -->
+            <div class="col s12 m4 xl5 grey lighten-2 mb1 p0">
+                <!-- Image -->
+                <div class="gallery-item mb-half">
                     <div class="square">
                         <div class="gallery-image content">
                             {% if cat.image %}
@@ -30,49 +32,66 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Info -->
-            <div class="col s12 m6 l8 p1">
-                <!-- Name -->
-                <h2 class="cursive m0">
-                    {{ cat.name }}
-                </h2>
                 <!-- Sex -->
-                <div class="">
+                <div class="ph-half">
                     <span class="bold">Sex:</span> {{ cat.sex }}
                 </div>
+                <div class="divider mb-half"></div>
+                <!-- Age -->
+                <div class="ph-half">
+                    <span class="bold">Age:</span> {{ cat.age }}
+                </div>
+                <div class="divider mb-half"></div>
+                <!-- Rescued -->
+                <div class="ph-half">
+                    <span class="bold">Rescued:</span> {{ cat.rescued }}
+                </div>
+                <div class="divider mb-half"></div>
                 <!-- Description -->
+                <div class="ph-half">
+                    <span class="bold">Description:</span> {{ cat.description }}
+                </div>
+                <div class="divider mb-half"></div>
+                <!-- Neutered/spayed -->
+                <div class="ph-half">
+                    <span class="bold">Neutered/spayed:</span> {{ cat.neutered }}
+                </div>
+                <div class="divider mb-half"></div>
+                <!-- Vaccinated -->
+                <div class="ph-half">
+                    <span class="bold">Vaccinated:</span> {{ cat.vaccinated }}
+                </div>
+                <!-- More detailed Info for super users -->
+                {% if request.user.is_superuser %}
+                <div class="divider mb-half"></div>
+                <!-- Status -->
+                <div class="ph-half">
+                    <span class="bold">Status:</span> {{ cat.status }}
+                </div>
+                <div class="divider mb-half"></div>
+                <!-- Microchipped -->
+                <div class="ph-half">
+                    <span class="bold">Microchipped:</span> {{ cat.microchipped }}
+                </div>
+                <div class="divider mb-half"></div>
+                <!-- Health checked -->
+                <div class="ph-half">
+                    <span class="bold">Health checked:</span> {{ cat.health_checked }}
+                </div>
+                {% endif %}
+            </div>
+            <!-- Bio -->
+            <div class="col s12 m8 xl7 bio">
+                <!-- Name -->
+                <h2 class="cursive mt0 mb-half">
+                    {{ cat.name }}
+                </h2>
                 <div class="">
-                    {{ cat.description }}
+                    {{ cat.profile|safe }}
                 </div>
             </div>
         </div>
     </div>
+</div>
     
-{% endblock %}
-
-{% block postloadjs %}
-    {{ block.super}}
-    <script>
-        $('#sort-selector').change(function() {
-            var selector = $(this)
-            var currentUrl = new URL(window.location);
-    
-            var selectedVal = selector.val();
-            if(selectedVal != 'reset'){
-                var sort = selectedVal.split('_')[0];
-                var direction = selectedVal.split('_')[1];
-    
-                currentUrl.searchParams.set('sort', sort);
-                currentUrl.searchParams.set('direction', direction);
-    
-                window.location.replace(currentUrl);
-            } else {
-                currentUrl.searchParams.delete('sort');
-                currentUrl.searchParams.delete('direction');
-    
-                window.location.replace(currentUrl);
-            }
-        })
-    </script>
 {% endblock %}

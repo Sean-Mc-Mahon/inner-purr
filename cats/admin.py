@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Status, Sex, Cat
+from .models import Sex, Cat
 
 # Register your models here.
 
@@ -8,15 +8,16 @@ class CatAdmin(admin.ModelAdmin):
         'name',
         'sex',
         'status',
+        'rescued',
+        'health_checked',
+        'neutered',
+        'adopted',
+        'microchipped',
+        'vaccinated',
         'image',
     )
 
-    ordering = ('name',)
-
-# class StatusAdmin(admin.ModelAdmin):
-#     list_display = (
-#         'status',
-#     )
+    ordering = ('rescued',)
 
 class SexAdmin(admin.ModelAdmin):
     list_display = (
@@ -24,5 +25,4 @@ class SexAdmin(admin.ModelAdmin):
     )
 
 admin.site.register(Cat, CatAdmin)
-# admin.site.register(Status, StatusAdmin)
 admin.site.register(Sex, SexAdmin)

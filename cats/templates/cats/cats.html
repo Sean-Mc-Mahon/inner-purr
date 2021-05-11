@@ -7,10 +7,11 @@
 {% endblock %}
 
 {% block content %}
-    <div class="white-overlay">
-        <div class="row m1">
+<div class="container">
+    <div class="white-overlay p1">
+        <div class="row w-100">
             {% for cat in cats %}
-                <div class="col s12 m6 l4 xl3 p1 mt1">
+                <div class="col s12 m6 l4 xl3 mt1">
                     <a href="{% url 'cat_detail' cat.id %}">
                         <div class="gallery-item">
                             <div class="square">
@@ -38,6 +39,7 @@
             
         </div>
     </div>
+</div>
     
 {% endblock %}
 

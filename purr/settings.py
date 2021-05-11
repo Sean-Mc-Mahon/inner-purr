@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'allauth', # copied from alauth documention
     'allauth.account', # copied from alauth documention
     'allauth.socialaccount', # copied from alauth documention
+    'ckeditor', # to allow customisable text fileds in admin view
     'home',
     'products',
     'bag',
