@@ -25,6 +25,8 @@ class Cat(models.Model):
     microchipped = models.BooleanField(null=True, blank=True)
     vaccinated = models.BooleanField(null=True, blank=True)
     adopted = models.BooleanField(null=True, blank=True)
+    resident = models.BooleanField(null=True, blank=True)
+    tagline = models.CharField(max_length=254, help_text="One line character description...")
     health_checked = models.BooleanField(null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)

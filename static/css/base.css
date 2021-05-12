@@ -127,6 +127,9 @@ h1, h2, h3, h4, h5, h6 {
 .ph-half {
   padding: 0 0.5rem;
 }
+.p-half {
+  padding: 0.5rem;
+}
 .p1 {
   padding: 1rem;
 }
@@ -792,6 +795,7 @@ svg:not(:root) {
   width: 280px;
   height: 280px;
   border-radius: 2rem;
+  overflow: hidden;
 }
 .carousel .carousel-item img {
   border-radius: 2rem;
@@ -885,6 +889,22 @@ color: #449bff;
 .gallery-item.bag-image {
   max-width: 250px;
   max-height: 250px;
+}
+
+/*All Cats*/
+.slider .slides li .cat-caption {
+  color: #fff;
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  width: 70%;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+}
+/* #cat-slides li::before {
+  background: none;
+} */
+.cat-box {
+  padding: 0.5rem !important;
 }
 
 /*Cat Details*/

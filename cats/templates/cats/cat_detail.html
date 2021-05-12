@@ -61,6 +61,11 @@
                 <div class="ph-half">
                     <span class="bold">Vaccinated:</span> {{ cat.vaccinated }}
                 </div>
+                <div class="divider mb-half"></div>
+                <!-- Adopted -->
+                <div class="ph-half">
+                    <span class="bold">Adopted:</span> {{ cat.adopted }}
+                </div>
                 <!-- More detailed Info for super users -->
                 {% if request.user.is_superuser %}
                 <div class="divider mb-half"></div>

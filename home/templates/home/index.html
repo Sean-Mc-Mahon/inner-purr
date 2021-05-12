@@ -143,7 +143,7 @@
           </div>
         </div>
         <!-- Cat Carousel -->
-        <div class="carousel-container">
+        <!-- <div class="carousel-container">
           <div id="carousel-small" class="carousel flex-center">
             <a class="carousel-item" href="#one!"><img src="../media/cats/marvin1.jpg"></a>
             <a class="carousel-item" href="#two!"><img src="../media/cats/rod3.JPG"></a>
@@ -151,9 +151,54 @@
             <a class="carousel-item" href="#four!"><img src="../media/cats/ruthy2.JPG"></a>
             <a class="carousel-item" href="#five!"><img src="../media/cats/theresa3.jpg"></a>
           </div>
+        </div> -->
+        <!-- Cat Carousel -->
+        <div class="carousel-container">
+          <div id="carousel-small" class="carousel flex-center">
+            {% for cat in cats %}
+              {% if cat.resident == True %}
+              <a class="carousel-item" href="{% url 'cat_detail' cat.id %}">
+                <div class="gallery-item">
+                    <div class="square">
+                        <div class="gallery-image content">
+                            {% if cat.image %}
+                                <img class="" src="{{ cat.image.url }}" alt="{{ cat.name }}">
+                            {% elif cat.image_url %}
+                                <img class="" src="{{ cat.image_url }}" alt="{{ cat.name }}">
+                            {% else %}
+                                <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ cat.name }}">
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="cat-overlay cat-overlay-fade">
+                        <div class="gallery-text">
+                            <h5 class="white-text">{{ cat.name }}</h5>
+                            <p class="xxl-only light small-font">{{ cat.sex }}</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
+              {% endif %} 
+            {% endfor %}  
+          </div>
         </div>
+
       </div>
     </div>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
 
     <div class="container">
       <div class="section">

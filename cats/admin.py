@@ -12,12 +12,13 @@ class CatAdmin(admin.ModelAdmin):
         'health_checked',
         'neutered',
         'adopted',
+        'resident',
         'microchipped',
         'vaccinated',
         'image',
     )
-
-    ordering = ('rescued',)
+    #  Cats in admin view displayed by date rescued
+    ordering = ('-rescued',)
 
 class SexAdmin(admin.ModelAdmin):
     list_display = (
