@@ -301,7 +301,8 @@ a, img, .large-icon {
 }
 .select-wrapper input.select-dropdown:focus,
 input[type=email]:not(.browser-default):focus:not([readonly]),
-input[type=text]:not(.browser-default):focus:not([readonly]) {
+input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=password]:not(.browser-default):focus:not([readonly]) {
   border-bottom: 1px solid var(--dark-green);
   box-shadow: 0 1px 0 0 var(--dark-green);
   color: var(--dark-green);
@@ -317,6 +318,18 @@ input[type=text]:not(.browser-default):focus.invalid ~ label{
   min-width: 3rem;
   text-align: center;
 }
+
+textarea {
+  border-color: var(--dark-green);
+}
+textarea:focus {
+  border-color: var(--dark-green);
+}
+
+:focus-visible {
+  outline-color: var(--dark-green);
+}
+
 
 [type="checkbox"]:checked+span:not(.lever):before {
   border-right: 2px solid var(--dark-green);
