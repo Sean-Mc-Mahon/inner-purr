@@ -99,6 +99,12 @@
                                 <!--Add to Bag-->
                                 <input type="submit" class="btn" value="Add to Bag">
                             </div>
+                            {% if request.user.is_superuser %}
+                                <div class="ph-half">
+                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                    <a href="{% url 'delete_product' product.id %}">Delete</a>
+                                </div>
+                            {% endif %}
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}
                         </div>

@@ -105,13 +105,19 @@
                                         </a>
                                     </p>
                                 {% endif %}
-                                <p class="small">
+                                <!-- <p class="small">
                                 {% if product.rating %}
                                     <small class="rating"><i class="fas fa-star right-align"></i> {{ product.rating }} / 5</small>
                                 {% else %}
                                     <small class="">No rating</small>
                                 {% endif %}
-                                </p>
+                                </p> -->
+                                {% if request.user.is_superuser %}
+                                    <small class="">
+                                        <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                        <a href="{% url 'delete_product' product.id %}">Delete</a>
+                                    </small>
+                                {% endif %}
                             </div>
                         </div>
                         <div class="divider center m-auto"></div>
