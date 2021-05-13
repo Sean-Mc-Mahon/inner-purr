@@ -947,6 +947,41 @@ color: #449bff;
   padding: 0;
 }
 
+/* Add/Edit Products */
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+#filename{
+  color: red;
+  font-size: .8rem;
+  font-weight: 600;
+  line-height: .8rem;
+  margin: 0.8rem 0;
+}
+
+.custom-checkbox .custom-control-label::before {
+  border-radius: 0;
+  border-color: var(--dark-green);
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+  background-color: var(--dark-green);
+  border-color: var(--dark-green);
+  border-radius: 0;
+}
+
 
 
 /* m tablet */
