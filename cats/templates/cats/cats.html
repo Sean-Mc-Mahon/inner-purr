@@ -9,8 +9,30 @@
 {% block content %}
 <div class="container">
     <div class="white-overlay p1">
+        <!-- Resident Cats -->
         <div class="row w-100">
-            <h3 class="cursive">Our Resident Kitties</h3>
+            <h5 class="cursive center">Our Resident Kitties</h5>
+            <div id="carousel-large" class="carousel">
+                {% for cat in cats %}
+                    {% if cat.resident == True %}
+                        <a class="carousel-item" href="{% url 'cat_detail' cat.id %}">
+                        <div class="gallery-item">
+                            <div class="square">
+                                <div class="gallery-image content">
+                                    <img class="" src="{{ cat.image.url }}" alt="{{ cat.name }}">
+                                </div>
+                            </div>
+                            <div class="cat-overlay cat-overlay-fade">
+                                <div class="gallery-text">
+                                    <h5 class="white-text">{{ cat.name }}</h5>
+                                    <p class="xxl-only light small-font">{{ cat.sex }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    {% endif %} 
+                {% endfor %} 
+              </div>
             <div class="slider">
                 <div class="overlayed">
                 </div>
@@ -37,11 +59,10 @@
                     {% endfor %}
                   </ul>
               </div>
-            
-            
         </div>
+        <!-- Cats for adoption -->
         <div class="row w-100">
-            <h3 class="cursive">Kitties for Adoption</h3>
+            <h5 class="cursive center">Kitties for Adoption</h5>
             {% for cat in cats %}
                 {% if cat.adopted == False %}
                     <div class="col s12 m6 l4 xl3 mt1">
@@ -62,11 +83,11 @@
                         </a>
                     </div>
                 {% endif %} 
-            {% endfor %}
-            
+            {% endfor %} 
         </div>
-        <div class="row w-100">
-            <h3 class="cursive">Kitties who have found their new home</h3>
+        <!-- Adopted Cats -->
+        <div class="row w-100 mt2">
+            <h5 class="cursive center">Kitties who have found their new home</h5>
             {% for cat in cats %}
                 {% if cat.adopted == True %}
                     <div class="col s6 m3 l3 xl2 cat-box">

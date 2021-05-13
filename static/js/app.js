@@ -4,6 +4,7 @@ $(document).ready(function () {
   $('.parallax').parallax();
   $('.dropdown-trigger').dropdown();
   $("#carousel-small").carousel();
+  $(".carousel").carousel();
   $('.slider').slider({
     interval: 10000,
   });

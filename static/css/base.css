@@ -791,9 +791,14 @@ svg:not(:root) {
   padding: 0 3rem;
 }
 
+/* #carousel-large,
+#carousel-small {
+    height: 320px;
+  } */
+
 .carousel .carousel-item {
-  width: 280px;
-  height: 280px;
+  width: 220px;
+  height: 220px;
   border-radius: 2rem;
   overflow: hidden;
 }
@@ -947,9 +952,20 @@ color: #449bff;
   .logo-sub-header {
   font-size: 0.8rem;
   }
+  /*Carousels*/
+  /* #carousel-large,
+  #carousel-small {
+    height: 360px;
+  } */
   /*Home*/
   .home-pages div> p {
     width: 80%;
+  }
+  .carousel .carousel-item {
+    width: 280px;
+    height: 280px;
+    border-radius: 2rem;
+    overflow: hidden;
   }
   /* products */
   .product-description {
@@ -1009,13 +1025,25 @@ color: #449bff;
   height: 24px;
   width: 24px;
   }
-  
+  /*All Cats*/
+  #carousel-large .carousel-item {
+    width: 340px;
+    height: 340px;
+  }
 }
 
 /* l desktop */
 @media screen and (min-width: 1201px) {
   .product-name {
     min-height: 40px;
+  }
+  /*All Cats*/
+  /* #carousel-large {
+    height: 480px;
+  } */
+  #carousel-large .carousel-item {
+    width: 400px;
+    height: 400px;
   }
 }
 
