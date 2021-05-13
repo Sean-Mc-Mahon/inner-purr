@@ -98,7 +98,7 @@
                             <ul class="profile-dropped p1">
                                 {% if request.user.is_authenticated %}
                                     {% if request.user.is_superuser %}
-                                        <a href="">Product Management</a>
+                                        <a href="{% url 'add_product' %}">Product Management</a>
                                     {% endif %}
                                     <a href="{% url 'profile' %}">My Profile</a>
                                     <a href="{% url 'account_logout' %}">Logout</a>

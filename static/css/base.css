@@ -302,6 +302,8 @@ a, img, .large-icon {
 .select-wrapper input.select-dropdown:focus,
 input[type=email]:not(.browser-default):focus:not([readonly]),
 input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=url]:not(.browser-default):focus:not([readonly]),
 input[type=password]:not(.browser-default):focus:not([readonly]) {
   border-bottom: 1px solid var(--dark-green);
   box-shadow: 0 1px 0 0 var(--dark-green);
@@ -317,6 +319,12 @@ input[type=text]:not(.browser-default):focus.invalid ~ label{
 .input-group input {
   min-width: 3rem;
   text-align: center;
+}
+
+.add-form .select-wrapper+label {
+  position: absolute;
+  top: auto;
+  font-size: .8rem;
 }
 
 textarea {
@@ -387,6 +395,15 @@ td p {
 
 .toast-capper {
   height: 2px;
+}
+
+.add-form .errorlist li {
+  color: red;
+    font-size: .8rem;
+    font-weight: 600;
+    transform: translate(0, 20px);
+    line-height: .8rem;
+    margin: 0.8rem 0;
 }
 
 /* Allauth form formatting */

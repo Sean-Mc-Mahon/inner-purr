@@ -7,10 +7,8 @@
     <div class="container">
         <div class="row">
             <div class="col s12 m6">
-                <hr>
                 <h2 class="cursive">Product Management</h2>
                 <h5 class="">Add a Product</h5>
-                <hr>
             </div>
         </div>
 
@@ -18,7 +16,7 @@
             <div class="col s12 m6">
                 <!-- without the encoding type attribute the image
                 won't be uploaded properly -->
-                <form method="POST" action="{% url 'add_product' %}" class="mb2" enctype="multipart/form-data">
+                <form method="POST" action="{% url 'add_product' %}" class="mb2 add-form" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form }}
                     <div class="mt1">
