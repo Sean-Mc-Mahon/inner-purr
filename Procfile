@@ -1,1 +1,1 @@
-web: gunicorn inner-purr.wsgi:application
+web: gunicorn purr.wsgi:application
