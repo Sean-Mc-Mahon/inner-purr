@@ -1,11 +1,11 @@
 {% if widget.is_initial %}
-    <p>{{ widget.initial_text }}:</p>
+    <!-- <p>{{ widget.initial_text }}:</p> -->
     <a href="{{ widget.value.url }}">
         <img width="96" height="96" class="" src="{{ widget.value.url }}">
     </a>
     {% if not widget.required %}
-        <div class="custom-control custom-checkbox mt2">
-            <label class="custom-control-label text-danger" for="{{ widget.checkbox_id }}"> 
+        <div class="custom-control custom-checkbox">
+            <label class="custom-control-label" for="{{ widget.checkbox_id }}"> 
                 <input class="custom-control-input" type="checkbox" name="{{ widget.checkbox_name }}" id="{{ widget.checkbox_id }}">
                 <span>{{ widget.clear_checkbox_label }}</span>
             </label>
@@ -13,7 +13,7 @@
     {% endif %}<br>
     {{ widget.input_text }}
 {% endif %}
-<button class="btn btn-file">
+<button class="btn btn-file ml-half">
     <span>
         Select Image <input id="new-image" type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>
     </span>

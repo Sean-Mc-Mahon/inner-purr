@@ -315,6 +315,13 @@ input[type=text]:not(.browser-default):focus:not([readonly])+label{
 input[type=text]:not(.browser-default):focus.invalid ~ label{
   color: var(--dark-green);
 }
+.add-form input[type=url]:not(.browser-default){
+  margin-bottom: 1rem;
+}
+.add-form input[name=sku]:not(.browser-default),
+.add-form input[name=price]:not(.browser-default){
+  padding-top: 1rem;
+}
 
 .input-group input {
   min-width: 3rem;
@@ -979,7 +986,6 @@ color: #449bff;
 .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
   background-color: var(--dark-green);
   border-color: var(--dark-green);
-  border-radius: 0;
 }
 
 

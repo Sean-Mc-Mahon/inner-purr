@@ -19,7 +19,7 @@
                 <form method="POST" action="{% url 'edit_product' product.id %}" class="mb2 add-form" enctype="multipart/form-data">
                     {% csrf_token %}
                     {{ form }}
-                    <div class="mt1">
+                    <div class="mt2">
                         <button class="btn"><a href="{% url 'products' %}">Cancel</a></button>
                         <button class="btn" type="submit">Edit Product</button>
                     </div>
