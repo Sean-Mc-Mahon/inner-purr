@@ -64,66 +64,43 @@
         </div>
         <!-- Menu Section -->
         <div class="menu-body flex-col">
+          
           <div class="menu-text">
             <div class="drinks">
-              <div class="coffee">
-                <h2 class="menu-title p1">Coffee</h2>
                 <div class="row">
-                  <div class="col s12 m6 xxl4 menu-item flex-space">
-                    <span>Espresso</span><span> 2.50</span>
-                  </div>
-                  <div class="col s12 m6 xxl4 menu-item flex-space">
-                    <span>Americano</span><span> 2.70</span>
-                  </div>
-                  <div class="col s12 m6 xxl4 menu-item flex-space">
-                    <span>Flat White</span><span> 3.50</span>
-                  </div>
-                  <div class="col s12 m6 xxl4 menu-item flex-space">
-                    <span>Latte</span><span> 3.50</span>
-                  </div>
-                  <div class="col s12 m6 xxl4 menu-item flex-space">
-                    <span>Cappuccino</span><span> 3.50</span>
-                  </div>
-                  <div class="col s12 m6 xxl4 menu-item flex-space">
-                    <span>Mocha</span><span> 3.50</span>
-                  </div>
+                  <h2 class="menu-title p1">Drinks</h2>
+                  {% for drink in drinks %}
+                    <div class="col s12 m6 xxl4 menu-item flex-space">
+                      <span>{{ drink.name }}</span><span> {{ drink.price }}</span>
+                    </div>
+                  {% endfor %}
                 </div>
-              </div>
-              <div class="hot-chocolate">
-                <h2 class="menu-title 1">Hot Chocolate</h2>
-                <div class="row">
-                  <div class="col s12 m6 xxl4 menu-item flex-space">
-                    <span>Dark Hot Chocolate</span><span> 4.00</span>
-                  </div>
-                </div>
-              </div>
-              <div class="tea">
-                <h2 class="menu-title p1">Tea</h2>
-                <div class="row">
-                  <div class="col s12 m6 xxl4 menu-item flex-space">
-                    <span>Loose Leaf Tea</span><span> 2.00</span>
-                  </div>
-                </div>
-              </div>
             </div>
             <div class="food">
-              <div class="treats">
-                <h2 class="menu-title p1">Treats</h2>
                 <div class="row">
-                  <div class="col s12 m6 xxl4 menu-item flex-space">
-                    <span>Blueberry Muffin</span><span> 3.50</span>
-                  </div>
-                  <div class="col s12 m6 xxl4 menu-item flex-space">
-                    <span>Carrot Cake</span><span> 3.50</span>
-                  </div>
-                  <div class="col s12 m6 xxl4 menu-item flex-space">
-                    <span>Lemon Sponge</span><span> 3.50</span>
-                  </div>
-                  <div class="col s12 m6 xxl4 menu-item flex-space">
-                    <span>Dark Chocolate Square</span><span> 3.50</span>
-                  </div>
+                  <h2 class="menu-title p1">Food</h2>
+                  {% for item in food %}
+                    <div class="col s12 m6 xxl4 menu-item">
+                      <div class="flex-space">
+                        <span>{{ item.name }}</span><span> {{ item.price }}</span>
+                      </div>
+                      
+                      {% if item.description %}
+                        <div class="description">{{ item.description|safe }}</div>
+                      {% endif %}
+                    </div>
+                  {% endfor %}
                 </div>
-              </div>
+            </div>
+            <div class="food">
+                <div class="row">
+                  <h2 class="menu-title p1">Treats</h2>
+                  {% for item in treats %}
+                    <div class="col s12 m6 xxl4 menu-item flex-space">
+                      <span>{{ item.name }}</span><span> {{ item.price }}</span>
+                    </div>
+                  {% endfor %}
+                </div>
             </div>
           </div>
         </div>

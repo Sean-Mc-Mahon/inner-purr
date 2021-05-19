@@ -56,8 +56,7 @@
 
             <!-- Side Nav Bar -->
             <ul class="sidenav" id="mobile-demo">
-                <li><a tabindex="-1" href="{% url 'home' %}">Home</a></li>
-                <li><a tabindex="-1" href="">Menu</a></li>
+                <li><a tabindex="-1" href="{% url 'home' %}">The Purr</a></li>
                 <li><a tabindex="-1" href="{% url 'cats' %}">Cats</a></li>
                 <li><a tabindex="-1" href="{% url 'products' %}">Shop</a></li>
                 <li><a tabindex="-1" href="{% url 'help' %}">Help Us</a></li>
@@ -71,8 +70,8 @@
         <div id="under-menu" class="flex-space all-links">
             <ul class="w-100 mh2 nav-links flex-space h100">
                 <li class="main-link flex hide-on-small-only h100">
-                    <a id="menu" href="">
-                        <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Menu</span>
+                    <a id="menu" href="{% url 'home' %}">
+                        <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">The Purr</span>
                     </a>
                 </li>
                 <li class="main-link flex hide-on-small-only h100">

@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'profiles',
     'cats',
     'help',
+    'contact',
 ]
 
 MIDDLEWARE = [

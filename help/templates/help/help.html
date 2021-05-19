@@ -9,14 +9,14 @@
 {% block content %}
 <div class="container">
     <div class="white-overlay p1">
-        <h3>How You Can Help</h3>
-        <!-- Doantions -->
-        <h4>Donate</h4>
+        <h3 class="cursive">How You Can Help</h3>
+        <!-- Donations -->
+        <h4 class="cursive">Donate</h4>
         {% for option in donations %}
             <div class="row">
                 <div class="col s12 p0">
                     <div>
-                        <h5>{{ option.donation_option }}</h5>
+                        <h5 class="cursive">{{ option.donation_option }}</h5>
                         <p>{{ option.description|safe }}</p>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
         </p>
 
         <!-- Volunteering Roles -->
-        <h4>Volunteer</h4>
+        <h4 class="cursive">Volunteer</h4>
         {% for role in roles %}
             <div class="row">
                 <div class="col s12 m6 l4 mt1">
@@ -42,7 +42,7 @@
                 </div>
                 <div class="col s12 m6 l8">
                     <div>
-                        <h5>{{ role.role }}</h5>
+                        <h5 class="cursive">{{ role.role }}</h5>
                         <p>{{ role.description|safe }}</p>
                     </div>
                 </div>
