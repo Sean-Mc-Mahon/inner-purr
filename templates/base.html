@@ -60,6 +60,7 @@
                 <li><a tabindex="-1" href="">Menu</a></li>
                 <li><a tabindex="-1" href="{% url 'cats' %}">Cats</a></li>
                 <li><a tabindex="-1" href="{% url 'products' %}">Shop</a></li>
+                <li><a tabindex="-1" href="{% url 'help' %}">Help Us</a></li>
                 <li><a tabindex="-1" href="">Contact</a></li>
             </ul>
         </header>
@@ -82,6 +83,11 @@
                 <li class="main-link flex hide-on-small-only h100">
                     <a id="shop" href="{% url 'products' %}">
                         <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Shop</span>
+                    </a>
+                </li>
+                <li class="main-link flex hide-on-small-only h100">
+                    <a id="help" href="{% url 'help' %}">
+                        <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Help Us</span>
                     </a>
                 </li>
                 <li class="main-link flex hide-on-small-only h100">

@@ -355,6 +355,9 @@ textarea:focus {
 .pointer {
   cursor: pointer;
 }
+.col .gallery-item .square .content .no-pointer {
+  cursor: auto;
+}
 
 /* TABLES */
 tr {
@@ -626,7 +629,7 @@ nav ul a {
 }
 /* Paw animation */
 .main-link {
-  width: 80px;
+  /* width: 80px; */
   font-weight: 500;
   position: relative;
   height: 100%;
@@ -937,10 +940,15 @@ color: #449bff;
 .slider .slides li .cat-caption {
   color: #fff;
   position: absolute;
-  bottom: 10%;
-  left: 5%;
-  width: 70%;
-  /* background-color: rgba(0, 0, 0, 0.5); */
+  bottom: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  text-align: start;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 /* #cat-slides li::before {
   background: none;
@@ -952,6 +960,16 @@ color: #449bff;
 /*Cat Details*/
 .row .bio {
   padding: 0;
+}
+.link-cover {
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+}
+.cover-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
 
 /* Add/Edit Products */

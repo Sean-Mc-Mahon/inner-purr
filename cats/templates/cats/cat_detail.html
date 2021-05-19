@@ -54,17 +54,20 @@
                 <div class="divider mb-half"></div>
                 <!-- Neutered/spayed -->
                 <div class="ph-half">
-                    <span class="bold">Neutered/spayed:</span> {{ cat.neutered }}
+                    <span class="bold">Neutered/Spayed:</span>
+                    {% if cat.neutered %} Yes {% else %} No {% endif %}
                 </div>
                 <div class="divider mb-half"></div>
                 <!-- Vaccinated -->
                 <div class="ph-half">
-                    <span class="bold">Vaccinated:</span> {{ cat.vaccinated }}
+                    <span class="bold">Vaccinated:</span>
+                    {% if cat.vaccinated %} Yes {% else %}No {% endif %}
                 </div>
                 <div class="divider mb-half"></div>
                 <!-- Adopted -->
                 <div class="ph-half">
-                    <span class="bold">Adopted:</span> {{ cat.adopted }}
+                    <span class="bold">Adopted:</span>
+                    {% if cat.adopted %} Yes {% else %} No {% endif %}
                 </div>
                 <!-- More detailed Info for super users -->
                 {% if request.user.is_superuser %}
@@ -76,12 +79,14 @@
                 <div class="divider mb-half"></div>
                 <!-- Microchipped -->
                 <div class="ph-half">
-                    <span class="bold">Microchipped:</span> {{ cat.microchipped }}
+                    <span class="bold">Microchipped:</span>
+                    {% if cat.microchipped %} Yes {% else %} No {% endif %}
                 </div>
                 <div class="divider mb-half"></div>
                 <!-- Health checked -->
                 <div class="ph-half">
-                    <span class="bold">Health checked:</span> {{ cat.health_checked }}
+                    <span class="bold">Health checked:</span> 
+                    {% if cat.health_checked %} Yes {% else %} No {% endif %}
                 </div>
                 {% endif %}
             </div>
