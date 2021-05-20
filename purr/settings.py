@@ -113,7 +113,7 @@ WSGI_APPLICATION = 'purr.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases
+# https://docs.djangoproject.com/en/3.1/ref/settings/#databases  
 # DATABASES = {
 #         'default': dj_database_url.parse('postgres://omvibwtcsdpqfl:84f3147b143c0e7a085140d33e087d0618f61f6c02a1b05efa9c5dea1b098682@ec2-54-195-76-73.eu-west-1.compute.amazonaws.com:5432/d8pk63vjg1uf0h')
 #     }

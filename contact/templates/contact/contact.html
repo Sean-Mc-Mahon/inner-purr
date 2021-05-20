@@ -19,8 +19,56 @@
                     <div class="divider"></div>
                 {% endfor %}
             </div>
+            <div class="col s12 m6 p0">
+                <div id="map">
+                </div>
+            </div>
         </div>
     </div>
 </div>
     
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super}}
+    
+    <script>
+        // Initialize and add the map
+        function initMap() {
+        // My location
+        var homePin = { lat: 53.3506793, lng: -6.2800457 };
+
+        // The map, centered at home
+        var map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 10,
+            center: homePin,});
+
+        //info window code taken from google documentation:https://developers.google.com/maps/documentation/javascript/infowindows
+        const address =
+            "<h6>The Inner Purr <br> 31A Brunswick St N, Stoneybatter, Dublin 7, D07 RW97 </h6>";
+        const infoWindow = new google.maps.InfoWindow({
+            content: address,
+        });
+        //zoom reset code and marker animation taken from google documentation:https://developers.google.com/maps/documentation/javascript/events#MarkerEvents
+        map.addListener("center_changed", () => {
+            window.setTimeout(() => {
+            map.panTo(marker.getPosition());
+            }, 2000);
+        });
+          var marker = new google.maps.Marker({
+            position: homePin,
+            map: map,
+            animation: google.maps.Animation.DROP,
+            icon: "{% static 'icons/mr-buttons-120.png' %}",
+          });
+        marker.addListener("click", () => {
+            map.setZoom(16);
+            map.setCenter(marker.getPosition());
+            infoWindow.open(map, marker);
+        });
+        }
+    </script>
+    <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA42qEl8RGpqO4RPFaMJXg7jp8IhZVq-uA&callback=initMap">
+    </script>
 {% endblock %}

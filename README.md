@@ -287,14 +287,16 @@ All testing and validation is contained within a separate .md file.
 ### Problems and Solutions
 - Problem: User agent style sheets overrriding my own style sheet for paragraphs on the index file.
 - Solution:
-- Problem: Media files not loading on checkout success
-- Solution:
 - Problem: Unable to locate form used in login template
 - Solution:
 - Problem: Console error triggered by Materialize 'M' function
 - Solution:
 - Problem: url not found for checkouts although all urls seemed in order in the checkouts url file
 - Solution: A typo in the project level urls which was also copied and pasted into the stripe endpoints was the source of the problem.
+- Problem: Database would not migrate to Postgres
+- Solution: Dumping old orders with a full country name prior to installing CountryField was causing an issue as the model was expecting two chareacters. I instead dumped data only for the models I required (products/cats etc...) and the migrations performed as expected.
+- Problem: Some media files not displaying on deployed site
+- Solution: Syntax corrected in src attribute for images in index.html file from '..media/example.jpg' '{{ MEDIA_URL }}example.jpg'
 
 <br> [View TESTING.md](TESTING.md)
 

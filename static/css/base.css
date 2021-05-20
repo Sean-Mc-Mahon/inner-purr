@@ -1011,6 +1011,12 @@ color: #449bff;
   border-color: var(--dark-green);
 }
 
+/*Contact*/
+#map {
+  min-height: 300px;
+  width: 100%;
+}
+
 
 
 /* m tablet */
