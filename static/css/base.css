@@ -276,9 +276,6 @@ hr {
 .btn.disabled, .disabled.btn-large, .disabled.btn-small, .btn-floating.disabled, .btn-large.disabled, .btn-small.disabled, .btn-flat.disabled, .btn:disabled, .btn-large:disabled, .btn-small:disabled, .btn-floating:disabled, .btn-large:disabled, .btn-small:disabled, .btn-flat:disabled, .btn[disabled], .btn-large[disabled], .btn-small[disabled], .btn-floating[disabled], .btn-large[disabled], .btn-small[disabled], .btn-flat[disabled] {
   border: solid 2px #DFDFDF;
 }
-.border-half {
-  border-radius: 0.2rem 0.2rem 0.5rem 0.5rem;
-}
 
 /* Green Links and Icons */
 a, img, .large-icon {
@@ -375,7 +372,7 @@ td p {
 /* MESSAGES */
 .message-container {
   position: fixed;
-  top: 10% !important;
+  top: 207px !important;
   right: 1%;
   z-index: 999;
   max-width: 300px;
@@ -393,11 +390,16 @@ td p {
   overflow: visible;
 }
 .toast {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   line-height: 0.9rem;
-  border: 3px solid var(--dark-green);
-  border-radius: 1rem;
-  padding: 10px;
+  border-bottom: 3px solid var(--dark-green);
+  border-top: 3px solid var(--dark-green);
+  color: var(--text);
+  font-weight: bold;
+  /* border-radius: 1rem; */
+  /* padding: 10px; */
+  /* box-shadow: 0 4px 4px 0 rgb(0 0 0 / 14%), 0 5px 3px -2px rgb(0 0 0 / 12%), 0 2px 7px 0 rgb(0 0 0 / 20%); */
+  box-shadow: 0 9px 9px 0 rgb(0 0 0 / 14%), 0 9px 9px -2px rgb(0 0 0 / 12%), 0 9px 9px 0 rgb(0 0 0 / 20%);
 }
 .toast p {
   line-height: 0.9rem;
