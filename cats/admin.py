@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Sex, Cat
+from .models import Sex, Cat, Notice
 
 # Register your models here.
 
@@ -25,5 +25,11 @@ class SexAdmin(admin.ModelAdmin):
         'sex',
     )
 
+class NoticeAdmin(admin.ModelAdmin):
+    list_display = (
+        'notice',
+    )
+
 admin.site.register(Cat, CatAdmin)
 admin.site.register(Sex, SexAdmin)
+admin.site.register(Notice, NoticeAdmin)

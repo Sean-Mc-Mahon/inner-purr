@@ -33,3 +33,9 @@ class Cat(models.Model):
 
     def __str__(self):
         return self.name
+
+class Notice(models.Model):
+    notice = models.TextField( null=True, blank=True)
+
+    def __str__(self):
+        return self.notice

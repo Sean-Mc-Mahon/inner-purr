@@ -2,11 +2,18 @@
 {% load static %}
 {% block extra_title%}{{ cat.name }}{% endblock %}
 
-<!-- Free Delivery Banner -->
-{% block page_header %}
-{% endblock %}
-
 {% block content %}
+<!-- Notice -->
+<div id="notice">
+    <div class="container flex">
+        <div class="flex-col-l">
+            {% for notice in notice %}
+                <p class="pv-half">{{ notice.notice|safe }}</p>
+            {% endfor %}
+        </div>
+        <i onclick="dismiss()" id="dismiss" class="fas fa-times pointer"></i>
+    </div>
+</div>
 <div class="container">
     <div class="white-overlay">
         <div class="row mt1">
@@ -104,4 +111,14 @@
     </div>
 </div>
     
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super}}
+    <script>
+        function dismiss() {
+            let notice = document.getElementById('notice');
+            notice.classList.add('dismiss');
+        }
+    </script>
 {% endblock %}
