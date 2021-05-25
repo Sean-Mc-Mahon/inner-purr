@@ -9,3 +9,9 @@ class EmailContacts(models.Model):
 
     def __str__(self):
         return self.directory
+     
+class Notice(models.Model):
+    notice = models.TextField( null=True, blank=True)
+
+    def __str__(self):
+        return self.notice

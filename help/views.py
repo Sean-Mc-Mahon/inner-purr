@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Volunteer, Donations
+from .models import Volunteer, Donations, Notice
 
 # Create your views here.
 
@@ -8,10 +8,12 @@ def help(request):
 
     roles = Volunteer.objects.all()
     donations = Donations.objects.all()
+    notice = Notice.objects.all()
 
     context = {
         'roles': roles,
         'donations': donations,
+        'notice': notice,
     }
 
     return render(request, 'help/help.html', context)

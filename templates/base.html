@@ -134,6 +134,20 @@
             </ul>
         </div>
 
+        <!-- Notice -->
+        {% if notice %}
+            <div id="notice">
+                <div class="container flex-space">
+                    <div class="flex-col-l">
+                        {% for notice in notice %}
+                            <p class="pv-half">{{ notice.notice|safe }}</p>
+                        {% endfor %}
+                    </div>
+                    <i onclick="dismiss()" id="dismiss" class="fas fa-times pointer ml1"></i>
+                </div>
+            </div>
+        {% endif %}
+
         {% if messages %}
             <div class="message-container">
                 {% for message in messages %}
@@ -234,6 +248,13 @@
         {% endblock %}
 
         {% block extra_js %}
+            <script>
+                //DISMISS NOTICES
+                function dismiss() {
+                    let notice = document.getElementById('notice');
+                    notice.classList.add('dismiss');
+                }
+            </script>
         {% endblock %}
 
     </body>

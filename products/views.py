@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Product, Category
+from .models import Product, Category, Notice
 from .forms import ProductForm
 
 # Create your views here.
@@ -13,6 +13,7 @@ def all_products(request):
     """" A view to return all products, including sorting """
 
     products = Product.objects.all()
+    notice = Notice.objects.all()
     query = None
     categories = None
     sort = None
@@ -55,6 +56,7 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'notice': notice,
     }
 
     return render(request, 'products/products.html', context)
@@ -65,9 +67,11 @@ def product_detail(request, product_id):
     """" A view to return single products """
 
     product = get_object_or_404(Product, pk=product_id)
+    notice = Notice.objects.all()
 
     context = {
         'product': product,
+        'notice': notice,
     }
 
     return render(request, 'products/product_detail.html', context)
