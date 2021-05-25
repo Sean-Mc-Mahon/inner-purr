@@ -297,6 +297,8 @@ All testing and validation is contained within a separate .md file.
 - Solution: Dumping old orders with a full country name prior to installing CountryField was causing an issue as the model was expecting two chareacters. I instead dumped data only for the models I required (products/cats etc...) and the migrations performed as expected.
 - Problem: Some media files not displaying on deployed site
 - Solution: Syntax corrected in src attribute for images in index.html file from '..media/example.jpg' '{{ MEDIA_URL }}example.jpg'
+- Problem: After adding additional models to apps a server 500 error was displayed on deployed site.
+- Solution: Running migrations and performing a data dump solved the issue.
 
 <br> [View TESTING.md](TESTING.md)
 

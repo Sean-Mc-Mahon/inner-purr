@@ -5,13 +5,13 @@
 {% block content %}
 <!-- Notice -->
 <div id="notice">
-    <div class="container flex">
+    <div class="container flex-space">
         <div class="flex-col-l">
             {% for notice in notice %}
                 <p class="pv-half">{{ notice.notice|safe }}</p>
             {% endfor %}
         </div>
-        <i onclick="dismiss()" id="dismiss" class="fas fa-times pointer"></i>
+        <i onclick="dismiss()" id="dismiss" class="fas fa-times pointer ml1"></i>
     </div>
 </div>
 
