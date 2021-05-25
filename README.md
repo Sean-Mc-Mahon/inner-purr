@@ -8,6 +8,16 @@
 
 The Inner Purr is a Milestone 4 project, it is part of the Fullstack Software Development Course of [Code Institute](https://codeinstitute.net/).
 
+#### For testing the following credentials can be used:
+* User Credentials:  
+  - Username: bobby  
+  - Password: passbob1 
+  - Email: test@test.com 
+
+* Card payments:
+  - Card number: 4242 4242 4242 4242
+  - Zip & CCV must be filled out with any integers
+
 # Table of Contents
 
 **<details><summary>Project overview</summary>**
