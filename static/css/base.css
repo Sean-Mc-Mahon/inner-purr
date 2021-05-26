@@ -1057,6 +1057,10 @@ color: #449bff;
   width: 100%;
 }
 
+/*Allauth Forms*/
+.allauth-form-inner-content p a {
+  font-weight: bold;
+}
 
 
 /* m tablet */

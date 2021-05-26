@@ -55,6 +55,16 @@ The Inner Purr is a Milestone 4 project, it is part of the Fullstack Software De
 * [**_Keyboard_**](#keyboard)
 </details>
 
+**<details><summary>Database Structure</summary>**
+* [**_Cats App_**](###Cats-app)
+* [**_Checkout App_**](###Checkout-app)
+* [**_Contact App_**](###Contact-app)
+* [**_Help App_**](###Help-app)
+* [**_Home App_**](###home-app)
+* [**_Products App_**](###products-app)
+* [**_Profiles App_**](###profiles-app)
+</details>
+
 **<details><summary>Testing</summary>**
 * [**_Testing_**](#testing)
 </details>
@@ -310,6 +320,202 @@ All testing and validation is contained within a separate .md file.
 - Solution: Running migrations and performing a data dump solved the issue.
 
 <br> [View TESTING.md](TESTING.md)
+
+# **Database Structure**
+
+During development SQLite3 was used as the database, which is the default database used by Django. For deployment of this project, PostgreSQL database was used, as an add-on using Heroku.
+
+Using Django Allauth and it's default `django.contrib.auth.models`, provided me with the the **User model** used in the profile app.
+
+The structure of the Product and Checkout apps are guided by the Code Institute's walkthrough project, **Boutique Ado**.
+
+## Data Models
+
+### Cats app
+
+#### Sex model
+
+| Name          | Database Key  | Field Type        | Validation                             |
+| ------------- | ------------- | ----------------- | -------------------------------------- |
+| Sex           | sex           | models.CharField  | max_length=254                         |
+
+#### Product model
+
+| Name          | Database Key  | Field Type          | Validation                                                                              |
+| ------------- | ------------- | ------------------- | ----------------------------------------------------------------------------------------|
+| Name          | name          | models.CharField    | max_length=254                                                                          |
+| Sex           | sex           | models.ForeignKey   | 'Sex', null=True, blank=True, on_delete=models.SET_NULL                                 |
+| Age           | age           | models.CharField    | max_length=254, help_text="Age when rescued"                                            |
+| Rescued       | rescued       | models.DateField    | null=True, blank=True                                                                   |
+| Description   | description   | models.CharField    | max_length=254, help_text="Physical Description", null=True blank=True                  |
+| Profile       | profile       | RichTextField       | null=True, blank=True                                                                   |
+| Neutered      | neutered      | models.BooleanField | null=True, blank=True                                                                   |
+| Microchipped  | microchipped  | models.BooleanField | null=True, blank=True                                                                   |
+| Vaccinated    | vaccinated    | models.BooleanField | null=True, blank=True                                                                   |
+| Adopted       | adopted       | models.BooleanField | null=True, blank=True                                                                   |
+| Resident      | resident      | models.BooleanField | null=True, blank=True                                                                   |
+| Tagline       | tagline       | models.CharField    | max_length=254, help_text="One line character description...", null=True, blank=True    |
+| Health_checked| health_checked| models.BooleanField | null=True, blank=True                                                                   |
+| Image url     | image_url     | models.URLField     | max_length=1024, null=True, blank=True                                                  |
+| Image         | image         | models.ImageField   | null=True, blank=True                                                                   |
+
+#### Notice model
+
+| Name          | Database Key  | Field Type            | Validation                             |
+| ------------- | ------------- | --------------------- | -------------------------------------- |
+| Notice        | notice        | models.TextField      | null=True, blank=True                  |
+
+### Checkout app
+
+#### Order model
+
+| Name                     | Database Key    | Field Type           | Validation                                                                          |
+| ------------------------ | --------------- | -------------------- | ----------------------------------------------------------------------------------- |
+| Order number             | order_number    | models.CharField     | max_length=32, null=False, editable=False                                           |
+| User profile             | user_profile    | models.ForeignKey    | UserProfile, on_delete=models.SET_NULL, null=True, blank=True,related_name='orders' |
+| Full name                | full_name       | models.CharField     | max_length=50, null=False, blank=False                                              |
+| Email                    | email           | models.EmailField    | max_length=254, null=False, blank=False                                             |
+| Phone number             | phone_number    | models.CharField     | max_length=20, null=False, blank=False                                              |
+| Country                  | country         | CountryField         | blank_label='Country *', null=False, blank=False                                    |
+| Postcode                 | postcode        | models.CharField     | max_length=20, null=True, blank=True                                                |
+| Town or city             | town_or_city    | models.CharField     | max_length=40, null=False, blank=False                                              |
+| Street address1          | street_address1 | models.CharField     | max_length=80, null=False, blank=False                                              |
+| Street address2          | street_address2 | models.CharField     | max_length=80, null=False, blank=False                                              |
+| County                   | county          | models.CharField     | max_length=80, null=True, blank=True                                                |
+| Date                     | date            | models.DateTimeField | auto_now_add=True                                                                   |
+| Delivery cost            | delivery_cost   | models.DecimalField  | max_digits=6, decimal_places=2, null=False, default=0                               |
+| Order total              | order_total     | models.DecimalField  | max_digits=10, decimal_places=2, null=False, default=0                              |
+| Grand total              | grand_total     | models.DecimalField  | max_digits=10, decimal_places=2, null=False, default=0                              |
+| Original Bag             | original_bag    | models.TextField     | null=False, blank=False, default=''                                                 |
+| Stripe pid               | stripe_pid      | models.CharField     | max_length=254, null=False, blank=False, default=''                                 |
+
+#### Order Line Item model
+
+| Name            | Database Key   | Field Type          | Validation                                                                         |
+| --------------- | -------------- | ------------------- | ---------------------------------------------------------------------------------- |
+| Order           | order          | models.ForeignKey   | Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems' |
+| Product         | product        | models.ForeignKey   | Product, null=False, blank=False, on_delete=models.CASCADE                         |
+| Product Size    | product_size   | models.CharField    | max_length=2, null=True, blank=True                                                |
+| Quantity        | quantity       | models.IntegerField | null=False, blank=False, default=0                                                 |
+| Line Item Total | lineitem_total | models.DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False            |
+
+### Contact app
+
+#### EmailContacts model
+
+| Name      | Database Key  | Field Type        | Validation                            |
+| --------- | ------------- | ----------------- | ------------------------------------- |
+| Directory | directory     | models.CharField  | max_length=254                        |
+| Email     | Email         | models.CharField  | max_length=254                        |
+
+#### Notice model
+
+| Name          | Database Key  | Field Type            | Validation                             |
+| ------------- | ------------- | --------------------- | -------------------------------------- |
+| Notice        | notice        | models.TextField      | null=True, blank=True                  |
+
+### Help app
+
+#### Volunteer model
+
+| Name          | Database Key  | Field Type        | Validation                            |
+| ------------- | ------------- | ----------------- | ------------------------------------- |
+| Role          | role          | models.CharField  | max_length=254                        |
+| Description   | description   | RichTextField     | null=True, blank=True                 |
+| Image url     | image_url     | models.URLField   | max_length=1024, null=True, blank=True|
+| Image         | image         | models.ImageField | null=True, blank=True                 |
+
+#### Donations model
+
+| Name              | Database Key      | Field Type        | Validation            |
+| ----------------- | ----------------- | ----------------- | --------------------- |
+| Donation Option   | donation_option   | models.CharField  | max_length=254        |
+| Description       | description       | RichTextField     | null=True, blank=True |
+
+#### Notice model
+
+| Name          | Database Key  | Field Type            | Validation                             |
+| ------------- | ------------- | --------------------- | -------------------------------------- |
+| Notice        | notice        | models.TextField      | null=True, blank=True                  |
+
+### Home app
+
+#### Drink model
+
+| Name          | Database Key  | Field Type            | Validation                            |
+| ------------- | ------------- | --------------------- | ------------------------------------- |
+| Name          | name          | models.CharField      | max_length=254                        |
+| Price         | price         | models.DecimalField   | max_digits=6, decimal_places=2        |
+| Category      | category      | models.CharField      | max_length=254, null=True, blank=True |
+
+#### Food model
+
+| Name          | Database Key  | Field Type            | Validation                            |
+| ------------- | ------------- | --------------------- | ------------------------------------- |
+| Name          | name          | models.CharField      | max_length=254                        |
+| Price         | price         | models.DecimalField   | max_digits=6, decimal_places=2        |
+| Category      | category      | models.CharField      | max_length=254, null=True, blank=True |
+| Description   | description   | RichTextField         | null=True, blank=True                 |
+
+#### Treats model
+
+| Name          | Database Key  | Field Type            | Validation                            |
+| ------------- | ------------- | --------------------- | ------------------------------------- |
+| Name          | name          | models.CharField      | max_length=254                        |
+| Price         | price         | models.DecimalField   | max_digits=6, decimal_places=2        |
+| Category      | category      | models.CharField      | max_length=254, null=True, blank=True |
+| Description   | description   | RichTextField         | null=True, blank=True                 |
+
+#### Notice model
+
+| Name          | Database Key  | Field Type            | Validation                             |
+| ------------- | ------------- | --------------------- | -------------------------------------- |
+| Notice        | notice        | models.TextField      | null=True, blank=True                  |
+
+### Products app
+
+#### Category model
+
+| Name          | Database Key  | Field Type        | Validation                             |
+| ------------- | ------------- | ----------------- | -------------------------------------- |
+| Name          | name          | models.CharField  | max_length=254                         |
+| Friendly name | friendly_name | models.CharField  | max_length=254, null=True, blank=True  |
+
+#### Product model
+
+| Name        | Database Key | Field Type          | Validation                                                    |
+| ----------- | ------------ | ------------------- | ------------------------------------------------------------- |
+| Category    | category     | models.ForeignKey   | 'Category', default='', blank=True, on_delete=models.SET_NULL |
+| Sku         | sku          | models.CharField    | max_length=254, null=True, blank=True                         |
+| Name        | name         | models.CharField    | max_length=254                                                |
+| Description | description  | models.TextField    |                                                               |
+| Has sizes   | has_sizes    | models.BooleanField | default=False, null=True, blank=True                          |
+| Price       | price        | models.DecimalField | max_digits=6, decimal_places=2                                |
+| Rating      | rating       | models.DecimalField | max_digits=6, decimal_places=2, null=True, blank=True         |
+| Image url   | image_url    | models.URLField     | max_length=1024, null=True, blank=True                        |
+| Image       | image        | models.ImageField   | null=True, blank=True                                         |
+
+#### Notice model
+
+| Name          | Database Key  | Field Type            | Validation                             |
+| ------------- | ------------- | --------------------- | -------------------------------------- |
+| Notice        | notice        | models.TextField      | null=True, blank=True                  |
+
+### Profiles app
+
+#### UserProfile model
+
+| Name             | Database Key           | Field Type           | Validation                                          |
+| ---------------- | ---------------------- | -------------------- | --------------------------------------------------- |
+| User             | user                   | OneToOneField 'User' | on_delete=models.CASCADE                            |
+| Phone Number     | default_phone_number   | models.CharField     | max_length=20, default='', blank=True               |
+| Street Address 1 | default_street_address1| models.CharField     | max_length=80, default='', blank=True               |
+| Street Address 2 | default_street_address2| models.CharField     | max_length=80, default='', blank=True               |
+| Town or City     | default_town_or_city   | models.CharField     | max_length=40, default='', blank=True               |
+| County           | default_county         | models.CharField     | max_length=80, default='', blank=True               |
+| Postcode         | default_postcode       | models.CharField     | max_length=20, default='', blank=True               |
+| Country          | default_country        | models.CharField     | blank_label='Select Country', null=True, blank=True |
+
 
 # Deployment
 
