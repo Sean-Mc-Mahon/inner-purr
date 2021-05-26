@@ -67,11 +67,9 @@ def product_detail(request, product_id):
     """" A view to return single products """
 
     product = get_object_or_404(Product, pk=product_id)
-    notice = Notice.objects.all()
 
     context = {
         'product': product,
-        'notice': notice,
     }
 
     return render(request, 'products/product_detail.html', context)

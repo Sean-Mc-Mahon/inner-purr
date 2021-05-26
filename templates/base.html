@@ -37,90 +37,90 @@
     <body>
         <header>
             <!-- Top Banner -->
-            <div class="navbar-fixed">
-            <nav class="nav-extended">
-                <div class="nav-wrapper flex">
-                    <!-- LOGO -->
-                    <div class="logo-image">
-                        {% include 'includes/mr-buttons.html' %}
+            <div class="navbar-fxd">
+                <nav class="nav-extended">
+                    <div class="nav-wrapper flex">
+                        <!-- LOGO -->
+                        <div class="logo-image">
+                            {% include 'includes/mr-buttons.html' %}
+                        </div>
+                        <div class="logo-text center flex-col">
+                            <a href="{% url 'home' %}">
+                                <h5 class="logo-header text-shadow-2 mv-half m0">The Inner Purr</h5>
+                                <h6 class="logo-sub-header text-shadow-2">
+                                Saving Cats & Serving Coffee
+                                </h6>
+                            </a>
+                        </div>
                     </div>
-                    <div class="logo-text center flex-col">
-                        <a href="{% url 'home' %}">
-                            <h5 class="logo-header text-shadow-2 mv-half m0">The Inner Purr</h5>
-                            <h6 class="logo-sub-header text-shadow-2">
-                            Saving Cats & Serving Coffee
-                            </h6>
-                        </a>
-                    </div>
-                </div>
-                <!-- LINKS -->
-        <div id="under-menu" class="flex-space all-links">
-            <ul class="w-100 mh2 nav-links flex-space h100">
-                <li class="main-link flex hide-on-small-only h100">
-                    <a id="menu" href="{% url 'home' %}">
-                        <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">The Purr</span>
-                    </a>
-                </li>
-                <li class="main-link flex hide-on-small-only h100">
-                    <a id="cats" href="{% url 'cats' %}">
-                        <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Cats</span>
-                    </a>
-                </li>
-                <li class="main-link flex hide-on-small-only h100">
-                    <a id="shop" href="{% url 'products' %}">
-                        <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Shop</span>
-                    </a>
-                </li>
-                <li class="main-link flex hide-on-small-only h100">
-                    <a id="help" href="{% url 'help' %}">
-                        <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Help Us</span>
-                    </a>
-                </li>
-                <li class="main-link flex hide-on-small-only h100">
-                    <a id="contact" href="{% url 'contact' %}">
-                        <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Contact</span>
-                    </a>
-                </li>
-                <!-- BAG AND PROFILE -->
-                <ul class="right flex mobile-nav">
-                    <li onclick="show()" class="profile-drop line1 mr1">
-                        <a class="flex profile pointer">
-                            <img src="{% static 'icons/profile-20-blue.png' %}" alt="profile"> 
-                            <span id="dropdown-arrow"> &#9660; </span>
-                            <ul class="profile-dropped p1">
-                                {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %}
-                                        <a href="{% url 'add_product' %}">Product Management</a>
-                                    {% endif %}
-                                    <a href="{% url 'profile' %}">My Profile</a>
-                                    <a href="{% url 'account_logout' %}">Logout</a>
-                                {% else %}
-                                    <li><a href="{% url 'account_login' %}">Login</a></li>
-                                    <li><a href="{% url 'account_signup' %}">Register</a></li>
-                                {% endif %}
+                    <!-- LINKS -->
+                    <div id="under-menu" class="flex-space all-links">
+                        <ul class="w-100 mh2 nav-links flex-space h100">
+                            <li class="main-link flex hide-on-small-only h100">
+                                <a id="menu" class="h100 flex-col" href="{% url 'home' %}">
+                                    <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">The Purr</span>
+                                </a>
+                            </li>
+                            <li class="main-link flex hide-on-small-only h100">
+                                <a id="cats" class="h100 flex-col" href="{% url 'cats' %}">
+                                    <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Cats</span>
+                                </a>
+                            </li>
+                            <li class="main-link flex hide-on-small-only h100">
+                                <a id="shop" class="h100 flex-col" href="{% url 'products' %}">
+                                    <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Shop</span>
+                                </a>
+                            </li>
+                            <li class="main-link flex hide-on-small-only h100">
+                                <a id="help" class="h100 flex-col" href="{% url 'help' %}">
+                                    <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Help Us</span>
+                                </a>
+                            </li>
+                            <li class="main-link flex hide-on-small-only h100">
+                                <a id="contact" class="h100 flex-col" href="{% url 'contact' %}">
+                                    <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Contact</span>
+                                </a>
+                            </li>
+                            <!-- BAG AND PROFILE -->
+                            <ul class="right flex mobile-nav">
+                                <li onclick="show()" class="profile-drop line1 mr1">
+                                    <a class="flex profile pointer">
+                                        <img src="{% static 'icons/profile-20-blue.png' %}" alt="profile"> 
+                                        <span id="dropdown-arrow"> &#9660; </span>
+                                        <ul class="profile-dropped p1">
+                                            {% if request.user.is_authenticated %}
+                                                {% if request.user.is_superuser %}
+                                                    <a href="{% url 'add_product' %}">Product Management</a>
+                                                {% endif %}
+                                                <a href="{% url 'profile' %}">My Profile</a>
+                                                <a href="{% url 'account_logout' %}">Logout</a>
+                                            {% else %}
+                                                <li><a href="{% url 'account_login' %}">Login</a></li>
+                                                <li><a href="{% url 'account_signup' %}">Register</a></li>
+                                            {% endif %}
+                                        </ul>
+                                    </a>
+                                </li>
+                                <li class="line1">
+                                    <a class="" href="{% url 'view_bag' %}">
+                                        <div id="bag-icon" class="flex">
+                                            <img class="mr-half" src="{% static 'icons/bag-20-blue.png' %}" alt="shopping bag">
+                                            {% if grand_total %}
+                                                €{{ grand_total|floatformat:2 }}
+                                            {% else %}
+                                                €0.00
+                                            {% endif %}
+                                        </div>
+                                    </a>
+                                </li>
+                                <div class="nav-links right-align flex all-links hide-on-med-and-up h100">
+                                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
+                                    <i class="material-icons right">menu</i></a>
+                                </div>
                             </ul>
-                        </a>
-                    </li>
-                    <li class="line1">
-                        <a class="" href="{% url 'view_bag' %}">
-                            <div id="bag-icon" class="flex">
-                                <img class="mr-half" src="{% static 'icons/bag-20-blue.png' %}" alt="shopping bag">
-                                {% if grand_total %}
-                                    €{{ grand_total|floatformat:2 }}
-                                {% else %}
-                                    €0.00
-                                {% endif %}
-                            </div>
-                        </a>
-                    </li>
-                    <div class="nav-links right-align flex all-links hide-on-med-and-up h100">
-                        <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
-                        <i class="material-icons right">menu</i></a>
+                        </ul>
                     </div>
-                </ul>
-            </ul>
-        </div>
-            </nav>
+                </nav>
             </div>
 
             <!-- Side Nav Bar -->
@@ -181,7 +181,7 @@
             <div class="row container">
                 <!-- Newsletter -->
                 <div class="col s12 l4 mb1 center">
-                    <h5 class="white-text">Newsletter Sign-up</h5>
+                    <h5 class="white-title">Newsletter Sign-up</h5>
                     <p class="grey-text text-lighten-4 mv-half text-newsletter">
                         Enter your email address to recieve out weekly newsletter
                     </p>
@@ -197,8 +197,8 @@
                 <!-- Address and Hours -->
                 <div class="col s12 m6 l4 mb1 center">
                     <div class="mb1">
-                        <h5 class="text-shadow-2 mv-half white-text">The Inner Purr</h5>
-                        <h6 class="text-shadow-2 large white-text">Saving Cats & Serving Coffee</h6>
+                        <h5 class="text-shadow-2 mv-half white-title">The Inner Purr</h5>
+                        <h6 class="text-shadow-2 large white-title">Saving Cats & Serving Coffee</h6>
                     </div>
                     <p class="bold">37A Brunswick St. North, D7</p>
                     <p class="bold">Mon-Fri 10am 7pm</p>

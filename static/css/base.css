@@ -14,7 +14,6 @@ html {
     --medium-green: #447924;
     --dark-green: #4b7730;
     --cream: #f8f9fa;
-    --creamy: #fffef5;
     --cursive: 'Architects Daughter', cursive;
     --non-cursive: 'Montserrat', sans-serif;
     color: var(--text);
@@ -33,12 +32,17 @@ body {
 /* used to make footer sticky */
 main {
   flex: 1 0 auto;
+  /* background-color: var(--cream); */
 }
 
 /* FONT STYLES */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   color: var(--medium-green);
+}
+
+.white-title {
+  color: var(--cream);
 }
 
 .cursive {
@@ -394,7 +398,7 @@ td p {
 /* MESSAGES */
 .message-container {
   position: fixed;
-  top: 207px !important;
+  top: 91px !important;
   right: 1%;
   z-index: 999;
   max-width: 300px;
@@ -556,9 +560,11 @@ display: block;
 
 
 /** Nav **/
-.navbar-fixed {
-  height: 104px;
+nav{
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
+
 #under-menu {
   height: 40px;
   background-color: var(--cream);
@@ -623,8 +629,9 @@ nav ul a {
     position: absolute;
     border: 2px solid var(--dark-green);
     z-index: 5;
+    width: 150px;
     background-color: var(--cream);
-    border-radius: 0.3rem;
+    border-radius: 0.4rem;
     margin-top: 0.3rem;
     opacity: 0;
     pointer-events: none;
@@ -667,13 +674,13 @@ nav ul a {
 }
 .nav-links li #paw {
   position: absolute;
-  bottom: -120px;
+  bottom: -80px;
   left: 0%;
   right: 0%;
   margin-left: auto;
   margin-right: auto;
   width: 30px;
-  z-index: -10;
+  z-index: 6;
 }
 nav ul a:hover {
   background-color: transparent !important;
@@ -693,7 +700,8 @@ nav ul a:hover {
     transform: translateY(0px);
   }
   to {
-    transform: translateY(-45px);
+    transform: translateY(-35px);
+    z-index: 6;
   }
 }
 
@@ -848,7 +856,7 @@ svg:not(:root){
 .cat-text,
 #carousel-small {
   opacity: 0;
-  transform: translateY(50px);
+  transform: translateY(10px);
   transition: 2s all ease-in-out;
 }
 .text-appear {
@@ -870,12 +878,9 @@ svg:not(:root){
   min-height: 54px;
   padding: 0 3rem;
 }
-
-/* #carousel-large,
-#carousel-small {
-    height: 320px;
-  } */
-
+.carousel {
+  height: 340px;
+}
 .carousel .carousel-item {
   width: 220px;
   height: 220px;
@@ -978,7 +983,7 @@ color: #449bff;
 
 /*All Cats*/
 .slider .slides li .cat-caption {
-  color: #fff;
+  color: var(--cream);
   position: absolute;
   bottom: 0%;
   left: 0%;
@@ -1069,9 +1074,6 @@ color: #449bff;
   #products .medium {
     font-size: 3rem;
   }
-  .navbar-fixed {
-    height: 164px;
-  }
   .nav-wrapper {
     margin: 0 1rem;
     position: relative;
@@ -1090,11 +1092,7 @@ color: #449bff;
   .logo-sub-header {
   font-size: 0.8rem;
   }
-  /*Carousels*/
-  /* #carousel-large,
-  #carousel-small {
-    height: 360px;
-  } */
+
   /*Home*/
   .home-pages div> p {
     width: 80%;
@@ -1113,12 +1111,15 @@ color: #449bff;
   .row .bio {
     padding: 0 2rem;
   }
+  /* MESSAGES */
+  .message-container {
+  top: 151px !important;
+  }
 }
 
 /* l desktop */
 @media screen and (min-width: 993px) {
   /*Nav*/
- 
   nav, nav .nav-wrapper i, nav a.sidenav-trigger, nav a.sidenav-trigger i, .nav-wrapper {
     line-height: 120px;
   }
@@ -1128,12 +1129,8 @@ color: #449bff;
   .logo-sub-header {
     font-size: 1.4rem;
   }
-  .navbar-fixed {
-    height: 220px;
-  }
   nav, .nav-wrapper {
     min-height: 120px;
-    /* overflow: hidden; */
   }
   header {
     max-height: 220px;
@@ -1152,8 +1149,6 @@ color: #449bff;
   .btn {
   font-size: 12px;
   }
-
-  
   /*welcome*/
   .welcome-title {
   top: 30%;
@@ -1170,6 +1165,10 @@ color: #449bff;
   #carousel-large .carousel-item {
     width: 340px;
     height: 340px;
+  }
+  /* MESSAGES */
+  .message-container {
+  top: 207px !important;
   }
 }
 
@@ -1251,5 +1250,13 @@ color: #449bff;
   .parallax-container .section {
     position: absolute;
     top: 10%;
+  }
+  .navbar-fxd {
+    position: relative;
+    height: 104px;
+    z-index: 997;
+  }
+  .navbar-fxd nav {
+    position: fixed;
   }
 }

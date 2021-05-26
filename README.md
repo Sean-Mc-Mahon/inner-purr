@@ -242,11 +242,10 @@ The footer features:
 - [W3C Markup Validation Service](https://validator.w3.org/https://jigsaw.w3.org/) - Used to test code for errors.
 - [Affinity Designer](https://affinity.serif.com/en-gb/) - Illustration software used to create logos and icons.
 - [Figma](https://figma.com) - Collaborative interface design tool used for creating wireframes as well logos and SVGs.
-- [Balsamiq](https://balsamiq.com/?) - Used to create wireframes.
 - [Tinypng](https://tinypng.com/) - Used to compress images.
 - [Croppola](https://croppola.com/) - Used to crop images.
 - [Randomkeygen](https://randomkeygen.com/) - Used to generate random keys.
-- [Uptime Robot](https://uptimerobot.com/) - Used to keep Heroku app from falling.
+- [Kaffeine](https://kaffeine.herokuapp.com/) - Used to keep Heroku app from falling asleep.
 
 ### Libraries
 

@@ -11,27 +11,6 @@
         <!-- Resident Cats -->
         <div class="row w-100">
             <h5 class="cursive center">Our Resident Kitties</h5>
-            <!-- <div id="carousel-large" class="carousel">
-                {% for cat in cats %}
-                    {% if cat.resident == True %}
-                        <a class="carousel-item" href="{% url 'cat_detail' cat.id %}">
-                        <div class="gallery-item">
-                            <div class="square">
-                                <div class="gallery-image content">
-                                    <img class="" src="{{ cat.image.url }}" alt="{{ cat.name }}">
-                                </div>
-                            </div>
-                            <div class="cat-overlay cat-overlay-fade">
-                                <div class="gallery-text">
-                                    <h5 class="white-text">{{ cat.name }}</h5>
-                                    <p class="xxl-only light small-font">{{ cat.sex }}</p>
-                                </div>
-                            </div>
-                        </div>
-                        </a>
-                    {% endif %} 
-                {% endfor %} 
-              </div> -->
             <div class="slider">
                 <div class="overlayed">
                 </div>
@@ -49,8 +28,8 @@
                                             <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ cat.name }}">
                                         {% endif %}
                                     <div class="cat-caption ph-half left-align">
-                                        <h4 class="white-text m0">{{ cat.name }}</h4>
-                                        <h6 class="white-text m0">{{ cat.tagline }}</h6>
+                                        <h4 class="white-title m0">{{ cat.name }}</h4>
+                                        <h6 class="white-title m0">{{ cat.tagline }}</h6>
                                     </div>
                                 </a>
                             </li>
@@ -78,7 +57,7 @@
                                 </div>
                                 <div class="cat-overlay cat-overlay-fade">
                                     <div class="gallery-text">
-                                        <h5 class="white-text">{{ cat.name }}</h5>
+                                        <h5 class="white-title">{{ cat.name }}</h5>
                                         <p class="xxl-only light small-font">{{ cat.sex }}</p>
                                     </div>
                                 </div>
@@ -111,7 +90,7 @@
                                 </div>
                                 <div class="cat-overlay cat-overlay-fade">
                                     <div class="gallery-text">
-                                        <h6 class="white-text">{{ cat.name }}</h6>
+                                        <h6 class="white-title">{{ cat.name }}</h6>
                                     </div>
                                 </div>
                             </div>
