@@ -1,6 +1,6 @@
 # The Inner Purr
 
-### [Live Site]()
+### [Live Site](https://github.com/Sean-Mc-Mahon/innerpurr/blob/master/wireframes/inner-purr-responsive.JPG)
 
 ### [GitHub](https://github.com/Sean-Mc-Mahon/inner-purr)
 

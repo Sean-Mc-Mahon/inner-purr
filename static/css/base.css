@@ -20,7 +20,7 @@ html {
     color: var(--text);
     background-color: var(--cream);
     font-family: var(--non-cursive);
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1rem;
 }
 
@@ -556,6 +556,9 @@ display: block;
 
 
 /** Nav **/
+.navbar-fixed {
+  height: 104px;
+}
 #under-menu {
   height: 40px;
   background-color: var(--cream);
@@ -699,11 +702,19 @@ nav ul a:hover {
 svg {
   overflow: visible;
 }
-svg:not(:root) {
-  overflow: visible;
+svg:not(:root){
+  overflow: inherit;
 }
+
 #head {
   animation: rise 2s ease-out;
+  z-index: -100;
+  position: relative;
+  overflow: hidden;
+}
+#Paws {
+  z-index: 1000;
+  position: relative;
 }
 
 .eye {
@@ -719,9 +730,11 @@ svg:not(:root) {
 @keyframes rise {
   from {
     transform: translateY(50px);
+    opacity: 0;
   }
   to {
     transform: translateY(0px);
+    opacity: 1;
   }
 }
 
@@ -1056,6 +1069,9 @@ color: #449bff;
   #products .medium {
     font-size: 3rem;
   }
+  .navbar-fixed {
+    height: 164px;
+  }
   .nav-wrapper {
     margin: 0 1rem;
     position: relative;
@@ -1112,12 +1128,15 @@ color: #449bff;
   .logo-sub-header {
     font-size: 1.4rem;
   }
+  .navbar-fixed {
+    height: 220px;
+  }
   nav, .nav-wrapper {
     min-height: 120px;
     /* overflow: hidden; */
   }
   header {
-    max-height: 120px;
+    max-height: 220px;
   }
   #mr-buttons {
     width:150px; 

@@ -37,6 +37,7 @@
     <body>
         <header>
             <!-- Top Banner -->
+            <div class="navbar-fixed">
             <nav class="nav-extended">
                 <div class="nav-wrapper flex">
                     <!-- LOGO -->
@@ -52,21 +53,7 @@
                         </a>
                     </div>
                 </div>
-            </nav>
-
-            <!-- Side Nav Bar -->
-            <ul class="sidenav" id="mobile-demo">
-                <li><a tabindex="-1" href="{% url 'home' %}">The Purr</a></li>
-                <li><a tabindex="-1" href="{% url 'cats' %}">Cats</a></li>
-                <li><a tabindex="-1" href="{% url 'products' %}">Shop</a></li>
-                <li><a tabindex="-1" href="{% url 'help' %}">Help Us</a></li>
-                <li><a tabindex="-1" href="{% url 'contact' %}">Contact</a></li>
-            </ul>
-        </header>
-        {% block page_header %}
-        {% endblock %}
-
-        <!-- LINKS -->
+                <!-- LINKS -->
         <div id="under-menu" class="flex-space all-links">
             <ul class="w-100 mh2 nav-links flex-space h100">
                 <li class="main-link flex hide-on-small-only h100">
@@ -133,20 +120,20 @@
                 </ul>
             </ul>
         </div>
-
-        <!-- Notice -->
-        {% if notice %}
-            <div id="notice">
-                <div class="container flex-space">
-                    <div class="flex-col-l">
-                        {% for notice in notice %}
-                            <p class="pv-half">{{ notice.notice|safe }}</p>
-                        {% endfor %}
-                    </div>
-                    <i onclick="dismiss()" id="dismiss" class="fas fa-times pointer ml1"></i>
-                </div>
+            </nav>
             </div>
-        {% endif %}
+
+            <!-- Side Nav Bar -->
+            <ul class="sidenav" id="mobile-demo">
+                <li><a tabindex="-1" href="{% url 'home' %}">The Purr</a></li>
+                <li><a tabindex="-1" href="{% url 'cats' %}">Cats</a></li>
+                <li><a tabindex="-1" href="{% url 'products' %}">Shop</a></li>
+                <li><a tabindex="-1" href="{% url 'help' %}">Help Us</a></li>
+                <li><a tabindex="-1" href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </header>
+        {% block page_header %}
+        {% endblock %}
 
         {% if messages %}
             <div class="message-container">
@@ -172,6 +159,19 @@
         {% endblock %}
 
         <main>
+             <!-- Notice -->
+                {% if notice %}
+                    <div id="notice">
+                        <div class="container flex-space">
+                            <div class="flex-col-l">
+                                {% for notice in notice %}
+                                    <p class="pv-half">{{ notice.notice|safe }}</p>
+                                {% endfor %}
+                            </div>
+                            <i onclick="dismiss()" id="dismiss" class="fas fa-times pointer ml1"></i>
+                        </div>
+                    </div>
+                {% endif %}
             {% block content%}
             {% endblock %}
         </main>
