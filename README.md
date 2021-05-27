@@ -1,10 +1,12 @@
 # The Inner Purr
 
-### [Live Site](https://github.com/Sean-Mc-Mahon/innerpurr/blob/master/wireframes/inner-purr-responsive.JPG)
+### [Live Site](https://inner-purr.herokuapp.com/)
 
 ### [GitHub](https://github.com/Sean-Mc-Mahon/inner-purr)
 
-![Various Devices]()
+**Please note**: To open any links in this document in a new browser tab, please press `CTRL + Click`.
+
+![Various Devices](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/inner-purr-responsive.JPG)
 
 The Inner Purr is a Milestone 4 project, it is part of the Fullstack Software Development Course of [Code Institute](https://codeinstitute.net/).
 
@@ -82,28 +84,43 @@ The Inner Purr is a Milestone 4 project, it is part of the Fullstack Software De
 
 # Project Overview
 
-The Inner Purr is an e-commerce site for the center of the same name. The Inner Purr is the public face of PCR(Phibsboro Cat Rescue), a charity that rescues stray cats around Dublin. The Inner Purr is a place where people can interact with cats under PCR supervision. The Inner Purr also houses a shop, a cafe and cat grooming salon.  <br> 
+The Inner Purr is an e-commerce site for the center of the same name. The Inner Purr is the public face of PCR(Phibsboro Cat Rescue), a charity that rescues stray cats around Dublin. The Inner Purr is a place where people can interact with cats under PCR supervision. The Inner Purr also houses a shop and cafe.  <br> 
 The purpose of the site is to sell the products on offer by the Inner Purr as well as provide a service where people may book a time slot with the cats.
 
 ---
 
 ### User Stories
 
-- User Story A: As a customer I would like to be able to view merchandise.
-- User Story B: As a customer I would like to be able to buy Inner Purr Merchandise.
-- User Story C: As a customer I would like to be able to donate to the Inner Purr.
-- User Story D: As a customer I would like to be able to view information on the cafe such as opening hours and menu.
-- User Story E: As a customer I would the site to be easily navigable from any device, desktop, tablet or phone. For the content to look good and be useable on all of these devices.
-- User Story F: As a customer I would to be able to create an account that I may edit so that my information is always up to date and checkout is a smooth process.
-- User Story G: As a customer I would to be able to see the value of items in my basket while shopping.
-- User Story H: As a customer I would to be able to adjust the quantities of items in my bag.
-- User Story I: As a customer I would to be able to be notified when I add/remove items from my basket.
-
-### Admin Stories
-
-- Admin Story A: As an admin I would like to be able to easily add/edit/delete products.
-- Admin Story B: As an admin I would to provide links to my social media platforms.
-- Admin Story C: As an admin I would to provide links to the main PCR resources.
+|      As a/an...      |                         I want the ability to...                         |                        So that I can...                             |
+|:--------------------:|:------------------------------------------------------------------------:|:-------------------------------------------------------------------:|
+|                      |                                                                          |                                                                     |
+|          ---         |                                    ---                                   |                              ---                                    |
+| Anonymous user       | easily navigate the site;                                                | find what I am looking for quickly                                  |
+| Anonymous user       | view the site on all screen sizes;                                       | visit the site using my mobile and/or tablet device                 |
+| Anonymous user       | view information on the cafe such as opening hours and menu;             | know when to visit and if I would like the products                 |
+| Anonymous user       | search for products;                                                     | quickly browse for products relevant to what I want                 |
+| Anonymous user       | filter my search results;                                                | search by product type                                              |
+| Anonymous user       | sort my search results;                                                  | view by cost, rating et...                                          |
+| Anonymous user       | view details on products;                                                | know more about what I want to buy                                  |
+| Anonymous user       | purchase products;                                                       | purchase products                                                   |
+| Anonymous user       | read details of what percentage of donations the projects receive        | feel confident, knowing where my donation will end up               |
+| Anonymous user       | access contact details;                                                  | get in touch with any questions                                     |
+| Anonymous user       | access social media of the Inner Purr;                                      | keep informed of all relevant updates                            |
+| Anonymous user       | register for a user profile account by choosing a username and password; | store details of my saved purchases                                 |
+|          ---         |                                    ---                                   |                              ---                                    |
+| Registered user      | log in and log out of my profile account;                                | Safeguard my information whilst not active on the site              |
+| Registered user      | update my details                                                        | update address and other details in case they change                |
+| Registered user      | store my address for later use;                                          | avoid having to retype it every time I make a purchase              |
+| Registered user      | store my order history;                                                  | access my previous purchases                                        |
+| Registered user      | review my order at checkout;                                             | decide whether to add to or edit order before confirming            |
+| Registered user      | store my choices in checkout;                                            | go back to the site in case I wish to add more options              |
+| Registered user      | Make secure payments                                                     | ensure my payments are securely handled                             |
+| Registered user      | Receive email confirmation of my order                                   | confirm that my order was made                                      |
+|          ---         |                                    ---                                   |                              ---                                    |
+| Site admin/superuser | add new products, menu items, volunteering roles etc...;                 | continuously make new products availableand keep users up to date   |
+| Site admin/superuser | update products;                                                         | update products                                                     |
+| Site admin/superuser | delete products;                                                         | delete products                                                     |
+| Site admin/superuser | add notices for each page;                                               | inform users on news relevant to each site page                     |
 
 ---
 
@@ -128,12 +145,9 @@ The purpose of the site is to sell the products on offer by the Inner Purr as we
 
 ### Strategy Plane
 
-- Business Goals:  
+- Business Goals:  Provide a revenue stream for the Inner Purr through online purchases as well as raising awareness for the work done at the Inner Purr and by it's parent charity Phibsboro Cat Rescue.
 
-
-- Audience: 
-
-- Content: 
+- Audience: The audience are cat lovers throughout Dublin and across Ireland, capitalizing on the existing audience of social media channels of Phibsboro Cat Rescue.
 
 #### Personal Goals
 
@@ -156,7 +170,9 @@ The purpose of the site is to sell the products on offer by the Inner Purr as we
 ### Skeleton Plane
 #### Wireframes
 
-I used Balsamiq and figma to create the wireframes.
+I Figma to create the [wireframes](https://github.com/Sean-Mc-Mahon/inner-purr/tree/main/wireframes/figma-wire-home).
+
+Various alterations were made along the way such as removing the parallax above the footer for all pages except the home page and the additon of a page for information about donations and volunteering.
 
 ### Surface Plane
 
@@ -168,24 +184,22 @@ A standard layout is fully responsive on mobile devices and larger screens.
 
 #### Color Scheme
 
-Colors are kept to a minimum in order to keep focus on the imagery of the recipes, chosen colours are various shades of grey. Color scheme can be found on my Coolors profile: [Coolors](https://coolors.co/u/sean_mcmahon)
+Colors are kept to a minimum and reflect the existing branding of the Phibsboro Cat Rescue. Color scheme can be found on my Coolors profile: [Coolors](https://coolors.co/u/sean_mcmahon)
 
-![Color Palette]()
+![Color Palette](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/color-scheme.JPG)
 
 #### Typography
 
 2 [Google Fonts](https://fonts.google.com/) were used across the site:
-
-- [Pattaya](https://fonts.google.com/specimen/Pattaya?query=patt) : Logo & Headings, used for it's flowing relaxed style.
+- [Architects Daughter](https://fonts.google.com/specimen/Architects+Daughter?query=architects) : Logo & Headings, used for it's sketch-like relaxed style.
 - [Montserrat](https://fonts.google.com/specimen/Montserrat?query=montse) : Body, used for it's excellent readability.
 
 #### Media
 
-All images are the authors own unless. Logos are also produced by the author using Affinity Design.
+All images are the authors own unless. Logos are also produced by the author using Affinity Design using the existing Phibsboro Cat Rescue Logo as a template.
 
-- [Balsamiq Wireframe]()
 
-- [Affinity Designer Logo Process]()
+- [Affinity Designer Logo Process](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/head.png)
 
 ##### back to [top](#table-of-contents)
 
@@ -197,45 +211,81 @@ All images are the authors own unless. Logos are also produced by the author usi
 
 ### Elements on every page
 #### Navbar
+
+![Navbar](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/nav.JPG)
+
 - The navigation bar features a logo and name in the top left corner, both are links to the home page. Navigation links are in the top right. On loading the homepage Mr.Buttons, the PCR mascot will raise his head from the bottom of the nav. While the mouse is moving his eyes and paws follow the mouse.
 
-- For visitors to the site who are not logged in, list items links are available for them to use.
-    1. Menu
-    2. Shop
-    3. About
-    4. Cats
-    5. Login/Signup
-
-- For users who are logged in, the list items are as follows: 
-    1. Menu
-    2. Shop
-    3. About
-    4. Cats
-    5. Logout
-    6. Profile
+- For all visitors to the site list item links are available for them to use.
+    1. The Purr
+    2. Cats
+    3. Shop
+    4. Help Us
+    4. Contact
 
 When a link is hovered over Mr.Buttons will reach out a paw towards it.
 
-- On the smaller resolutions (tablet, mobile) the navbar is collapsed into a burger icon. A slide out menu opens when the burger icon is clicked.
+![Small Navbar](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/nav-sm.JPG)
+
+On the smaller resolutions (tablet, mobile) the navbar is collapsed into a burger icon. A slide out menu opens when the burger icon is clicked.
+
+- On all resoltions a drop down menu provides links to profile pages. For users who are not logged in the options are:
+    1. Login
+    2. Register
+
+- For Logged in users the options are:
+    1. My Profile
+    2. Logout
+
+- For Logged in superusers the options are:
+    1. Product Management
+    2. My Profile
+    3. Logout
+
+- On all resoltions a basket icon represents a link to the user's bag and a grand total will be displayed next to the bag.
 
 #### Footer
+
+![Footer](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/footer.JPG)
 
 The footer features:
     - Newsletter signup: Users may submit an email to request a newsletter.
     - Opening Hours
-    - Links to social media platforms.
-
-
-### Elements on Multiple Pages
-
-#### Search Sort Filter 
-(index, search, single_recipe)
+    - Links to social media platforms.  
 
 ### Individual Pages
 
 ### Home
+- An Image slider highlights aspects of the Inner Purr.
+- The home page offers information about the Inner Purr as well as Phibsboro Cat Rescue. 
+- A menu title is displayed over a parralax image.
+- Menu items added through the django admin are displayed in the menu section
+- Resident cats of the Inner Purr as defined through the django admin are displayed in a carousel.
+- An instagram feed displays instagram posts.
+- A parrallax containing a quote is above the footer.
 
+### Cats
+- An Image slider highlights cats currently residing in the purr as defined through the django admin. The images are links to individual profiles.
+- Cat cards of cats currently awaiting adoption as defined through the django admin. The images are links to individual profiles.
+- A grid of images of adopted cats as defined through the django admin. The images are links to individual profiles.
 
+### Products
+- Product cards of products added through the django admin or via the add_product page are displayed here. The images are links to individual products. A super user has options to edit or delete products here.
+- The index page has a search bar, filter and sort feature. The search feature searches for keywords in titles and descriptions. If a user performs a search they will be able to sort the search results.
+- The sort feature allows users to sort the results by A-Z, Z-A, price, category and rating.
+- The filter allows users to display recipes under the categories set out using django admin.
+
+### Help Us
+- Volunteering roles as well as Donation options as defined through django admin are listed on this page along with links to the relevant pages of the Phibsboro Cat Rescue website.
+
+### Contact
+- Various email addresses as set out using django admin are listed on this page along with a map outlining the location of the Inner Purr using the PCR logo as the pin.
+
+### My Profile
+- A form allows users to update their personal details and an order history section lists previous orders.
+
+### Bag
+- The bag page gives information on the products in a user's bag as well as details on the grand total and shipping, links bring users back to the products page or the checkout page.
 
 ##### back to [top](#table-of-contents)
 
@@ -256,6 +306,8 @@ The footer features:
 - [Croppola](https://croppola.com/) - Used to crop images.
 - [Randomkeygen](https://randomkeygen.com/) - Used to generate random keys.
 - [Kaffeine](https://kaffeine.herokuapp.com/) - Used to keep Heroku app from falling asleep.
+- [Elfsight](https://elfsight.com/instagram-feed-instashow/) - Used to provide an instagram widget on the homepage.
+- [Google Maps](https://developers.google.com/maps) - Used to provide a map in the contact page.
 
 ### Libraries
 

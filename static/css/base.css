@@ -9,8 +9,6 @@
 html {
     --text: #37474F;
     --text-light: #37474F;
-    --light-green: #A5CB8D;
-    --bright-green: #5BEB00;
     --medium-green: #447924;
     --dark-green: #4b7730;
     --cream: #f8f9fa;
@@ -32,7 +30,6 @@ body {
 /* used to make footer sticky */
 main {
   flex: 1 0 auto;
-  /* background-color: var(--cream); */
 }
 
 /* FONT STYLES */
@@ -559,7 +556,7 @@ display: block;
 }
 
 
-/** Nav **/
+/** NAV **/
 nav{
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -758,6 +755,65 @@ svg:not(:root){
   text-transform: capitalize;
 }
 
+/** FOOTER **/
+.page-footer {
+  background-color: var(--medium-green);
+}
+footer .row {
+margin-bottom: 0;
+}
+.page-footer .row .col {
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 1rem 0;
+}
+/* newsletter signup */
+#form_contact {
+display: flex;
+background-color: var(--cream);
+border-radius: 20px;
+overflow: hidden;
+}
+#form_contact:active {
+background-color: rgb(232, 240, 254) !important;
+}
+.text-newsletter {
+max-width: 320px;
+}
+#formContact input {
+background-color: var(--cream);
+color: #000;
+}
+#formContact input[placeholder] {
+background-color: var(--cream);
+color: rgb(255, 0, 0);
+}
+#submit {
+padding: 0 1rem;
+background-color: var(--cream);
+border: none;
+color: var(--text);
+border: none;
+}
+#emailaddress {
+padding: 0rem;
+margin: 0 0 0.75rem 0.75rem;
+}
+/* Social Icons */
+.social-links {
+display: flex;
+}
+.social-links li i:hover {
+color: #449bff;
+}
+.fab {
+font-size: 2rem;
+margin: 0 1rem;
+color: var(--cream);
+}
+
+/* HOME PAGE */
 /* Fullscreen Slider */
 .slides {
   position: relative;
@@ -878,6 +934,10 @@ svg:not(:root){
   min-height: 54px;
   padding: 0 3rem;
 }
+.food .menu-item span {
+  min-height: 54px;
+
+}
 .carousel {
   height: 340px;
 }
@@ -891,62 +951,9 @@ svg:not(:root){
   border-radius: 2rem;
 }
 
-/** FOOTER **/
-.page-footer {
-    background-color: var(--medium-green);
-}
-footer .row {
-  margin-bottom: 0;
-}
-.page-footer .row .col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem 0;
-}
-/* newsletter signup */
-#form_contact {
-  display: flex;
-  background-color: var(--cream);
-  border-radius: 20px;
-  overflow: hidden;
-}
-#form_contact:active {
-  background-color: rgb(232, 240, 254) !important;
-}
-.text-newsletter {
-  max-width: 320px;
-}
-#formContact input {
-  background-color: var(--cream);
-  color: #000;
-}
-#formContact input[placeholder] {
-  background-color: var(--cream);
-  color: rgb(255, 0, 0);
-}
-#submit {
-  padding: 0 1rem;
-  background-color: var(--cream);
-  border: none;
-  color: var(--text);
-  border: none;
-}
-#emailaddress {
-  padding: 0rem;
-  margin: 0 0 0.75rem 0.75rem;
-}
-/* Social Icons */
-.social-links {
-  display: flex;
-}
-.social-links li i:hover {
-color: #449bff;
-}
-.fab {
-  font-size: 2rem;
-  margin: 0 1rem;
-  color: var(--cream);
+/** Instagram Feed **/
+.elfsight-app-10f467a6-329b-451b-8269-e3f37d798d52{
+  z-index: 1;
 }
 
 /*PRODUCTS*/
@@ -1178,13 +1185,12 @@ color: #449bff;
 
 /* l desktop */
 @media screen and (min-width: 1201px) {
+  .hide-on-extra-large-only {
+    display: none !important;
+  }
   .product-name {
     min-height: 40px;
   }
-  /*All Cats*/
-  /* #carousel-large {
-    height: 480px;
-  } */
   #carousel-large .carousel-item {
     width: 400px;
     height: 400px;
@@ -1225,28 +1231,6 @@ color: #449bff;
   }
 }
 
-@media only screen and (max-width : 992px) {
-  .table, .table tbody, .table tr, .table td {
-    display: block;
-    width: 100%;
-  }
-}
-
-/*Media styles from Materialize Template: https://materializecss.com/templates/parallax-template/preview.html*/
-@media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 20%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
-}
-/*HEADING*/
-#logo-container h1 {
-  margin: auto;
-}
-
 @media only screen and (max-width : 600px) {
   #index-banner .section {
     top: 0;
@@ -1262,5 +1246,34 @@ color: #449bff;
   }
   .navbar-fxd nav {
     position: fixed;
+  }
+}
+
+@media only screen and (max-width : 992px) {
+  .table, .table tbody, .table tr, .table td {
+    display: block;
+    width: 100%;
+  }
+  .parallax-container .section {
+    position: absolute;
+    top: 20%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+/*Media styles from Materialize Template: https://materializecss.com/templates/parallax-template/preview.html*/
+@media only screen and (max-width : 992px) {
+  
+}
+/*HEADING*/
+#logo-container h1 {
+  margin: auto;
+}
+
+@media only screen and (max-width: 1199px) {
+  .hide-on-large-and-down {
+    display: none !important;
   }
 }

@@ -14,6 +14,7 @@ def all_products(request):
 
     products = Product.objects.all()
     notice = Notice.objects.all()
+    cat = Category.objects.all()
     query = None
     categories = None
     sort = None
@@ -57,6 +58,7 @@ def all_products(request):
         'current_categories': categories,
         'current_sorting': current_sorting,
         'notice': notice,
+        'cat': cat,
     }
 
     return render(request, 'products/products.html', context)

@@ -13,9 +13,12 @@
                     <!-- Dropdown Structure -->
                     <ul id='dropdown1' class='dropdown-content'>
                         <li><a href="{% url 'products' %}">All</a></li>
-                        <li><a href="{% url 'products' %}?category=clothing">Clothing</a></li>
-                        <li><a href="{% url 'products' %}?category=accessories">Accessories</a></li>
-                        <li><a href="{% url 'products' %}?category=cards">Greeting Cards</a></li>
+                        {% for category in cat %}
+                        <li>
+                            <a href="{% url 'products' %}?category={{ category.name }}">{{ category.friendly_name }}
+                            </a>
+                        </li>
+                        {% endfor %}
                     </ul>
                 </div>
 
@@ -101,26 +104,57 @@
                                         </a>
                                     </p>
                                 {% endif %}
-                                <!-- <p class="small">
+                                <p class="small">
                                 {% if product.rating %}
-                                    <small class="rating"><i class="fas fa-star right-align"></i> {{ product.rating }} / 5</small>
+                                    <small class="rating">
+                                        <i class="fas fa-star right-align"></i> 
+                                        {{ product.rating }} / 5
+                                    </small>
                                 {% else %}
-                                    <small class="">No rating</small>
-                                {% endif %}
-                                </p> -->
-                                {% if request.user.is_superuser %}
-                                    <small class="">
-                                        <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                        <a href="{% url 'delete_product' product.id %}">Delete</a>
+                                    <small>
+                                        No rating
                                     </small>
                                 {% endif %}
+                                </p>
                             </div>
+                            {% if request.user.is_superuser %}
+                                <small>
+                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                    <a href="{% url 'delete_product' product.id %}">Delete</a>
+                                </small>
+                            {% endif %}
+                            
                         </div>
-                        <div class="divider center m-auto"></div>
+                        <!-- <div class="divider center m-auto"></div>                         -->
+                        
                     </div>
-                    
-                {% endfor %}
-                
+                    {% if forloop.counter|divisibleby:1 %}
+                        <div class="col s12 hide-on-med-and-up">
+                            <div class="divider center m-auto"></div>
+                        </div>
+                    {% endif %}
+                    {% if forloop.counter|divisibleby:2 %}
+                    <div class="row hide-on-small-only show-on-medium hide-on-med-and-up">
+                        <div class="col s12 w-100">
+                            <div class="divider center m-auto"></div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if forloop.counter|divisibleby:3 %}
+                    <div class="row hide-on-med-and-down show-on-large hide-on-extra-large-only">
+                        <div class="col s12 w-100">
+                            <div class="divider center m-auto"></div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    {% if forloop.counter|divisibleby:4 %}
+                    <div class="row hide-on-large-and-down show-on-extra-large">
+                        <div class="col s12 w-100">
+                            <div class="divider center m-auto"></div>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endfor %} 
             </div>
         </div>
     </div>
