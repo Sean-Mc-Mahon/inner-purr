@@ -15,64 +15,101 @@
 # User Testing
 
 ### User Story Testing
-#### Casual Users
+#### Casual Users Wants
 
-_- easily navigate the site to find what I am looking for quickly 
+- easily navigate the site to find what I am looking for quickly:
+    Homepage offers information about the organisation, menu and cats as well as links to cats page, shop, help page and contact page.
 
-![Browse](https://github.com/Sean-Mc-Mahon/McTasticRecipes/blob/master/wireframes/story-a.gif)
+![Browse](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/browse.gif)
 
-User can search by ingredient, sort results, hover over an image to preview information with the help of tooltips, navigate to the recipe, enlarge the image and check off ingredients and steps as they make the recipe.
+- view the site on all screen sizes:
+    The site is highly responsive. Nav is fixed for small devices, image overlays display without hover where approproate on small devices.
 
-_- User Story B:_ As a user I would like to create a profile and delete it if I no longer want it.
+![Responsive](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/inner-purr-responsive.JPG)
 
-![Browse](https://github.com/Sean-Mc-Mahon/McTasticRecipes/blob/master/wireframes/story-b.gif)
+-  view information on the cafe such as opening hours and social media:
+    Footer contains information such as opening hours and social media links.
 
-User can navigate to registration, enter a username and password and if they are valid and the username is not taken she can create a profile and be redirected to their new profile with a flash message to wwelcome them. They can later delete the profile after clicking past a warning from a modal and will be notified by a flash message that the profile has been deleted.
+![Footer](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/footer.JPG)
 
-_- User Story C:_ As a registered user I would like to add, edit, update or delete my own recipes.
+-  sign up to recieve news from the Inner Purr:
+    A newsletter sign up allows users to notify admin of their wish to recieve newsletter.
 
-![Browse](https://github.com/Sean-Mc-Mahon/McTasticRecipes/blob/master/wireframes/story-c.gif)
+![Newsletter](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/newsletter.gif)
 
-User can input information, choose categories and preview image prior to adding recipe. User may then edit the recipe or delete it.
+-  search filter and sort products:
+    shop page enables users to search and filter products on offer.
 
-_- User Story D:_ As a registered user I would like to view what recipes other users have created.
+![Search](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/browse.gif)
 
-![Browse](https://github.com/Sean-Mc-Mahon/McTasticRecipes/blob/master/wireframes/story-d.gif)
+-  view details on products:
+    Product details page gives information on sizes available as well as price rating and large product image.
 
-User can navigate to users page and view any user to browse their reciepes, they may also click the 'Created By' link on any recipe to view the corresponding profile.
+![Details](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/product-details.JPG)
 
-_- User Story E:_ I would like to be able to view the recipes clearly regardless of the type of device I use.
+-  purchase products:
+    Users can add products to a bag, see totals accumulate as items are added and have toasts pop up to give users feedback on their actions. An email is sent after a purchase is complete.
 
-![Browse](https://github.com/Sean-Mc-Mahon/McTasticRecipes/blob/master/wireframes/story-e.gif)
+![Purchase](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/purchase.gif)
 
-The app is fully resonsive and a user can use the app comfortably on any device size.
+-  access contact details:
+    Contact page displays relevant email addresses as well as a map while the footer displays an address and social media links.
 
-_- User Story F:_ I would like to be able to easily share recipes.
+![Contact](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/contact.JPG)
 
-![Browse](https://github.com/Sean-Mc-Mahon/McTasticRecipes/blob/master/wireframes/story-f.gif)
+-  learn how I can help the work of the Inner Purr:
+    Help Us page offers information on how donations can be made and volunteering roles. External links link to the parent charity of the Inner Purr (Phibsboro Cat Rescue).
 
-User can hover or click on the share icon on the bottom right of the screen and choose what platform thay would like to use to share the page.
+![Help](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/help.JPG)
 
-_- User Story G:_ I would to be able to convert units from metric to imperial and vice versa.
+-  register for a user profile account by choosing a username and password:
+    Users may register a profile and save their information to make future payments more convenient.
 
-![Browse](https://github.com/Sean-Mc-Mahon/McTasticRecipes/blob/master/wireframes/story-g.gif)
+![Register](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/register.gif)
 
-User can click on any field of a card on the conversions section and any figures they input will be converted to all other units on that card.
+### Registered Story Testing
+#### Registered User Wants
 
-_- User Story H:_ As a registered user I would like to add, edit, update or delete my own ingredients.
+- log in and log out of my profile account:
+    users may select to register from a dropdown in the navbar.
 
-![Browse](https://github.com/Sean-Mc-Mahon/McTasticRecipes/blob/master/wireframes/story-h.gif)
+![Login](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/login.gif)
 
-User can click add button on units page to add ingredient using a modal, if fields are filled and ingredient name is not in use the ingredient will be added and the user may edit or delete the ingredient as long as they are logged in.
+- update my details, store my address and order history:
+
+![Profile](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/profile.JPG)
 
 ### Admin Story Testing
+#### Admin User Wants
 
-_- Admin Story A:_ As the admin I would like to be able to delete any user along with all recipes created by that user.
+- add new products, menu items, volunteering roles etc:
+    Products, cats, menu items, volunteering roles, donation options and contact addresses can all be added, edited and deleted through the django admin.
 
-![Browse](https://github.com/Sean-Mc-Mahon/McTasticRecipes/blob/master/wireframes/admin-story-a.gif)
+![Admin](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/admin.gif)
 
-Admin may access any profile by the 'Created By' link in a single_recipe page or by the corresponding 'view' button on the users page and after confirming the intention to delete in a modal the user will be deleted along with any recipe they created.
+    Products can also be added using a form in the product management section of the site
 
+![Products](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/product-add.JPG)
+
+- edit products:
+    Products can be edited using a form
+
+![Edit](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/product-edit.gif)
+
+- delete products:
+    Products can be deleted via the products or product details page
+
+![Delete](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/product-edit.gif)
+
+- add notices for each page:
+    Notices can be added for seperate pages to give relevant information on opening announcments, adoption waiting list news etc...
+
+![Notice](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/notice.JPG)
+
+- change the status of cats so that they can be categorized properly:
+    by checking the relevant boxes cats can be placed in the Resident Cat Gallery, the Cats for adoption gallery or the adopted cat gallery as appropriate as well as the carousel of Resident Cats on the home page.
+
+![Status](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/status.gif)
 ---
 
 # Manual Testing

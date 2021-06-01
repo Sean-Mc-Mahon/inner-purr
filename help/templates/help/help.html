@@ -3,19 +3,6 @@
 {% block extra_title%}Help Us{% endblock %}
 
 {% block content %}
-<!-- Notice -->
-<!-- {% if notice %}
-<div id="notice">
-    <div class="container flex-space">
-        <div class="flex-col-l">
-            {% for notice in notice %}
-                <p class="pv-half">{{ notice.notice|safe }}</p>
-            {% endfor %}
-        </div>
-        <i onclick="dismiss()" id="dismiss" class="fas fa-times pointer ml1"></i>
-    </div>
-</div>
-{% endif %} -->
 <div class="container">
     <div class="white-overlay p1">
         <h3 class="cursive">How You Can Help</h3>
@@ -63,14 +50,3 @@
 </div>
     
 {% endblock %}
-
-<!-- {% block postloadjs %}
-    {{ block.super}}
-        <script>
-            //DISMISS NOTICES
-            function dismiss() {
-                let notice = document.getElementById('notice');
-                notice.classList.add('dismiss');
-            }
-        </script>
-    {% endblock %} -->

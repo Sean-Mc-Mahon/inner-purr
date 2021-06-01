@@ -97,29 +97,21 @@ The purpose of the site is to sell the products on offer by the Inner Purr as we
 |          ---          |                                    ---                                    |
 | Casual User           | easily navigate the site to find what I am looking for quickly            |             
 | Casual User           | view the site on all screen sizes                                         |
-| Casual User           | view information on the cafe such as opening hours and menu               |
+| Casual User           | view information on the cafe such as opening hours and social media       |
 | Casual User           | Sign up to recieve news from the Inner Purr                               |
-| Casual User           | access social media of the Inner Purr                                     |
 | Casual User           | search, filter and sort products                                          |
-| Casual User           | view details on products;                                                 |
-| Casual User           | purchase products                                                         |
-| Casual User           | see my actions actions being acknowledged as I'm making them              |
+| Casual User           | view details on products                                                  |
+| Casual User           | purchase products and see my actions throughout the process, 
+review my order at checkout, make secure payments & receive email confirmation of my order          |
 | Casual User           | access contact details                                                    |
 | Casual User           | learn how I can help the work of the Inner Purr                           |
 | Casual User           | register for a user profile account by choosing a username and password   |
 |          ---          |                                    ---                                    |
 | Registered user       | log in and log out of my profile account                                  |
-| Registered user       | update my details                                                         |
-| Registered user       | store my address for later use                                            |
-| Registered user       | store my order history                                                    |
-| Registered user       | review my order at checkout                                               |
-| Registered user       | store my choices in checkout                                              |
-| Registered user       | Make secure payments                                                      |
-| Registered user       | Receive email confirmation of my order                                    |
+| Registered user       | update my details, store my address and order history                     |
 |          ---          |                                    ---                                    |
 | Site admin/superuser  | add new products, menu items, volunteering roles etc...                   |
-| Site admin/superuser  | update products                                                           |
-| Site admin/superuser  | delete products                                                           |
+| Site admin/superuser  | update and delete products                                                |
 | Site admin/superuser  | add notices for each page                                                 |
 | Site admin/superuser  | change the status of cats so that they can be categorized properly        |
 
