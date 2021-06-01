@@ -91,36 +91,36 @@ The purpose of the site is to sell the products on offer by the Inner Purr as we
 
 ### User Stories
 
-|      As a/an...      |                         I want the ability to...                         |                        So that I can...                             |
-|:--------------------:|:------------------------------------------------------------------------:|:-------------------------------------------------------------------:|
-|                      |                                                                          |                                                                     |
-|          ---         |                                    ---                                   |                              ---                                    |
-| Anonymous user       | easily navigate the site;                                                | find what I am looking for quickly                                  |
-| Anonymous user       | view the site on all screen sizes;                                       | visit the site using my mobile and/or tablet device                 |
-| Anonymous user       | view information on the cafe such as opening hours and menu;             | know when to visit and if I would like the products                 |
-| Anonymous user       | search for products;                                                     | quickly browse for products relevant to what I want                 |
-| Anonymous user       | filter my search results;                                                | search by product type                                              |
-| Anonymous user       | sort my search results;                                                  | view by cost, rating et...                                          |
-| Anonymous user       | view details on products;                                                | know more about what I want to buy                                  |
-| Anonymous user       | purchase products;                                                       | purchase products                                                   |
-| Anonymous user       | read details of what percentage of donations the projects receive        | feel confident, knowing where my donation will end up               |
-| Anonymous user       | access contact details;                                                  | get in touch with any questions                                     |
-| Anonymous user       | access social media of the Inner Purr;                                      | keep informed of all relevant updates                            |
-| Anonymous user       | register for a user profile account by choosing a username and password; | store details of my saved purchases                                 |
-|          ---         |                                    ---                                   |                              ---                                    |
-| Registered user      | log in and log out of my profile account;                                | Safeguard my information whilst not active on the site              |
-| Registered user      | update my details                                                        | update address and other details in case they change                |
-| Registered user      | store my address for later use;                                          | avoid having to retype it every time I make a purchase              |
-| Registered user      | store my order history;                                                  | access my previous purchases                                        |
-| Registered user      | review my order at checkout;                                             | decide whether to add to or edit order before confirming            |
-| Registered user      | store my choices in checkout;                                            | go back to the site in case I wish to add more options              |
-| Registered user      | Make secure payments                                                     | ensure my payments are securely handled                             |
-| Registered user      | Receive email confirmation of my order                                   | confirm that my order was made                                      |
-|          ---         |                                    ---                                   |                              ---                                    |
-| Site admin/superuser | add new products, menu items, volunteering roles etc...;                 | continuously make new products availableand keep users up to date   |
-| Site admin/superuser | update products;                                                         | update products                                                     |
-| Site admin/superuser | delete products;                                                         | delete products                                                     |
-| Site admin/superuser | add notices for each page;                                               | inform users on news relevant to each site page                     |
+|      As a/an...       |                         I want the ability to...                          |
+|:---------------------:|:-------------------------------------------------------------------------:|
+|                       |                                                                           |
+|          ---          |                                    ---                                    |
+| Casual User           | easily navigate the site to find what I am looking for quickly            |             
+| Casual User           | view the site on all screen sizes                                         |
+| Casual User           | view information on the cafe such as opening hours and menu               |
+| Casual User           | Sign up to recieve news from the Inner Purr                               |
+| Casual User           | access social media of the Inner Purr                                     |
+| Casual User           | search, filter and sort products                                          |
+| Casual User           | view details on products;                                                 |
+| Casual User           | purchase products                                                         |
+| Casual User           | access contact details;                                                   |
+| Casual User           | learn how I can help the work of the Inner Purr                           |
+| Casual User           | register for a user profile account by choosing a username and password   |
+|          ---          |                                    ---                                    |
+| Registered user       | log in and log out of my profile account                                  |
+| Registered user       | update my details                                                         |
+| Registered user       | store my address for later use                                            |
+| Registered user       | store my order history                                                    |
+| Registered user       | review my order at checkout                                               |
+| Registered user       | store my choices in checkout                                              |
+| Registered user       | Make secure payments                                                      |
+| Registered user       | Receive email confirmation of my order                                    |
+|          ---          |                                    ---                                    |
+| Site admin/superuser  | add new products, menu items, volunteering roles etc...;                  |
+| Site admin/superuser  | update products                                                           |
+| Site admin/superuser  | delete products                                                           |
+| Site admin/superuser  | add notices for each page                                                 |
+| Site admin/superuser  | change the status of cats so that they can be categorized properly        |
 
 ---
 
@@ -353,22 +353,6 @@ The footer features:
   
 # Testing
 All testing and validation is contained within a separate .md file. 
-
-### Problems and Solutions
-- Problem: User agent style sheets overrriding my own style sheet for paragraphs on the index file.
-- Solution:
-- Problem: Unable to locate form used in login template
-- Solution:
-- Problem: Console error triggered by Materialize 'M' function
-- Solution:
-- Problem: url not found for checkouts although all urls seemed in order in the checkouts url file
-- Solution: A typo in the project level urls which was also copied and pasted into the stripe endpoints was the source of the problem.
-- Problem: Database would not migrate to Postgres
-- Solution: Dumping old orders with a full country name prior to installing CountryField was causing an issue as the model was expecting two chareacters. I instead dumped data only for the models I required (products/cats etc...) and the migrations performed as expected.
-- Problem: Some media files not displaying on deployed site
-- Solution: Syntax corrected in src attribute for images in index.html file from '..media/example.jpg' '{{ MEDIA_URL }}example.jpg'
-- Problem: After adding additional models to apps a server 500 error was displayed on deployed site.
-- Solution: Running migrations and performing a data dump solved the issue.
 
 <br> [View TESTING.md](TESTING.md)
 
