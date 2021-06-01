@@ -149,10 +149,6 @@ The purpose of the site is to sell the products on offer by the Inner Purr as we
 
 - Audience: The audience are cat lovers throughout Dublin and across Ireland, capitalizing on the existing audience of social media channels of Phibsboro Cat Rescue.
 
-#### Personal Goals
-
-- 
-
 ### Scope Plane
 
 - 
@@ -161,9 +157,9 @@ The purpose of the site is to sell the products on offer by the Inner Purr as we
 ### Structure Plane
 
 - The site uses a consistent structure, a navbar is at the top of the page which allow a user to navigate the site and login if needed. A burger menu is used for small devices.
-- The index page has a search bar, filter and sort feature.
+- The products page has a search bar, filter and sort feature.
 - The content is consistant with text kept to a minimum.
-- A footer at the bottom provides copyright information and links to social media pages. 
+- A footer at the bottom provides copyright information and links to social media pages and newsletter signup. 
 - The number of clicks needed to reach any page is kept to a minimum. Sections such as user profiles will not be visible to users who are not logged in.
 - Buttons/modals/links are consistant in design.
 
@@ -227,7 +223,7 @@ When a link is hovered over Mr.Buttons will reach out a paw towards it.
 
 ![Small Navbar](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/nav-sm.JPG)
 
-On the smaller resolutions (tablet, mobile) the navbar is collapsed into a burger icon. A slide out menu opens when the burger icon is clicked.
+On the smaller resolutions (tablet, mobile) the navbar is collapsed into a burger icon. A slide out menu opens when the burger icon is clicked. The navbar is fixed to the top on small devices.
 
 - On all resoltions a drop down menu provides links to profile pages. For users who are not logged in the options are:
     1. Login
@@ -291,10 +287,16 @@ The footer features:
 
 # Technologies Used
 
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) - Used throughout the site
-- [CSS (Cascading Style Sheets)](https://www.w3.org/Style/CSS/Overview.en.html) - Used throughout the site 
-- [JavaScript](https://www.javascript.com/) - Used for animations and functions.
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) - HTML5 is the latest version of Hypertext Markup Language, the code that describes web pages.
+- [CSS (Cascading Style Sheets)](https://www.w3.org/Style/CSS/Overview.en.html) - CSS describes how HTML elements are to be displayed on screen. 
+- [Python](https://www.python.org/) - Used throughout the site 
+- [Django](https://www.djangoproject.com/) - a high-level Python Web framework that encourages rapid development and clean, pragmatic design 
+- [JavaScript](https://www.javascript.com/) - Used for various animations and functions.
 - [Materialize](https://materializecss.com/) - Used to aid responsive design and for componants such as sliders and carousels.
+- [Heroku](https://dashboard.heroku.com/) - Heroku is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+- [Heroku PostGres](https://www.heroku.com/postgres) - Heroku Postgres is a managed SQL database service provided directly by Heroku.
+- [Google Fonts](https://fonts.google.com/) - Google Fonts is a library of free licensed font families.
+- [Stripe payments](https://stripe.com/docs) - Stripe offers payment processing software and application programming interfaces for e-commerce websites and mobile applications.
 - [Gitpod](https://code.visualstudio.com/) - Code Editor used to create the site.
 - [GitHub](https://github.com/) - Used to host repos for the site.
 - [Screen Recorder](https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden?hl=en) - Used to make GIFs for README.
@@ -315,11 +317,8 @@ The footer features:
 
 - [JQuery](https://jquery.com/) - is a Javascirpt library. I primarily used JQuery to add and remove classes on hover states as well as run various Materialize functions.
 
-- [Flask](https://flask.palletsprojects.com/en/1.1.x/) - is a lightweight WSGI web application framework. I primarily used it to construct and render pages.
 
 - [Jinja](https://flask.palletsprojects.com/en/1.1.x/) - is a templating language for Python. I primarily used it to display data from the backend in HTML.
-
-- [PyMongo](https://flask.palletsprojects.com/en/1.1.x/) - is the recommended way to work with MongoDB from Python, used to make communication between Python and MongoDB.
 
 - [dnspython](https://pypi.org/project/dnspython/) - is a DNS toolkit for Python.
 

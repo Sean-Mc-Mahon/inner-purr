@@ -64,3 +64,32 @@ document.addEventListener('click', function(e) {
     dropped.classList.remove('show')
     arrow.classList.remove('rotated')
 })
+
+//SEND MAIL AND ALERT FOR NEWSLETTER SIGNUP
+function sendMail(contactForm) {
+  emailjs.send("gmail", "innerpurr", {
+      "from_email": contactForm.emailaddress.value
+  })
+  //custom alert from https://sweetalert.js.org/
+  .then(
+      function response (response) {
+        swal({
+    title: "Thanks for signing up!",
+    text: "You'll recieve the newsletter every month",
+    icon: "success",
+    button: "All Done",
+  });
+    },
+    function (error) {
+      swal({
+        title: "Sorry, looks like something went wrong...",
+        text: "Please try again",
+        icon: "error",
+        button: "OK",
+      });
+  }
+  );
+  //clear form when submitting
+  $("#emailaddress").val("");
+  return false;  // To block from loading a new page
+}
