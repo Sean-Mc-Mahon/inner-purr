@@ -795,7 +795,7 @@ color: var(--cream);
 
 /* Parralax */
 .parallax-container {
-  min-height: 250px;
+  min-height: 175px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
@@ -833,7 +833,7 @@ color: var(--cream);
   width: 100%;
 }
 .menu-header {
-  height: 300px;
+  height: 175px;
   color: var(--cream);
 }
 .food .row .menu-item .description> p {
@@ -1121,12 +1121,24 @@ color: var(--cream);
   .home-pages div> p {
     width: 80%;
   }
+  /* Parralax */
+  .menu-header {
+    height: 300px;
+    color: var(--cream);
+  }
+  .parallax-container {
+    min-height: 250px;
+    line-height: 0;
+    height: auto;
+    color: rgba(255,255,255,.9);
+  }
   .carousel .carousel-item {
     width: 280px;
     height: 280px;
     border-radius: 2rem;
     overflow: hidden;
   }
+  
   /* products */
   .product-description {
     min-height: 40px;

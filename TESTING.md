@@ -15,8 +15,9 @@
 # User Testing
 
 ### User Story Testing
+#### Casual Users
 
-_- User Story A:_ As a casual user I would to easily browse recipes.
+_- easily navigate the site to find what I am looking for quickly 
 
 ![Browse](https://github.com/Sean-Mc-Mahon/McTasticRecipes/blob/master/wireframes/story-a.gif)
 

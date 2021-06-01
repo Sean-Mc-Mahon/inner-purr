@@ -103,7 +103,8 @@ The purpose of the site is to sell the products on offer by the Inner Purr as we
 | Casual User           | search, filter and sort products                                          |
 | Casual User           | view details on products;                                                 |
 | Casual User           | purchase products                                                         |
-| Casual User           | access contact details;                                                   |
+| Casual User           | see my actions actions being acknowledged as I'm making them              |
+| Casual User           | access contact details                                                    |
 | Casual User           | learn how I can help the work of the Inner Purr                           |
 | Casual User           | register for a user profile account by choosing a username and password   |
 |          ---          |                                    ---                                    |
@@ -116,7 +117,7 @@ The purpose of the site is to sell the products on offer by the Inner Purr as we
 | Registered user       | Make secure payments                                                      |
 | Registered user       | Receive email confirmation of my order                                    |
 |          ---          |                                    ---                                    |
-| Site admin/superuser  | add new products, menu items, volunteering roles etc...;                  |
+| Site admin/superuser  | add new products, menu items, volunteering roles etc...                   |
 | Site admin/superuser  | update products                                                           |
 | Site admin/superuser  | delete products                                                           |
 | Site admin/superuser  | add notices for each page                                                 |
