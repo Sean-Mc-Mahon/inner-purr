@@ -449,13 +449,16 @@ td p {
   color: var(--dark-green);
 }
 
+.allauth-form-inner-content p a {
+  font-weight: bold;
+}
 
-
-/* UNNECCESARY? */
-/* input[type=email]:not(.browser-default) {
-  border-bottom: 1px solid var(--dark-green);
-  color: var(--dark-green);
-} */
+.login [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+  position: block;
+  opacity: 1;
+  pointer-events: all;
+  margin: 0.18rem;
+}
 
 /* Square Image */
 /*perfect square code from: https://codepen.io/Tyler_Potts_/pen/qBBXoVQ*/
@@ -516,6 +519,10 @@ nav{
   z-index: 5;
   border-top: 3px solid var(--dark-green);
   border-bottom: 3px solid var(--dark-green);
+  z-index: 100;
+  position: relative;
+  padding: 0rem;
+  /* overflow: visible; */
 }
 .mobile-nav {
   width: 100%;
@@ -538,16 +545,12 @@ nav {
   background-color: var(--cream);
 }
 .nav-wrapper {
-  margin: 0 0.5rem;
   position: relative;
 }
 .logo-text {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  margin: auto;
-}
-.logo-text {
   margin: auto;
 }
 .logo{
@@ -606,7 +609,6 @@ nav ul a {
 }
 /* Paw animation */
 .main-link {
-  /* width: 80px; */
   font-weight: 500;
   position: relative;
   height: 100%;
@@ -634,9 +636,6 @@ nav ul a:hover {
   font-weight: 600;
   animation: link 0.2s ease-out forwards;
 }
-/* .main-link:hover a span {
-  animation: link 0.2s ease-out forwards;
-} */
 .main-link:hover a #paw {
   animation: paw 0.2s ease-out forwards;
 }
@@ -658,7 +657,6 @@ svg {
 svg:not(:root){
   overflow: inherit;
 }
-
 #head {
   animation: rise 2s ease-out;
   z-index: -100;
@@ -668,28 +666,18 @@ svg:not(:root){
 #Paws {
   z-index: 1000;
   position: relative;
+  transform: translateY(-65px);
 }
-
 .eye {
   position: absolute;
 }
-
 .stitches {
   position: relative;
   transform-origin: center;
   transform-box: fill-box;
 }
 
-@keyframes rise {
-  from {
-    transform: translateY(50px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0px);
-    opacity: 1;
-  }
-}
+
 
 /* Logo Text */
 .logo-header {
@@ -1077,10 +1065,7 @@ color: var(--cream);
   width: 100%;
 }
 
-/*Allauth Forms*/
-.allauth-form-inner-content p a {
-  font-weight: bold;
-}
+
 
 
 /* m tablet */
@@ -1104,10 +1089,14 @@ color: var(--cream);
   }
   #under-menu {
     height: 100px;
+    padding: 0 1rem;
   }
   .mobile-nav {
     width: auto;
     display: flex;
+  }
+  #Paws {
+    transform: translateY(-100px);
   }
   /*Logo Text*/
   .logo-header {
@@ -1151,6 +1140,10 @@ color: var(--cream);
   .message-container {
   top: 151px !important;
   }
+  /* allauth */
+  .login [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+    margin: 0.35rem;
+  }
 }
 
 /* l desktop */
@@ -1174,6 +1167,9 @@ color: var(--cream);
   #mr-buttons {
     width:150px; 
     height:120px;
+  }
+  #Paws {
+    transform: translateY(-72px);
   }
   .parallax-container {
     min-height: 350px;

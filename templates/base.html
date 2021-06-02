@@ -42,7 +42,7 @@
                     <div class="nav-wrapper flex">
                         <!-- LOGO -->
                         <div class="logo-image">
-                            {% include 'includes/mr-buttons.html' %}
+                            {% include 'includes/mr-buttons-head.html' %}
                         </div>
                         <div class="logo-text center flex-col">
                             <a href="{% url 'home' %}">
@@ -55,6 +55,9 @@
                     </div>
                     <!-- LINKS -->
                     <div id="under-menu" class="flex-space all-links">
+                        <div class="logo-image">
+                            {% include 'includes/mr-buttons-paws.html' %}
+                        </div>
                         <ul class="w-100 mh2 nav-links flex-space h100">
                             <li class="main-link flex hide-on-small-only h100">
                                 <a id="menu" class="h100 flex-col" href="{% url 'home' %}">

@@ -40,15 +40,15 @@
 -  search filter and sort products:
     shop page enables users to search and filter products on offer.
 
-![Search](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/browse.gif)
+![Search](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/search.gif)
 
 -  view details on products:
     Product details page gives information on sizes available as well as price rating and large product image.
 
 ![Details](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/product-details.JPG)
 
--  purchase products:
-    Users can add products to a bag, see totals accumulate as items are added and have toasts pop up to give users feedback on their actions. An email is sent after a purchase is complete.
+-  purchase products and see my actions throughout the process, review my order at checkout, make secure payments & receive email confirmation of my order:
+    Users can add products to a bag, see totals accumulate as items are added and have toasts pop up to give users feedback on their actions. Payments are securely made using Stripe. An email is sent after a purchase is complete.
 
 ![Purchase](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/purchase.gif)
 

@@ -1,0 +1,11 @@
+#head {
+    animation: rise 2s ease-out;
+  }
+@keyframes rise {
+    from {
+      transform: translateY(50px);
+    }
+    to {
+      transform: translateY(0px);
+    }
+  }

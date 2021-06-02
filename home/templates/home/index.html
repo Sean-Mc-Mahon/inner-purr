@@ -2,6 +2,10 @@
 {% load static %}
 {% block extra_title%}Home{% endblock %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+{% endblock %}
+
 {% block content %}
     <div class="slider">
       <div class="overlayed">
