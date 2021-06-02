@@ -599,21 +599,9 @@ To deploy the project to [Heroku](https://heroku.com/) the following steps need 
 
 2.  Youtube; Various resources for Materialize taken from [The Net Ninja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff)
 
-3.  Youtube; Code for temperature conversion modified from [Whatsdev](https://youtu.be/EHclqGV_KME)
+3.  Github; Format of README modified from [AJGreaves](https://github.com/AJGreaves/thehouseofmouse)
 
-4.  Youtube; Code for temperature conversion modified from [Whatsdev](https://youtu.be/EHclqGV_KME)
-
-5.  Github; Code for pagination modified from [irinatu17](https://github.com/irinatu17/MyCookBook)
-
-6.  Github; Format of README modified from [AJGreaves](https://github.com/AJGreaves/thehouseofmouse)
-
-7.  Button icons sourced from [Fontawesome](https://fontawesome.com/)
-
-8.  Profile icon sourced from Raj Dev @ [freeicons](https://freeicons.io/user-and-profile-icons/forward-user-profile-icon-6314#)
-
-8.  Bag icon sourced from Soni Sokell @ [freeicons](https://freeicons.io/business-13/bag-cart-shop-shopping-shopping-bag-ecommerce-icon-52830#)
-
-9.  Background texture image from [freepik.com](https://www.freepik.com/photos/background)
+4.  Button icons sourced from [Fontawesome](https://fontawesome.com/)
 
  
 

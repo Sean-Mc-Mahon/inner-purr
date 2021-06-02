@@ -279,11 +279,13 @@ Kitties for Adoption | gallery-items displayed occupying 3 columns|pass
 Adopted Kitties | Gallery-items displayed occupying 2 columns |pass
 
 #### cat_details view
+action taken | expected result | pass/fail
+------------ | --------------- | ---------
 On displays =< 600px | Image and details occupy 12 columns. Name and bio occupy 12 columns|pass
 On displays > 600px | Image and details occupy 4 columns. Name and bio occupy 8 columns|pass
 
 ### Shop App
-####  view
+####  view 
 action taken | expected result | pass/fail
 ------------ | --------------- | ---------
  | |pass
