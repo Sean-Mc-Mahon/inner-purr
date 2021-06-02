@@ -203,4 +203,89 @@ action taken | expected result | pass/fail
 4. **Python:** [Pep8](http://pep8online.com/) Used to check that python files are PEP8 compliant
 ---
 
+## Functionality
+
+### Header and Footer
+#### base.html
+
+action taken | expected result | pass/fail
+------------ | --------------- | ---------    
+**Logo** |
+Clicked Logo | Display index view, browser tab displays 'The Inner Purr Home' | pass
+Clicked Logo | Image Logo head rises | pass
+Move Mouse | Eyes and Paws follow mouse | pass
+**Lower Nav** |
+When on displays >= 992px: lower nav | The Purr/Cats/Shop/Help Us/Contact links should display | pass
+Clicked The Purr within topnav | Display index view, browser tab displays 'The Inner Purr Cats' | pass
+Clicked Cats within topnav | Display all_cats view, browser tab displays 'The Inner Purr Home'  | pass
+Clicked Shop within topnav | Display all_products view, browser tab displays 'The Inner Purr Products'  | pass
+Clicked Help Us within topnav | Display help view, browser tab displays 'The Inner Purr Help Us'  | pass
+Clicked Contact within topnav | Display contact view, browser tab displays 'The Inner Purr Contact'  | pass
+**Side Nav** |
+When on displays < 992px: lower nav | Burger menu should display and when clicked reveal side nav | pass
+Clicked The Purr within topnav | Display index view, browser tab displays 'The Inner Purr Cats' | pass
+Clicked Cats within side nav | Display all_cats view, browser tab displays 'The Inner Purr Home'  | pass
+Clicked Shop within side nav | Display all_products view, browser tab displays 'The Inner Purr Products'  | pass
+Clicked Help Us within side nav | Display help view, browser tab displays 'The Inner Purr Help Us'  | pass
+Clicked Contact within side nav | Display contact view, browser tab displays 'The Inner Purr Contact'  | pass
+**Dropdown Nav** |
+Clicked profile-drop within Dropdown Nav | Display links Product Management (if superuser), My Profile (if logged in), Logout (if logged in), Login (if not logged in), Register (if not logged in) | pass
+Clicked Product Management within topnav | Display add_product view, browser tab displays 'The Inner Purr Add Product' | pass
+Clicked My Profile within Dropdown Nav | Display profile view, browser tab displays 'The Inner Purr Profile' | pass
+Clicked Logout within Dropdown Nav | Display account_logout view, browser tab displays 'The Inner Purr Profile' | pass
+Clicked Login within Dropdown Nav | Display account_login view, browser tab displays 'The Inner Purr Login' | pass
+Clicked Register within Dropdown Nav | Display account_signup view, browser tab displays 'The Inner Purr Register'| pass
+**Footer** |
+Enter valid email address and submit #form-contact | Alert displayed thanking user for signing up. Email sent. | pass
+Enter email adress without an '@' and submit #form-contact | Alert is displayed informing user that a '@' is required | pass
+Enter incomplete email address and submit #form-contact | Alert is displayed informing user that address is incomplete | pass
+Clicked 'All Done' on modal following newsletter signup | Modal is closed | pass
+Clicked LinkedIn icon | LinkedIn profile opened in new tab | pass
+Clicked Instagram icon | Instagram profile opened in new tab | pass
+Clicked Facebook icon | Facebook profile opened in new tab | pass
+
+### Search/Filter/Sort
+#### all_products view
+action taken | expected result | pass/fail
+------------ | --------------- | --------- 
+**Search, Sort By and Filter**|
+On displays =< 600px |Search, Sort By and Categories occuppy 12 columns|pass
+On displays > 600px  |Search coccupies 12 columns, Sort By and Categories occupy 6 columns|pass
+On displays > 992px  |Search, sort by and filter all occupy 4 columns|pass
+**Search**|
+Entered a value into #search form and submitted it. | all_products view loads with query results, number of results are displayed as well as the searched term | pass
+**Sort By**|
+'Sort By' option chosen. | all_products view loads with query results in order specified, number of results are displayed as well as the searched term (if any) | pass
+**Filter**|
+'Filter' option chosen. | all_products view loads with query results in order specified (if specified), number of results are displayed as well as the searched term (if any) | pass
+
+### Cats App
+#### all_cats view
+action taken | expected result | pass/fail
+------------ | --------------- | ---------
+Resident Kitties | Slider displays Images with cats name and a tagline. Another image displayed after 10 seconds or when relevant indicator is clicked on|pass
+Images clicked on slider or Kitties for adoption images | Relevant cat profile displayed |pass
+Links clicked | New tabs opened on relevant external pages |pass
+**On displays =< 600px**|
+Kitties for Adoption | gallery-items displayed occupying 12 columns, item displays as square image with name and gender dispayed at bottom of image. Image zoomed on hover|pass
+Adopted Kitties | Gallery-items displayed occupying 6 columns, item displays as square image. Name dispayed and image zoomed in on hover|pass
+**On displays > 600px**|
+Kitties for Adoption | gallery-items displayed occupying 6 columns, item displays as square image with name and gender dispayed at bottom of image. Image zoomed on hover|pass
+Adopted Kitties | Gallery-items displayed occupying 3 columns, item displays as square image. Name dispayed and image zoomed in on hover|pass
+**On displays > 992px**|
+Kitties for Adoption | gallery-items displayed occupying 4 columns, item displays as square image with name and gender dispayed and image zoomed on hover|pass
+**On displays > 1200px**|
+Kitties for Adoption | gallery-items displayed occupying 3 columns|pass
+Adopted Kitties | Gallery-items displayed occupying 2 columns |pass
+
+#### cat_details view
+On displays =< 600px | Image and details occupy 12 columns. Name and bio occupy 12 columns|pass
+On displays > 600px | Image and details occupy 4 columns. Name and bio occupy 8 columns|pass
+
+### Shop App
+####  view
+action taken | expected result | pass/fail
+------------ | --------------- | ---------
+ | |pass
+
 ##### back to [top](#testing)

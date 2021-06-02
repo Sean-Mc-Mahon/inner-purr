@@ -55,7 +55,7 @@
                     </div>
                     <!-- LINKS -->
                     <div id="under-menu" class="flex-space all-links">
-                        <div class="logo-image">
+                        <div  class="logo-paws">
                             {% include 'includes/mr-buttons-paws.html' %}
                         </div>
                         <ul class="w-100 mh2 nav-links flex-space h100">
@@ -90,7 +90,7 @@
                                     <a class="flex profile pointer">
                                         <img src="{% static 'icons/profile-20-blue.png' %}" alt="profile"> 
                                         <span id="dropdown-arrow"> &#9660; </span>
-                                        <ul class="profile-dropped p1">
+                                        <ul class="profile-dropped p1 flex-col-l">
                                             {% if request.user.is_authenticated %}
                                                 {% if request.user.is_superuser %}
                                                     <a href="{% url 'add_product' %}">Product Management</a>

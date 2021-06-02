@@ -553,6 +553,9 @@ nav {
   transform: translateX(-50%);
   margin: auto;
 }
+.logo-paws {
+  position: absolute;
+}
 .logo{
   display: flex;
 }
@@ -565,6 +568,7 @@ nav .brand-logo {
 nav ul a {
   padding: 0 5px;
   color: var(--dark-green);
+  font-size: 0.85rem;
 }
 .sidenav-trigger {
   color: var(--dark-green);
@@ -1160,6 +1164,9 @@ color: var(--cream);
   }
   nav, .nav-wrapper {
     min-height: 120px;
+  }
+  nav ul a {
+    font-size: 1.1rem;
   }
   header {
     max-height: 220px;
