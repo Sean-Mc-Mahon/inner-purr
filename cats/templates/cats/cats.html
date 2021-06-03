@@ -39,12 +39,15 @@
               </div>
         </div>
         <!-- Cats for adoption -->
-        <div class="row w-100">
-            <h5 class="cursive center">Kitties for Adoption</h5>
-            <p class="justify mb-half">A kitty cat makes a wonderful addition to any household and we are always delighted to talk with people who are interested in offering a kitty a loving home. 
-            </p>
-            <p class="justify mb-half">If you are looking to adopt a feline friend, you can learn more <a title="Adopt" target="_blank" rel="noopener" href="http://www.phibsborocatrescue.ie/adopting-a-cat/">here</a>.
-            </p>
+        <div class="container center row">
+            <h5 class="larger-header">Kitties for Adoption</h5>
+            <div class="larger container">
+                <p class="mb1">A kitty cat makes a wonderful addition to any household and we are always delighted to talk with people who are interested in offering a kitty a loving home. 
+                </p>
+                <p class="mb1">If you are looking to adopt a feline friend, you can learn more <a class="bold" title="Adopt" target="_blank" rel="noopener" href="http://www.phibsborocatrescue.ie/adopting-a-cat/">here</a>.
+                </p>
+            </div>
+            
             {% for cat in cats %}
                 {% if cat.adopted == False %}
                     <div class="col s12 m6 l4 xl3 mt1">
@@ -68,11 +71,14 @@
             {% endfor %} 
         </div>
         <!-- Adopted Cats -->
-        <div class="row w-100 mt2">
-            <h5 class="cursive center">Kitties who have found their new home</h5>
-            <p class="justify mb-half">Since forming  in August 2014, we have TNR’d over 1,500 feral cats and we have rescued, tamed and found loving forever homes for over 2,000 cats and kittens. We have provided veterinary treatment for many more and we have rehomed a number of domestic cats who have been surrendered to us by their humans for a variety of reasons. 
-            </p>
-            <p class="justify mb-half">You can learn more about what we do <a title="About" rel="noopener" target="_blank" href="http://www.phibsborocatrescue.ie/sample-page/">here</a>.</p>
+        <div class="container center row mt2">
+            <h5 class="cursive larger-header">Kitties who have found their new home</h5>
+            <div class="container larger">
+                <p class="mb1">Since forming  in August 2014, we have TNR’d over 1,500 feral cats and we have rescued, tamed and found loving forever homes for over 2,000 cats and kittens. We have provided veterinary treatment for many more and we have rehomed a number of domestic cats who have been surrendered to us by their humans for a variety of reasons. 
+                </p>
+                <p class="mb1">You can learn more about what we do <a class="bold" title="About" rel="noopener" target="_blank" href="http://www.phibsborocatrescue.ie/sample-page/">here</a>.</p>
+            </div>
+            
             {% for cat in cats %}
                 {% if cat.adopted == True %}
                     <div class="col s6 m3 l3 xl2 cat-box">

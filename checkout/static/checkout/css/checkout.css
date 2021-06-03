@@ -1,14 +1,14 @@
 /*Checkout*/
 fieldset {
-    border: 2px solid var(--dark-green);
-    border-radius: 0.5rem;
+  border: 2px solid var(--dark-green);
+  border-radius: 0.5rem;
 }
 legend {
-  color: var(--dark-green);
-  font-weight: 400;
+color: var(--dark-green);
+font-weight: 400;
 }
 .row .col+.p0 {
-  padding: 0;
+padding: 0;
 }
 
 .input-field>label, .select-wrapper input.select-dropdown {
@@ -19,6 +19,14 @@ legend {
 
 input[type=text]::placeholder {
   color: var(--text-light);
+}
+
+.form-check #id-save-info {
+  opacity: 0;
+}
+label[for=id-save-info]
+{
+    color: var(--text);
 }
 
 /*Preloader*/  
@@ -66,4 +74,8 @@ input[type=text]::placeholder {
 }
 .stripe-style-input:focus {
     color: var(--dark-green);
+}
+
+.fa-exclamation-circle:before {
+  color: rgb(255, 74, 74);
 }

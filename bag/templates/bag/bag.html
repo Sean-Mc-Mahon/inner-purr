@@ -53,7 +53,7 @@
                                 <!--Name-->
                                 <p><strong>{{ item.product.name }}</strong></p>
                                 <!--Size-->
-                                <p><strong>Size:</strong> {% if item.product.has_sizes %}{{ item.size }}{% else %}N/A{% endif %}</p>
+                                <p><strong>Size:</strong> {% if item.product.has_sizes %}{{ item.size|capfirst }}{% else %}N/A{% endif %}</p>
                                 <!--SKU-->
                                 <p><strong>SKU:</strong> {{ item.product.sku|upper }}</p>
                             </td>

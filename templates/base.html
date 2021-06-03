@@ -85,7 +85,7 @@
                                 </a>
                             </li>
                             <!-- BAG AND PROFILE -->
-                            <ul class="right flex mobile-nav">
+                            <ul class="right flex-space mobile-nav">
                                 <li onclick="show()" class="profile-drop line1 mr1">
                                     <a class="flex profile pointer">
                                         <img src="{% static 'icons/profile-20-blue.png' %}" alt="profile"> 
@@ -116,7 +116,7 @@
                                         </div>
                                     </a>
                                 </li>
-                                <div class="nav-links right-align flex all-links hide-on-med-and-up h100">
+                                <div class="nav-links right-align flex-end all-links hide-on-med-and-up h100 right">
                                     <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
                                     <i class="material-icons right">menu</i></a>
                                 </div>
@@ -189,7 +189,7 @@
                         Enter your email address to recieve out monthly newsletter.
                     </p>
                     <form id="form_contact" onsubmit="return sendMail(this);">
-                        <input class="larger" type="email" name="emailaddress" id="emailaddress" placeholder="email" required />
+                        <input style="color:black;" class="larger" type="email" name="emailaddress" id="emailaddress" placeholder="email" required />
                         <label for="emailaddress" class="valign-wrapper">
                             <button id="submit" tabindex="0" aria-label="submit" type="submit" class="focus-outline" >
                                 <i class="far fa-paper-plane large-icon larger"></i>

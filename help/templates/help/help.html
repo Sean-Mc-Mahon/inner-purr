@@ -7,45 +7,49 @@
     <div class="white-overlay p1">
         <h3 class="cursive">How You Can Help</h3>
         <!-- Donations -->
-        <h4 class="cursive">Donate</h4>
-        {% for option in donations %}
-            <div class="row">
-                <div class="col s12 p0">
-                    <div>
-                        <h5 class="cursive">{{ option.donation_option }}</h5>
-                        <p>{{ option.description|safe }}</p>
-                    </div>
-                </div>
-            </div>
-            <div class="divider center m-auto"></div>
-        {% endfor %}
-        <p>You can learn more about donations 
-            <a target="_blank" rel="noopener" title="Doante" class="bold" href="http://www.phibsborocatrescue.ie/volunteer-roles/">here</a>.
-        </p>
-
-        <!-- Volunteering Roles -->
-        <h4 class="cursive">Volunteer</h4>
-        {% for role in roles %}
-            <div class="row">
-                <div class="col s12 m6 l4 mt1">
-                    <div class="gallery-item">
-                        <div class="square">
-                            <div class="gallery-image content">
-                                <img class="no-pointer" src="{{ role.image.url }}" alt="{{ role.role }}">
-                            </div>
+        <div class="mb1">
+            <h4 class="cursive">Donate</h4>
+            {% for option in donations %}
+                <div class="container row">
+                    <div class="col s12 p0">
+                        <div>
+                            <h5 class="cursive large-header">{{ option.donation_option }}</h5>
+                            <div class="larger">{{ option.description|safe }}</div>
                         </div>
                     </div>
                 </div>
-                <div class="col s12 m6 l8">
-                    <div>
-                        <h5 class="cursive">{{ role.role }}</h5>
-                        <p>{{ role.description|safe }}</p>
+                <div class="divider center m-auto"></div>
+            {% endfor %}
+        </div>
+        <em class="larger mt-half">You can learn more about donations 
+            <a target="_blank" rel="noopener" title="Doante" class="bold" href="http://www.phibsborocatrescue.ie/volunteer-roles/">here</a>.
+        </em>
+
+        <!-- Volunteering Roles -->
+        <div class="mb1">
+            <h4 class="cursive">Volunteer</h4>
+            {% for role in roles %}
+                <div class="row">
+                    <div class="col s12 m6 l4 mt1">
+                        <div class="gallery-item">
+                            <div class="square">
+                                <div class="gallery-image content">
+                                    <img class="no-pointer" src="{{ role.image.url }}" alt="{{ role.role }}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l8">
+                        <div>
+                            <h5 class="cursive large-header">{{ role.role }}</h5>
+                            <div class="larger">{{ role.description|safe }}</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="divider center m-auto"></div>
-        {% endfor %}
-        <p>You can learn more about these and other roles <a target="_blank" rel="noopener" title="Volunteer" class="bold" href="http://www.phibsborocatrescue.ie/volunteer-roles/">here</a>.</p>
+                <div class="divider center m-auto"></div>
+            {% endfor %}
+        </div>
+        <em class="larger">You can learn more about these and other roles <a target="_blank" rel="noopener" title="Volunteer" class="bold" href="http://www.phibsborocatrescue.ie/volunteer-roles/">here</a>.</em>
     </div>
 </div>
     
