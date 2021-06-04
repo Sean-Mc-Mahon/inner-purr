@@ -19,7 +19,7 @@
     <div class="row">
         <!--CUSTOMER DETAILS-->
         <p class="p1">Please fill out the form below to complete your order</p>
-        <div class="col s12 l6"> 
+        <div class="col s12 l5"> 
             <form action="{% url 'checkout' %}" method="POST" id="payment-form" class="mb1">
                 {% csrf_token %}
                 <!--Name & Email-->
@@ -92,7 +92,7 @@
             </form>
         </div>
         <!--BAG ITEM DETAILS-->
-        <div class="col s12 l6">
+        <div class="col s12 l7">
             {% for item in bag_items %}
                 <div class="row m0">
                     <!--Image-->
@@ -125,13 +125,13 @@
                                 <p class="mb-half"><strong>{{ item.product.name }}</strong></p>
                                 <!--Size-->
                                 {% if item.product.has_sizes %}
-                                    <p><strong>Size:</strong> {{ item.size }}</p>
+                                    <p><strong>Size:</strong> {{ item.size|upper }}</p>
                                 {% endif %}
                                 <!--Quantity-->
                                 <p><strong>Qty:</strong>{{ item.quantity }}</p>
                             </div>
                             <!--Bag Total-->
-                            <div class="col s12 m4 p0">
+                            <div class="col s12 m4 pl-1">
                                 <p><strong>€{{ item.product.price | calc_subtotal:item.quantity }}</strong></p>
                             </div>
                             

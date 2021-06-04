@@ -53,9 +53,11 @@
                                 <!--Name-->
                                 <p><strong>{{ item.product.name }}</strong></p>
                                 <!--Size-->
-                                <p><strong>Size:</strong> {% if item.product.has_sizes %}{{ item.size|capfirst }}{% else %}N/A{% endif %}</p>
-                                <!--SKU-->
-                                <p><strong>SKU:</strong> {{ item.product.sku|upper }}</p>
+                                <p><strong>Size:</strong> {% if item.product.has_sizes %}{{ item.size|upper }}{% else %}N/A{% endif %}</p>
+                                {% if request.user.is_superuser %}
+                                    <!--SKU displayed to superusers-->
+                                    <p><strong>SKU:</strong> {{ item.product.sku|upper }}</p>
+                                {% endif %}
                             </td>
                             <!--Price-->
                             <td>

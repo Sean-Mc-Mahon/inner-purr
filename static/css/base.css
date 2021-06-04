@@ -7,7 +7,8 @@
 }
 
 html {
-    --text: #37474F;
+    --text: #3e5a68;
+    --texty: #37474F;
     --text-light: #37474F;
     --light-green: #A5CB8D;
     --medium-green: #447924;
@@ -137,6 +138,12 @@ h1, h2, h3, h4, h5, h6 {
 .p0 {
   padding: 0 !important;
 }
+.p1 {
+  padding: 1rem;
+}
+.p2 {
+  padding: 2rem;
+}
 .pv-half {
   padding: 0.5rem 0;
 }
@@ -146,11 +153,8 @@ h1, h2, h3, h4, h5, h6 {
 .p-half {
   padding: 0.5rem;
 }
-.p1 {
-  padding: 1rem;
-}
-.p2 {
-  padding: 2rem;
+.pl-1{
+  padding-left: 1rem;
 }
 
 /* MARGIN STYLES */
@@ -389,7 +393,7 @@ textarea:focus {
 tr {
   display: table-row;
   vertical-align: top;
-  border-color: inherit;
+  border-color: var(--dark-green);
 }
 td {
   vertical-align: top;
