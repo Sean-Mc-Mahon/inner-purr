@@ -118,32 +118,35 @@
 
 2. **Lighthouse:** A number of issues were resolved using lighthouse.
 
-    Page | Performance | Accessability | Best Practices | SEO
-    ------------ | --------------- | --------- | --------- | ---------
-    **index.html** |82|100|100|99
-    **login.html** |93|90|100|100
-    **register.html** |93|98|100|100
-    **view_profile.html** |57|100|93|99
-    **insert_recipe.html** |89|92|100|98
-    **edit_recipe.html** |87|92|100|98
-    **single_recipe.html** |54|99|93|100
-    **users.html** |94|100|100|99
-    **units.html** |94|100|100|100
-
     **Performance**
-    - Script.js broken into seperate files as unnused Javascript was the biggest factor in low performance scores.
+    - Some inages compressed to improve performance, as the site heavily involves user input I have chosen not to compress all images as this may not reflect how the site may be used in the future. This partly explains why lighthouse performance scores are comparitvely low.
 
     **Accessability**
     - Contrast: Alpha level on .blank-image was set to 0.6 which did not offer sufficient contrast with white text. Alpah level rasied to 0.8.
-    - Aria labels: Aria labels added to buttons such as #search-button and #submit
-    - Alt Text: Alt text dynamically applied to images eg `alt="{{recipe.recipe_name}} image"`
-    - Lists: headers moved from inside pagination `<ul>` to above the list.
+    - Aria labels: Aria labels added to buttons such as increment and decrement quatity buttons in bag.
+    - Alt Text: Alt text added to images such as home page full slider images.
     
     **Best Practices**
-    - Logo image resized.
+    - Bag and Profile icons in navbar redesigned and resized to a correct ratio.
     
     **SEO**
     - Description meta tag added on all pages.
+
+
+    Page | Performance | Accessability | Best Practices | SEO
+    ------------ | --------------- | --------- | --------- | ---------
+    **home** |82|100|100|99
+    **login** |92|90|100|100
+    **logout** |87|98|100|100
+    **register** |94|98|100|100
+    **reset password** |95|98|100|100
+    **reset password sent** |94|98|100|100
+    **view_profile** |57|100|93|99
+    **All Products** |82|90|100|100
+    **product details** |66|98|100|100
+    **bag** |64|96|100|100
+    **help** |91|98|100|100
+    **contact** ||||
 
 3. **Mobile Devices:** I used my Google Pixel 3a phone and Amazon Fire tablet to test the site.
 
@@ -244,20 +247,8 @@ Clicked LinkedIn icon | LinkedIn profile opened in new tab | pass
 Clicked Instagram icon | Instagram profile opened in new tab | pass
 Clicked Facebook icon | Facebook profile opened in new tab | pass
 
-### Search/Filter/Sort
-#### all_products view
-action taken | expected result | pass/fail
------------- | --------------- | --------- 
-**Search, Sort By and Filter**|
-On displays =< 600px |Search, Sort By and Categories occuppy 12 columns|pass
-On displays > 600px  |Search coccupies 12 columns, Sort By and Categories occupy 6 columns|pass
-On displays > 992px  |Search, sort by and filter all occupy 4 columns|pass
-**Search**|
-Entered a value into #search form and submitted it. | all_products view loads with query results, number of results are displayed as well as the searched term | pass
-**Sort By**|
-'Sort By' option chosen. | all_products view loads with query results in order specified, number of results are displayed as well as the searched term (if any) | pass
-**Filter**|
-'Filter' option chosen. | all_products view loads with query results in order specified (if specified), number of results are displayed as well as the searched term (if any) | pass
+**Notices** |
+for various view: | Notice displayed and removed when close button clicked | pass
 
 ### Cats App
 #### all_cats view
@@ -285,9 +276,79 @@ On displays =< 600px | Image and details occupy 12 columns. Name and bio occupy 
 On displays > 600px | Image and details occupy 4 columns. Name and bio occupy 8 columns|pass
 
 ### Shop App
-####  view 
+#### all_products view 
 action taken | expected result | pass/fail
 ------------ | --------------- | ---------
- | |pass
+product clicked | redirected to correct product_details view |pass
+super user logged in | edit and delete options below products |pass
+
+**Search, Sort By and Filter**|
+On displays =< 600px |Search, Sort By and Categories occuppy 12 columns|pass
+On displays > 600px  |Search coccupies 12 columns, Sort By and Categories occupy 6 columns|pass
+On displays > 992px  |Search, sort by and filter all occupy 4 columns|pass
+**Search**|
+Entered a value into #search form and submitted it. | all_products view loads with query results, number of results are displayed as well as the searched term | pass
+**Sort By**|
+'Sort By' option chosen. | all_products view loads with query results in order specified, number of results are displayed as well as the searched term (if any) | pass
+**Filter**|
+'Filter' option chosen. | all_products view loads with query results in order specified (if specified), number of results are displayed as well as the searched term (if any) | pass
+
+#### product_details view 
+action taken | expected result | pass/fail
+------------ | --------------- | ---------
+increment/decrement buttons clicked | quantities altered accordingly |pass
+image clicked | image opened in new window |pass
+'keep shopping' button clicked | return to all_products view |pass
+category link clicked | return to all_products view with relevant products |pass
+'add to bag' clicked | toast displays correct bag information and grand total updated in nav |pass
+super user logged in | edit and delete options below products |pass
+
+#### add_product view 
+action taken | expected result | pass/fail
+------------ | --------------- | ---------
+required fields not filled in | prompted to fill all required fileds |pass
+required fields filled in | product added, toast displayed and redirected to product_detail view |pass
+
+#### edit_product view 
+action taken | expected result | pass/fail
+------------ | --------------- | ---------
+required fields filled in | product edited, toast displayed and redirected to product_detail view |pass
+
+#### delete_product view 
+action taken | expected result | pass/fail
+------------ | --------------- | ---------
+delete button clicked | product deleted, toast displayed and redirected to pall_products view |pass
+
+### Bag App
+#### view_bag view
+action taken | expected result | pass/fail
+------------ | --------------- | ---------
+bag icon clicked | displays correct bag information |pass
+increment/decrement buttons clicked | quantities altered accordingly |pass
+Update/Remove buttons clicked | quantities and grand total altered accordingly |pass
+'keep shopping' button clicked | return to all_products view |pass
+'adjust bag' button clicked | return to bag view |pass
+'secure checkout' clicked | redirected to checkout with prefilled delivery information if available and product info available |pass
+form filled and 'complete order' clicked | loading spinner commences, redirected to checkout successful page, toast displays order information |pass
+form filled incorrectedly and 'complete order' clicked | info box displays required fields |pass
+card info incorrect | Incomplete card message appears in payment box |pass
+
+### Help App
+#### help view
+action taken | expected result | pass/fail
+------------ | --------------- | ---------
+external links clicked | redirected to external page with a new window |pass
+
+### Contact App
+#### contact view
+action taken | expected result | pass/fail
+------------ | --------------- | ---------
+Map pin clicked | map zooms on location with address displayed |pass
+
+### Profile App
+#### contact view
+action taken | expected result | pass/fail
+------------ | --------------- | ---------
+Form edited | Details altered accordingly |pass
 
 ##### back to [top](#testing)
