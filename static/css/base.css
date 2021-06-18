@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* border: 1px solid pink; */
 }
 
 html {
@@ -254,7 +253,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* PARAGRAPHS */
 p {
-  /* line-height: 1rem; */
   margin: 0;
 }
 
@@ -375,6 +373,10 @@ textarea:focus {
   outline-color: var(--dark-green);
 }
 
+li:focus {
+  outline-color: var(--dark-green);
+}
+
 
 [type="checkbox"]:checked+span:not(.lever):before {
   border-right: 2px solid var(--dark-green);
@@ -384,6 +386,9 @@ textarea:focus {
 /* POINTER */
 .pointer {
   cursor: pointer;
+}
+.no-pointer {
+  cursor: none;
 }
 .col .gallery-item .square .content .no-pointer {
   cursor: auto;
@@ -463,7 +468,6 @@ td p {
 }
 
 .login [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
-  position: block;
   opacity: 1;
   pointer-events: all;
   margin: 0.18rem;
@@ -531,16 +535,12 @@ nav{
   z-index: 100;
   position: relative;
   padding: 0rem;
-  /* overflow: visible; */
 }
 .mobile-nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
 }
-/* .all-links{
-    transform: translateY(-5px);
-} */
 nav {
   min-height: 64px;
 }
@@ -583,13 +583,9 @@ nav ul a {
   color: var(--dark-green);
 }
 .mobile-nav .nav-links .sidenav-trigger {
-  /* padding-right: 0.2rem; */
   margin: 0;
   text-align: end;
 }
-/* .mobile-nav > * {
-  min-width: 60px;
-} */
 .profile-drop {
     position: relative;
 }
@@ -880,8 +876,6 @@ color: var(--cream);
 }
 .home-pages div> p {
   width: 90%;
-  /* font-size: 18px;
-  line-height: 30px; */
   margin: 0 auto;
 }
 .menu-body,
@@ -965,8 +959,8 @@ color: var(--cream);
 
 /*BAG*/
 .gallery-item.bag-image {
-  max-width: 250px;
-  max-height: 250px;
+  max-width: 300px;
+  max-height: 300px;
 }
 .update-form .input-group {
   max-height: 30px;
@@ -986,9 +980,6 @@ color: var(--cream);
   flex-direction: column;
   justify-content: flex-end;
 }
-/* #cat-slides li::before {
-  background: none;
-} */
 .cat-box {
   padding: 0.5rem !important;
 }
@@ -1113,8 +1104,7 @@ color: var(--cream);
   width: 100%;
 }
 
-
-
+/*MEDIA QUERIES*/
 
 /* m tablet */
 @media screen and (min-width: 601px) {
@@ -1225,7 +1215,7 @@ color: var(--cream);
   header {
     max-height: 220px;
   }
-  #mr-buttons {
+  .mr-buttons {
     width:150px; 
     height:120px;
   }
@@ -1365,10 +1355,6 @@ color: var(--cream);
   min-height: 54px;
   padding: 0 1rem;
   }
-  /* .larger {
-    font-size: 1.5rem;
-    line-height: 2rem;
-  } */
 }
 
 @media only screen and (max-width : 600px) {
