@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load bag_tools %}
+{% block extra_meta %}<meta name="Description" content="shopping bag">{% endblock %}
 
 {% block extra_title%}Bag{% endblock %}
 
@@ -32,17 +33,11 @@
                                     <div class="square">
                                         <div class="gallery-image content">
                                             {% if item.product.image %}
-                                                <a href="{{ product.image.url }}" target="_blank">
-                                                    <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                                                </a>
+                                                <img class="no-pointer" src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                             {% elif item.product.image_url %}
-                                                <a href="{{ product.image_url }}" target="_blank">
-                                                    <img class="" src="{{ item.product.image_url }}" alt="{{ item.product.name }}">
-                                                </a>
+                                                <img class="no-pointer" src="{{ item.product.image_url }}" alt="{{ item.product.name }}">
                                             {% else %}
-                                                <a href="">
-                                                    <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                                                </a>
+                                                <img class="no-pointer" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
                                             {% endif %}
                                         </div>
                                     </div>
@@ -65,22 +60,24 @@
                             </td>
                             <!--Quantity-->
                             <td>      
-                                <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                                <form class="form update-form pv-half" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                     {% csrf_token %}
-                                    <div>
-                                        <div class="input-group flex">
+                                    <div class="flex w-100">
+                                        <div class="input-group flex w-100">
                                             <div class="input-group-prepend">
                                                 <button class="decrement-qty btn-small" 
-                                                    data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                    data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}" aria-label="decrease">
                                                     <span class="flex">
                                                         <i class="fas fa-minus fa-sm"></i>
                                                     </span>
                                                 </button>
                                             </div>
-                                            <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                            <label for="quantity" class="w-100">
+                                                <input class="form-control qty_input" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="99" data-item_id="{{ item.item_id }}" id="id_qty_{{ item.item_id }}">
+                                            </label>
                                             <div class="input-group-append">
                                                 <button class="increment-qty btn-small"
-                                                    data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                    data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}" aria-label="increase">
                                                     <span class="flex">
                                                         <i class="fas fa-plus fa-sm"></i>
                                                     </span>
@@ -93,8 +90,8 @@
                                     </div>
                                 </form>  
                                 <!--Update & Remove from Bag-->   
-                                <a class="update-link pointer left"><small>Update</small></a>      
-                                <a class="remove-item pointer right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>      
+                                <a class="update-link pointer left pv-half"><small>Update</small></a>      
+                                <a class="remove-item pointer right pv-half" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>      
                             </td>
                             <!--Bag Total--> 
                             <td>

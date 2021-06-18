@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block extra_title%}Home{% endblock %}
+{% block extra_meta %}<meta name="Description" content="homepage, menu, cafe, welcome, about">{% endblock %}
 
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
@@ -13,21 +14,21 @@
         <ul class="slides">
           <li>
             <div class="slide-overlay"></div>
-            <img src="{{ MEDIA_URL }}coffee.jpg">
+            <img src="{{ MEDIA_URL }}coffee.jpg" alt="cafe">
             <div class="caption center-align">
               <h4 class="white-title">Check out our Cafe</h4>
               <h6 class="white-title">All of our products are 100% vegan</h6>
             </div>
           </li>
           <li>
-            <img src="{{ MEDIA_URL }}cat-playing.jpeg">
+            <img src="{{ MEDIA_URL }}cat-playing.jpeg" alt="cats">
             <div class="caption left-align">
               <h4 class="white-title">Come meet our Cats</h4>
               <h6 class="white-title">You can spend time in our cat therapy suite</h6>
             </div>
           </li>
           <li>
-            <img src="{{ MEDIA_URL }}cat-grooming.jpg">
+            <img src="{{ MEDIA_URL }}cat-grooming.jpg" alt="cat-grooming">
             <div class="caption right-align">
               <h4 class="white-title">Cat Grooming</h4>
               <h6 class="white-title">We have an expert groomer on site to pamper your cats</h6>

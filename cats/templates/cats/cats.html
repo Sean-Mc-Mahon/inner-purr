@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block extra_title%}Cats{% endblock %}
+{% block extra_meta %}<meta name="Description" content="all cats">{% endblock %}
 
 {% block content %}
 
@@ -44,7 +45,7 @@
             <div class="larger container">
                 <p class="mb1">A kitty cat makes a wonderful addition to any household and we are always delighted to talk with people who are interested in offering a kitty a loving home. 
                 </p>
-                <p class="mb1">If you are looking to adopt a feline friend, you can learn more <a class="bold" title="Adopt" target="_blank" rel="noopener" href="http://www.phibsborocatrescue.ie/adopting-a-cat/">here</a>.
+                <p class="mb1">All of our cats are fostered by The Phibsboro Cat Rescue. If you are looking to adopt a feline friend, you can learn more from the <a class="bold" title="Adopt" target="_blank" rel="noopener" href="http://www.phibsborocatrescue.ie/adopting-a-cat/">PCR Adoptions page</a>.
                 </p>
             </div>
             
@@ -76,7 +77,7 @@
             <div class="container larger">
                 <p class="mb1">Since forming  in August 2014, we have TNR’d over 1,500 feral cats and we have rescued, tamed and found loving forever homes for over 2,000 cats and kittens. We have provided veterinary treatment for many more and we have rehomed a number of domestic cats who have been surrendered to us by their humans for a variety of reasons. 
                 </p>
-                <p class="mb1">You can learn more about what we do <a class="bold" title="About" rel="noopener" target="_blank" href="http://www.phibsborocatrescue.ie/sample-page/">here</a>.</p>
+                <p class="mb1">You can learn more about what we do on the <a class="bold" title="About" rel="noopener" target="_blank" href="http://www.phibsborocatrescue.ie/sample-page/">PCR About Us</a>Page.</p>
             </div>
             
             {% for cat in cats %}

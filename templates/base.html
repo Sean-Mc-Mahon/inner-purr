@@ -8,6 +8,7 @@
             <meta http-equiv="X-UA-Compatible" content="ie=edge" />
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1"/>
+            <meta name="robots" content="index,follow" />
         {% endblock %}
 
         {% block extra_meta %}
@@ -86,9 +87,9 @@
                             </li>
                             <!-- BAG AND PROFILE -->
                             <ul class="right flex-space mobile-nav">
-                                <li onclick="show()" class="profile-drop line1 mr1">
-                                    <a class="flex profile pointer">
-                                        <img src="{% static 'icons/profile-20-blue.png' %}" alt="profile"> 
+                                <li class="profile-drop line1 mr1">
+                                    <a href="#" onclick="show()" class="flex profile pointer" title="profiles">
+                                        <img width="20" height="20" src="{% static 'icons/profile-40.png' %}" alt="profile"> 
                                         <span id="dropdown-arrow"> &#9660; </span>
                                         <ul class="profile-dropped p1 flex-col-l">
                                             {% if request.user.is_authenticated %}
@@ -107,7 +108,7 @@
                                 <li class="line1">
                                     <a class="" href="{% url 'view_bag' %}">
                                         <div id="bag-icon" class="flex">
-                                            <img class="mr-half" src="{% static 'icons/bag-20-blue.png' %}" alt="shopping bag">
+                                            <img width="20" height="20" class="mr-half" src="{% static 'icons/bag-40.png' %}" alt="shopping bag">
                                             {% if grand_total %}
                                                 €{{ grand_total|floatformat:2 }}
                                             {% else %}

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% load bag_tools %}
+{% block extra_meta %}<meta name="Description" content="checkout">{% endblock %}
 
 {% block extra_css%}
 <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
@@ -101,17 +102,11 @@
                             <div class="square">
                                 <div class="gallery-image content">
                                     {% if item.product.image %}
-                                        <a href="{{ product.image.url }}" target="_blank">
-                                            <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                                        </a>
+                                        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
                                     {% elif item.product.image_url %}
-                                        <a href="{{ product.image_url }}" target="_blank">
-                                            <img class="" src="{{ item.product.image_url }}" alt="{{ item.product.name }}">
-                                        </a>
+                                        <img class="" src="{{ item.product.image_url }}" alt="{{ item.product.name }}">
                                     {% else %}
-                                        <a href="">
-                                            <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
-                                        </a>
+                                        <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.product.name }}">
                                     {% endif %}
                                 </div>
                             </div>
