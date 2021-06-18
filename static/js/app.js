@@ -62,7 +62,7 @@ document.addEventListener('click', function(e) {
     const dropped = document.querySelector('.profile-dropped')
     if (e.target.closest('.profile-drop')) return
     dropped.classList.remove('show')
-    arrow.classList.remove('rotated')
+    arrow.classList.remove('rotated')         
 })
 
 //SEND MAIL AND ALERT FOR NEWSLETTER SIGNUP
