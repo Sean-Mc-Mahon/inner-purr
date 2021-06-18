@@ -357,6 +357,8 @@ Using Django Allauth and it's default `django.contrib.auth.models`, provided me 
 
 The structure of the Product and Checkout apps are guided by the Code Institute's walkthrough project, **Boutique Ado**.
 
+![Schema](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/db-schema.JPG)
+
 ## Data Models
 
 ### Cats app
