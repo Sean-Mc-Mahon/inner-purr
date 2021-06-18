@@ -39,11 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
-    'allauth', # copied from alauth documention
-    'allauth.account', # copied from alauth documention
-    'allauth.socialaccount', # copied from alauth documention
-    'ckeditor', # to allow customisable text fileds in admin view
-    'storages', # for media and static files
+    'allauth',  # copied from alauth documention
+    'allauth.account',  # copied from alauth documention
+    'allauth.socialaccount',  # copied from alauth documention
+    'ckeditor',  # to allow customisable text fileds in admin view
+    'storages',  # for media and static files
     'home',
     'products',
     'bag',
@@ -77,7 +77,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
-                'django.template.context_processors.request', # required by allauth
+                'django.template.context_processors.request',  # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
@@ -113,10 +113,6 @@ WSGI_APPLICATION = 'purr.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.1/ref/settings/#databases  
-# DATABASES = {
-#         'default': dj_database_url.parse('postgres://omvibwtcsdpqfl:84f3147b143c0e7a085140d33e087d0618f61f6c02a1b05efa9c5dea1b098682@ec2-54-195-76-73.eu-west-1.compute.amazonaws.com:5432/d8pk63vjg1uf0h')
-#     }
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))

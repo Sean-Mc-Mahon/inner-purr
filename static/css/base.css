@@ -76,6 +76,9 @@ h1, h2, h3, h4, h5, h6 {
 .toast-font-header {
   font-size: 13px !important;
 }
+.dark {
+  color: var(--text-light);
+}
 
 /* FLEX STYLES */
 .flex {
@@ -943,6 +946,10 @@ color: var(--cream);
   font-size: 2rem;
 }
 
+.name-desc{
+  min-height: 100px;
+}
+
 .all-products .row {
   display: flex;
   flex-wrap: wrap;
@@ -1178,7 +1185,7 @@ color: var(--cream);
   
   /* products */
   .product-description {
-    min-height: 40px;
+    min-height: 50px;
   }
   /*Cat Details*/
   .row .bio {
@@ -1316,7 +1323,7 @@ color: var(--cream);
     display: none !important;
   }
   .product-name {
-    min-height: 40px;
+    min-height: 50px;
   }
   #carousel-large .carousel-item {
     width: 400px;

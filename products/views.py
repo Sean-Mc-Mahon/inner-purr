@@ -9,6 +9,7 @@ from .forms import ProductForm
 
 # Create your views here.
 
+
 def all_products(request):
     """" A view to return all products, including sorting """
 
@@ -46,10 +47,10 @@ def all_products(request):
             if not query:
                 messages.error(request, 'Please enter a search criteria')
                 return redirect(reverse('products'))
-            
+
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
-    
+
     current_sorting = f'{sort}_{direction}'
 
     context = {
@@ -62,7 +63,6 @@ def all_products(request):
     }
 
     return render(request, 'products/products.html', context)
-    
 
 
 def product_detail(request, product_id):
@@ -77,7 +77,6 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
-#  taken from CI module @ https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSF_102+Q1_2020/courseware/4201818c00aa4ba3a0dae243725f6e32/c557000edc0549b5b372ab66702580b3/
 @login_required
 def add_product(request):
     """ Add a product to the store """

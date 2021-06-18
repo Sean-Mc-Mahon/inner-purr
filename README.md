@@ -91,29 +91,29 @@ The purpose of the site is to sell the products on offer by the Inner Purr as we
 
 ### User Stories
 
-|      As a/an...       |                         I want the ability to...                          |
-|:---------------------:|:-------------------------------------------------------------------------:|
-|                       |                                                                           |
-|          ---          |                                    ---                                    |
-| Casual User           | easily navigate the site to find what I am looking for quickly            |             
-| Casual User           | view the site on all screen sizes                                         |
-| Casual User           | view information on the cafe such as opening hours and social media       |
-| Casual User           | Sign up to recieve news from the Inner Purr                               |
-| Casual User           | search, filter and sort products                                          |
-| Casual User           | view details on products                                                  |
-| Casual User           | purchase products and see my actions throughout the process, 
-review my order at checkout, make secure payments & receive email confirmation of my order          |
-| Casual User           | access contact details                                                    |
-| Casual User           | learn how I can help the work of the Inner Purr                           |
-| Casual User           | register for a user profile account by choosing a username and password   |
-|          ---          |                                    ---                                    |
-| Registered user       | log in and log out of my profile account                                  |
-| Registered user       | update my details, store my address and order history                     |
-|          ---          |                                    ---                                    |
-| Site admin/superuser  | add new products, menu items, volunteering roles etc...                   |
-| Site admin/superuser  | update and delete products                                                |
-| Site admin/superuser  | add notices for each page                                                 |
-| Site admin/superuser  | change the status of cats so that they can be categorized properly        |
+|      As a/an...       |                         I want the ability to...                                              |
+|:---------------------:|:---------------------------------------------------------------------------------------------:|
+|                       |                                                                                               |
+|          ---          |                                    ---                                                        |
+| Casual User           | easily navigate the site to find what I am looking for quickly                                |             
+| Casual User           | view the site on all screen sizes                                                             |
+| Casual User           | view information on the cafe such as opening hours and social media                           |
+| Casual User           | Sign up to recieve news from the Inner Purr                                                   |
+| Casual User           | search, filter and sort products                                                              |
+| Casual User           | view details on products                                                                      |
+| Casual User           | purchase products and see my actions throughout the process,                                  |
+| Casual User           | review my order at checkout, make secure payments & receive email confirmation of my order    |
+| Casual User           | access contact details                                                                        |
+| Casual User           | learn how I can help the work of the Inner Purr                                               |
+| Casual User           | register for a user profile account by choosing a username and password                       |
+|          ---          |                                    ---                                                        |
+| Registered user       | log in and log out of my profile account                                                      |
+| Registered user       | update my details, store my address and order history                                         |
+|          ---          |                                    ---                                                        |
+| Site admin/superuser  | add new products, menu items, volunteering roles etc...                                       |
+| Site admin/superuser  | update and delete products                                                                    |
+| Site admin/superuser  | add notices for each page                                                                     |
+| Site admin/superuser  | change the status of cats so that they can be categorized properly                            |
 
 ---
 
@@ -144,7 +144,11 @@ review my order at checkout, make secure payments & receive email confirmation o
 
 ### Scope Plane
 
-- 
+- The site is fully responsive and intuitive with prompts to provide users with information such as grand total of shopping bag in the nav, toasts to display product info of items in bag and modal to inform user that they have successfully registered for the newsletter.
+
+- Unregistered users will be able to make purchases on the site. Registered users will have the added benefit of being able to change their delivery information as required and view previous ordres.
+
+- Admin users will have a high degree of cistomisation available to them without needing access to the source code. From the Django admin they may edit menu items, products or cat details. They may alter email adresses in the 'Contact' page and volunteering and donation options for the 'Help Us' page.
 
 
 ### Structure Plane
@@ -159,7 +163,7 @@ review my order at checkout, make secure payments & receive email confirmation o
 ### Skeleton Plane
 #### Wireframes
 
-I Figma to create the [wireframes](https://github.com/Sean-Mc-Mahon/inner-purr/tree/main/wireframes/figma-wire-home).
+I used Figma to create the [wireframes](https://github.com/Sean-Mc-Mahon/inner-purr/tree/main/wireframes/figma-wire-home).
 
 Various alterations were made along the way such as removing the parallax above the footer for all pages except the home page and the additon of a page for information about donations and volunteering.
 

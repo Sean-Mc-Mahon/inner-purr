@@ -68,35 +68,39 @@
                 {% for product in products %}
                     <div class="col s12 m6 l4 xl3 p1">
                         <div class="gallery-item">
-                            <div class="square">
-                                <div class="gallery-image content">
-                                    {% if product.image %}
-                                        <a href="{% url 'product_detail' product.id %}">
-                                            <img class="" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                        </a>
-                                    {% elif product.image_url %}
-                                        <a href="{% url 'product_detail' product.id %}">
-                                            <img class="" src="{{ product.image_url }}" alt="{{ product.name }}">
-                                        </a>
-                                    {% else %}
-                                        <a href="{% url 'product_detail' product.id %}">
-                                            <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                        </a>
-                                    {% endif %}
+                                <div class="square">
+                                    <div class="gallery-image content">
+                                        {% if product.image %}
+                                            <a href="{% url 'product_detail' product.id %}">
+                                                <img class="" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                            </a>
+                                        {% elif product.image_url %}
+                                            <a href="{% url 'product_detail' product.id %}">
+                                                <img class="" src="{{ product.image_url }}" alt="{{ product.name }}">
+                                            </a>
+                                        {% else %}
+                                            <a href="{% url 'product_detail' product.id %}">
+                                                <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                            </a>
+                                        {% endif %}
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="name-desc">
+                                    <div class="mv-half">
+                                        <a href="{% url 'product_detail' product.id %}">
+                                            <div class="bold small product-name">
+                                                {{ product.name }}
+                                            </div>
+                                            <div class="small product-description dark">
+                                                {{ product.description }}
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <p class="mv-half">
+                                    €{{ product.price }}
+                                </p>
                             
-                            <div class="mv-half">
-                                <div class="bold small product-name">
-                                    {{ product.name }}
-                                </div>
-                                <div class="small product-description">
-                                    {{ product.description }}
-                                </div>
-                            </div>
-                            <p class="mv-half">
-                                €{{ product.price }}
-                            </p>
                             <div class="flex-space mb1">    
                                 {% if product.category %}
                                     <p class="small">
@@ -123,11 +127,8 @@
                                     <a href="{% url 'edit_product' product.id %}">Edit</a> | 
                                     <a href="{% url 'delete_product' product.id %}">Delete</a>
                                 </small>
-                            {% endif %}
-                            
-                        </div>
-                        <!-- <div class="divider center m-auto"></div>                         -->
-                        
+                            {% endif %}                           
+                        </div>  
                     </div>
                     {% if forloop.counter|divisibleby:1 %}
                         <div class="col s12 hide-on-med-and-up">
