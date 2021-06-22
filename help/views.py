@@ -3,6 +3,7 @@ from .models import Volunteer, Donations, Notice
 
 # Create your views here.
 
+
 def help(request):
     """ A view to show all volunteering roles """
 

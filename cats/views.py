@@ -3,6 +3,7 @@ from .models import Cat, Notice
 
 # Create your views here.
 
+
 def all_cats(request):
     """ A view to show all cats """
 
@@ -16,6 +17,7 @@ def all_cats(request):
     }
 
     return render(request, 'cats/cats.html', context)
+
 
 def cat_detail(request, cat_id):
     """" A view to return individual cats """

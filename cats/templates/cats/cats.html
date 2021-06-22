@@ -56,7 +56,13 @@
                             <div class="gallery-item">
                                 <div class="square">
                                     <div class="gallery-image content">
-                                        <img class="" src="{{ cat.image.url }}" alt="{{ cat.name }}">
+                                        {% if cat.image %}
+                                            <img class="" src="{{ cat.image.url }}" alt="{{ cat.name }}">
+                                        {% elif cat.image_url %}
+                                            <img class="" src="{{ cat.image_url }}" alt="{{ cat.name }}">
+                                        {% else %}
+                                            <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ cat.name }}">
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="cat-overlay cat-overlay-fade">

@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Drink, Food, Treats, Notice
 
-# Register your models here.
 
 class DrinkAdmin(admin.ModelAdmin):
     list_display = (
@@ -26,10 +25,12 @@ class TreatsAdmin(admin.ModelAdmin):
     )
     ordering = ('name',)
 
+
 class NoticeAdmin(admin.ModelAdmin):
     list_display = (
         'notice',
     )
+
 
 admin.site.register(Drink, DrinkAdmin)
 admin.site.register(Food, FoodAdmin)

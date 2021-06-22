@@ -3,6 +3,7 @@ from .models import EmailContacts, Notice
 
 # Register your models here.
 
+
 class AddressesAdmin(admin.ModelAdmin):
     list_display = (
         'directory',
@@ -10,10 +11,12 @@ class AddressesAdmin(admin.ModelAdmin):
     )
     ordering = ('directory',)
 
+
 class NoticeAdmin(admin.ModelAdmin):
     list_display = (
         'notice',
     )
+
 
 admin.site.register(EmailContacts, AddressesAdmin)
 admin.site.register(Notice, NoticeAdmin)

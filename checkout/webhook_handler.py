@@ -10,6 +10,7 @@ from profiles.models import UserProfile
 import json
 import time
 
+
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
@@ -25,7 +26,7 @@ class StripeWH_Handler:
         body = render_to_string(
             'checkout/confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-        
+
         send_mail(
             subject,
             body,
@@ -55,12 +56,13 @@ class StripeWH_Handler:
         shipping_details = intent.shipping
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
-        # replace empty fields with None to prevent them being saved as blank strings
+        # replace empty fields with None to prevent them being saved as blank
+        # strings
         for field, value in shipping_details.address.items():
             if value == "":
                 shipping_details.address[field] = None
-        
-         # Update profile information if save_info was checked
+
+        # Update profile information if save_info was checked
         profile = None
         username = intent.metadata.username
         if username != 'AnonymousUser':
@@ -76,7 +78,8 @@ class StripeWH_Handler:
                 profile.save()
 
         # loop over order until it is found
-        # iexact lookup field used to require an exact match but case insensitive
+        # iexact lookup field used to require an exact match but case
+        # insensitive
         order_exists = False
         attempt = 1
         while attempt <= 5:
@@ -123,7 +126,8 @@ class StripeWH_Handler:
                     original_bag=bag,
                     stripe_pid=pid,
                 )
-                # bag is loaded from the json version in payment intent istead of in session
+                # bag is loaded from the json version in payment intent istead
+                # of in session
                 for item_id, item_data in json.loads(bag).items():
                     product = Product.objects.get(id=item_id)
                     if isinstance(item_data, int):
@@ -134,7 +138,8 @@ class StripeWH_Handler:
                         )
                         order_line_item.save()
                     else:
-                        for size, quantity in item_data['items_by_size'].items():
+                        for size, quantity in item_data['items_by_size'].items(
+                        ):
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
@@ -162,4 +167,5 @@ class StripeWH_Handler:
             content=f'Webhook received: {event["type"]}',
             status=200)
 
-#  taken from CI module at: https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSF_102+Q1_2020/courseware/4201818c00aa4ba3a0dae243725f6e32/90cda137ebaa461894ba8c89cd83291a/
+# taken from CI module at:
+# https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSF_102+Q1_2020/courseware/4201818c00aa4ba3a0dae243725f6e32/90cda137ebaa461894ba8c89cd83291a/

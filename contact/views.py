@@ -3,6 +3,7 @@ from .models import EmailContacts, Notice
 
 # Create your views here.
 
+
 def contact(request):
     """ A view to show contact information """
 

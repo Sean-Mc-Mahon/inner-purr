@@ -2,7 +2,6 @@ from django.shortcuts import render
 from cats.models import Cat
 from .models import Drink, Food, Treats, Notice
 
-# Create your views here.
 
 def index(request):
     """" A view to return the index page """

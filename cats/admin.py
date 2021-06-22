@@ -1,7 +1,6 @@
 from django.contrib import admin
 from .models import Sex, Cat, Notice
 
-# Register your models here.
 
 class CatAdmin(admin.ModelAdmin):
     list_display = (
@@ -20,10 +19,12 @@ class CatAdmin(admin.ModelAdmin):
     #  Cats in admin view displayed by date rescued
     ordering = ('-rescued',)
 
+
 class SexAdmin(admin.ModelAdmin):
     list_display = (
         'sex',
     )
+
 
 class NoticeAdmin(admin.ModelAdmin):
     list_display = (
