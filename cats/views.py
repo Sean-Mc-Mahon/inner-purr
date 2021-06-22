@@ -12,6 +12,7 @@ def all_cats(request):
     context = {
         'cats': cats,
         'notice': notice,
+        'page': 'cats'
     }
 
     return render(request, 'cats/cats.html', context)
@@ -25,6 +26,7 @@ def cat_detail(request, cat_id):
     context = {
         'cat': cat,
         'notice': notice,
+        'page': 'cats'
     }
 
     return render(request, 'cats/cat_detail.html', context)

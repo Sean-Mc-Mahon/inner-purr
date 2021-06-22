@@ -1,6 +1,6 @@
 //MATERIALIZE FUNCTIONS
 $(document).ready(function () {
-  $('.sidenav').sidenav({edge: "right",inDuration: 1000});
+  $('.sidenav').sidenav({edge: "right"});
   $('.parallax').parallax();
   $('.dropdown-trigger').dropdown();
   $("#carousel-small").carousel();
@@ -93,3 +93,4 @@ function sendMail(contactForm) {
   $("#emailaddress").val("");
   return false;  // To block from loading a new page
 }
+

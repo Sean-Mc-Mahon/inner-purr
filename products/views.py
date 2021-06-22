@@ -60,6 +60,7 @@ def all_products(request):
         'current_sorting': current_sorting,
         'notice': notice,
         'cat': cat,
+        'page': 'shop'
     }
 
     return render(request, 'products/products.html', context)
@@ -72,6 +73,7 @@ def product_detail(request, product_id):
 
     context = {
         'product': product,
+        'page': 'shop'
     }
 
     return render(request, 'products/product_detail.html', context)
@@ -98,6 +100,7 @@ def add_product(request):
     template = 'products/add_product.html'
     context = {
         'form': form,
+        'page': 'shop'
     }
 
     return render(request, template, context)
@@ -127,6 +130,7 @@ def edit_product(request, product_id):
     context = {
         'form': form,
         'product': product,
+        'page': 'shop'
     }
 
     return render(request, template, context)

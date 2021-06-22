@@ -12,6 +12,7 @@ def contact(request):
     context = {
         'addresses': addresses,
         'notice': notice,
+        'page': 'contact'
     }
 
     return render(request, 'contact/contact.html', context)

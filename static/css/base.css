@@ -9,9 +9,11 @@ html {
     --text: #3e5a68;
     --texty: #37474F;
     --text-light: #37474F;
-    --light-green: #A5CB8D;
+    --light-green: rgb(165, 203, 141);
     --medium-green: #447924;
+    --darkest-green: #3b502d;
     --dark-green: #4b7730;
+    --pale-green: rgba(165, 203, 101, 0.3);
     --cream: #f8f9fa;
     --cursive: 'Architects Daughter', cursive;
     --non-cursive: 'Montserrat', sans-serif;
@@ -32,25 +34,20 @@ body {
 main {
   flex: 1 0 auto;
 }
-
 /* FONT STYLES */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   color: var(--medium-green);
 }
-
 .white-title {
   color: var(--cream);
 }
-
 .cursive {
   font-family: var(--cursive);
 }
-
 .non-cursive {
   font-family: var(--non-cursive);
 }
-
 .boldish {
   font-weight: 500;
 }
@@ -145,6 +142,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .p2 {
   padding: 2rem;
+}
+.pv-small {
+  padding: 0.25rem 0;
 }
 .pv-half {
   padding: 0.5rem 0;
@@ -528,6 +528,10 @@ nav{
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+.active {
+  font-weight: 900;
+  color: var(--darkest-green);
+}
 
 #under-menu {
   height: 40px;
@@ -582,6 +586,9 @@ nav ul a {
   color: var(--dark-green);
   font-size: 0.85rem;
 }
+.bag-profile-burger {
+  width: 100%;
+}
 .sidenav-trigger {
   color: var(--dark-green);
 }
@@ -592,6 +599,12 @@ nav ul a {
 .profile-drop {
     position: relative;
 }
+#bag-total {
+  min-width: 128px;
+  display: flex;
+  justify-content: center;
+}
+
 
 .profile-dropped {
     position: absolute;
@@ -643,7 +656,7 @@ nav ul a {
 .nav-links li a {
   position: relative;
 }
-.nav-links li #paw {
+.nav-links li .paw {
   position: absolute;
   bottom: -80px;
   left: 0%;
@@ -660,7 +673,7 @@ nav ul a:hover {
   font-weight: 600;
   animation: link 0.2s ease-out forwards;
 }
-.main-link:hover a #paw {
+.main-link:hover a .paw {
   animation: paw 0.2s ease-out forwards;
 }
 @keyframes paw {
@@ -734,6 +747,7 @@ display: flex;
 background-color: var(--cream);
 border-radius: 20px;
 overflow: hidden;
+width: 280px;
 }
 #form_contact:active {
 background-color: rgb(232, 240, 254) !important;
@@ -757,17 +771,31 @@ input[id=emailaddress]:not(.browser-default):focus::placeholder{
   opacity: 0.5;
   transition: 0.3s;
 }
-#submit {
+#emailaddress .plane {
 padding: 0 1rem;
 background-color: var(--cream);
-border: none;
 color: var(--text);
-border: none;
 }
 #emailaddress {
-padding: 0rem;
-margin: 0 0 0.75rem 0.75rem;
+padding: 0 0.5rem;
+border: none;
+margin: 0;
 }
+#emailaddress:focus {
+border: none;
+}
+#plane {
+  border: none;
+  margin-right: 0.5rem;
+}
+.plane:focus {
+  background: none;
+  border: none;
+}
+.plane {
+  border: none;
+}
+
 /* Social Icons */
 .social-links {
 display: flex;
@@ -1142,6 +1170,9 @@ color: var(--cream);
     height: 100px;
     padding: 0 1rem;
   }
+  .bag-profile-burger {
+    width: auto;
+  }
   .mobile-nav {
     width: auto;
     display: flex;
@@ -1149,6 +1180,10 @@ color: var(--cream);
   .profile-dropped a {
     line-height: 1.2rem;
     margin-bottom: 0.5rem;
+  }
+  #bag-total {
+    display: flex;
+    justify-content: flex-start;
   }
   #Paws {
     transform: translateY(-100px);

@@ -14,6 +14,7 @@ def help(request):
         'roles': roles,
         'donations': donations,
         'notice': notice,
+        'page': 'help'
     }
 
     return render(request, 'help/help.html', context)

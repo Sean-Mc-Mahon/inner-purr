@@ -61,66 +61,71 @@
                         </div>
                         <ul class="w-100 mh2 nav-links flex-space h100">
                             <li class="main-link flex hide-on-small-only h100">
-                                <a id="menu" class="h100 flex-col" href="{% url 'home' %}">
-                                    <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">The Purr</span>
+                                <a id="menu" class="h100 flex-col {% if page == 'cafe' %}active{% endif %}" href="{% url 'home' %}">
+                                    <img class="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Catfé</span>
                                 </a>
                             </li>
                             <li class="main-link flex hide-on-small-only h100">
-                                <a id="cats" class="h100 flex-col" href="{% url 'cats' %}">
-                                    <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Cats</span>
+                                <a id="cats" class="h100 flex-col {% if page == 'cats' %}active{% endif %}" href="{% url 'cats' %}">
+                                    <img class="paw" id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Cats</span>
                                 </a>
                             </li>
                             <li class="main-link flex hide-on-small-only h100">
-                                <a id="shop" class="h100 flex-col" href="{% url 'products' %}">
-                                    <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Shop</span>
+                                <a id="shop" class="h100 flex-col {% if page == 'shop' %}active{% endif %}" href="{% url 'products' %}">
+                                    <img class="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Shop</span>
                                 </a>
                             </li>
                             <li class="main-link flex hide-on-small-only h100">
-                                <a id="help" class="h100 flex-col" href="{% url 'help' %}">
-                                    <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Help Us</span>
+                                <a id="help" class="h100 flex-col {% if page == 'help' %}active{% endif %}" href="{% url 'help' %}">
+                                    <img class="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Help Us</span>
                                 </a>
                             </li>
                             <li class="main-link flex hide-on-small-only h100">
-                                <a id="contact" class="h100 flex-col" href="{% url 'contact' %}">
-                                    <img id="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Contact</span>
+                                <a id="contact" class="h100 flex-col {% if page == 'contact' %}active{% endif %}" href="{% url 'contact' %}">
+                                    <img class="paw" src="{% static 'icons/paw.png' %}" alt="paw"><span class="center-align w-100">Contact</span>
                                 </a>
                             </li>
                             <!-- BAG AND PROFILE -->
+                            <li class="bag-profile-burger">
                             <ul class="right flex-space mobile-nav">
                                 <li class="profile-drop line1 mr1">
-                                    <a href="#" onclick="show()" class="flex profile pointer" title="profiles">
+                                    <p onclick="show()" class="flex profile pointer" title="profiles">
                                         <img width="20" height="20" src="{% static 'icons/profile-40.png' %}" alt="profile"> 
                                         <span id="dropdown-arrow"> &#9660; </span>
                                         <ul class="profile-dropped p1 flex-col-l">
                                             {% if request.user.is_authenticated %}
                                                 {% if request.user.is_superuser %}
-                                                    <a href="{% url 'add_product' %}">Product Management</a>
+                                                   <li><a href="{% url 'add_product' %}">Product Management</a></li> 
                                                 {% endif %}
-                                                <a href="{% url 'profile' %}">My Profile</a>
-                                                <a href="{% url 'account_logout' %}">Logout</a>
+                                                <li><a href="{% url 'profile' %}">My Profile</a></li>
+                                                <li><a href="{% url 'account_logout' %}">Logout</a></li>
                                             {% else %}
                                                 <li><a href="{% url 'account_login' %}">Login</a></li>
                                                 <li><a href="{% url 'account_signup' %}">Register</a></li>
                                             {% endif %}
                                         </ul>
-                                    </a>
+                                    </p>
                                 </li>
-                                <li class="line1">
-                                    <a class="" href="{% url 'view_bag' %}">
+                                <li id="bag-total" class="line1">
+                                    <a href="{% url 'view_bag' %}">
                                         <div id="bag-icon" class="flex">
                                             <img width="20" height="20" class="mr-half" src="{% static 'icons/bag-40.png' %}" alt="shopping bag">
+                                            <div>
                                             {% if grand_total %}
                                                 €{{ grand_total|floatformat:2 }}
                                             {% else %}
                                                 €0.00
                                             {% endif %}
+                                            </div>
                                         </div>
                                     </a>
                                 </li>
-                                <div class="nav-links right-align flex-end all-links hide-on-med-and-up h100 right">
-                                    <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
-                                    <i class="material-icons right">menu</i></a>
-                                </div>
+                                <li>
+                                    <div class="nav-links right-align flex-end all-links hide-on-med-and-up h100 right">
+                                        <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
+                                        <i class="material-icons right">menu</i></a>
+                                    </div>
+                                </li>
                             </ul>
                         </ul>
                     </div>
@@ -184,7 +189,7 @@
         <footer class="page-footer p1">
             <div class="row container">
                 <!-- Newsletter -->
-                <div class="col s12 l4 mb1 center">
+                <!-- <div class="col s12 l4 mb1 center">
                     <h5 class="white-title">Newsletter Sign-up</h5>
                     <p class="grey-text text-lighten-4 mv-half text-newsletter">
                         Enter your email address to recieve out monthly newsletter.
@@ -192,14 +197,14 @@
                     <form id="form_contact" onsubmit="return sendMail(this);">
                         <input style="color:black;" class="larger" type="email" name="emailaddress" id="emailaddress" placeholder="email" required />
                         <label for="emailaddress" class="valign-wrapper">
-                            <button id="submit" tabindex="0" aria-label="submit" type="submit" class="focus-outline" >
-                                <i class="far fa-paper-plane large-icon larger"></i>
+                            <button tabindex="0" aria-label="submit" type="submit" class="focus-outline plane" >
+                                <i id="plane" class="far fa-paper-plane large-icon larger"></i>
                             </button>
                         </label>
                     </form>
-                </div>
+                </div> -->
                 <!-- Address and Hours -->
-                <div class="col s12 m6 l4 mb1 center">
+                <div class="col s12 m6 mb1 center">
                     <div class="mb1">
                         <h5 class="text-shadow-2 mv-half white-title">The Inner Purr</h5>
                         <h6 class="text-shadow-2 large white-title">Saving Cats & Serving Coffee</h6>
@@ -209,7 +214,7 @@
                     <p class="bold">Sat-Sun 11am 5pm</p>
                 </div>
                 <!-- Social Links -->
-                <div class="col s12 m6 l4 mb1">
+                <div class="col s12 m6 mb1">
                     <ul class="social-links mb-half">
                         <li>
                             <a rel="noopener" target="_blank" href="https://www.instagram.com/phibsborocatrescue/?hl=en" title="Instagram" >
@@ -239,12 +244,12 @@
             <!--STRIPE included in base to enable some fraud detection features-->
             <script src="https://js.stripe.com/v3/"></script>
             <!--EMAILJS used for newsletter signup-->
-            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+            <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
             <script type="text/javascript">
             (function() {
             emailjs.init("user_phcTljyBItI7OTOrLNHqx");
             })();
-            </script>
+            </script> -->
             <!--Sweet alert used for alerts upon form submission https://sweetalert.js.org/-->
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         {% endblock %}

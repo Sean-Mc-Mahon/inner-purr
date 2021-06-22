@@ -125,12 +125,14 @@
                     </span>
                     <span class="text-uppercase ml-half">Keep Shopping</span>
                 </a>
-                <a href="{% url 'checkout' %}" class="btn flex">
-                    <span class="text-uppercase mr-half">Secure Checkout</span>
-                    <span class="icon">
-                        <i class="fas fa-lock"></i>
-                    </span>
-                </a>
+                {% if bag_items %}
+                    <a href="{% url 'checkout' %}" class="btn flex">
+                        <span class="text-uppercase mr-half">Secure Checkout</span>
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>

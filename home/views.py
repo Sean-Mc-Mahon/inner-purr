@@ -18,5 +18,6 @@ def index(request):
         'food': food,
         'treats': treats,
         'notice': notice,
+        'page': 'cafe'
     }
     return render(request, 'home/index.html', context)
