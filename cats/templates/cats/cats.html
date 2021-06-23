@@ -20,7 +20,6 @@
                         {% if cat.resident == True %}
                             <li>
                                 <a class="link-cover" href="{% url 'cat_detail' cat.id %}">
-                                    <div class="slide-overlay"></div>
                                         {% if cat.image %}
                                             <img class="" src="{{ cat.image.url }}" alt="{{ cat.name }}">
                                         {% elif cat.image_url %}
