@@ -26,7 +26,6 @@ input, input:focus {
     color: var(--text) !important;
 }
 input:-internal-autofill-selected {
-    appearance: menulist-button;
     background-color: transparent !important;
     background-image: none !important;
     color: var(--text) !important;

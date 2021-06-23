@@ -270,6 +270,11 @@ hr {
   width: 90%;
 }
 
+/*Focus Styles*/
+.focus:focus, .focus:active, .focus:focus-within, .focus:focus-visible {
+  outline: 1px solid var(--dark-green);
+}
+
 /* CARDS & BUTTONS */
 .border {
   border:2px solid #263238;
@@ -516,7 +521,7 @@ display: block;
 
 /* Overlay */
 .overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 .white-overlay {
   background-color: var(--cream);
@@ -1062,9 +1067,6 @@ color: var(--cream);
 .gallery-item:hover .gallery-text {
   opacity: 1;
 }
-.recipe-link:focus .gallery-text {
-  opacity: 1;
-}
 /* For adopted cats name revealed on hover at all device sizes */
 .adopted {
   height: 100%;
@@ -1296,9 +1298,6 @@ color: var(--cream);
   top: 207px !important;
   }
   /* Cat Overlay */
-  .overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
   .white-overlay {
     background-color: var(--cream);
     z-index: 1;
@@ -1312,9 +1311,6 @@ color: var(--cream);
     background-color: rgba(0, 0, 0, 0.6);
   }
   .gallery-item:hover .cat-overlay {
-    opacity: 1;
-  }
-  .recipe-link:focus .cat-overlay {
     opacity: 1;
   }
   .gallery-item:hover .image_header {
@@ -1345,9 +1341,6 @@ color: var(--cream);
     padding-left: 0rem;
   }
   .gallery-item:hover .gallery-text {
-    opacity: 1;
-  }
-  .recipe-link:focus .gallery-text {
     opacity: 1;
   }
 }
