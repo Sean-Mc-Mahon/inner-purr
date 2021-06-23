@@ -85,7 +85,7 @@ The Inner Purr is a Milestone 4 project, it is part of the Fullstack Software De
 # Project Overview
 
 The Inner Purr is an e-commerce site for the center of the same name. The Inner Purr is the public face of PCR(Phibsboro Cat Rescue), a charity that rescues stray cats around Dublin. The Inner Purr is a place where people can interact with cats under PCR supervision. The Inner Purr also houses a shop and cafe.  <br> 
-The purpose of the site is to sell the products on offer by the Inner Purr as well as provide a service where people may book a time slot with the cats.
+The purpose of the site is to sell the products on offer by the Inner Purr.
 
 ---
 
@@ -148,7 +148,7 @@ The purpose of the site is to sell the products on offer by the Inner Purr as we
 
 - Unregistered users will be able to make purchases on the site. Registered users will have the added benefit of being able to change their delivery information as required and view previous ordres.
 
-- Admin users will have a high degree of cistomisation available to them without needing access to the source code. From the Django admin they may edit menu items, products or cat details. They may alter email adresses in the 'Contact' page and volunteering and donation options for the 'Help Us' page.
+- Admin users will have a high degree of customisation available to them without needing access to the source code. From the Django admin they may edit menu items, products or cat details. They may alter email adresses in the 'Contact' page and volunteering and donation options for the 'Help Us' page.
 
 
 ### Structure Plane
@@ -189,7 +189,7 @@ Colors are kept to a minimum and reflect the existing branding of the Phibsboro 
 
 #### Media
 
-All images are the authors own unless. Logos are also produced by the author using Affinity Design using the existing Phibsboro Cat Rescue Logo as a template.
+Home page slider and parallax images were sourced from Pexels. All other images are the authors own unless uploaded by users. Logos are also produced by the author using Affinity Design using the existing Phibsboro Cat Rescue Logo as a template.
 
 
 - [Affinity Designer Logo Process](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/head.png)
@@ -210,7 +210,7 @@ All images are the authors own unless. Logos are also produced by the author usi
 - The navigation bar features a logo and name in the top left corner, both are links to the home page. Navigation links are in the top right. On loading the homepage Mr.Buttons, the PCR mascot will raise his head from the bottom of the nav. While the mouse is moving his eyes and paws follow the mouse.
 
 - For all visitors to the site list item links are available for them to use.
-    1. The Purr
+    1. Catfe
     2. Cats
     3. Shop
     4. Help Us
@@ -266,7 +266,7 @@ The footer features:
 - Product cards of products added through the django admin or via the add_product page are displayed here. The images are links to individual products. A super user has options to edit or delete products here.
 - The index page has a search bar, filter and sort feature. The search feature searches for keywords in titles and descriptions. If a user performs a search they will be able to sort the search results.
 - The sort feature allows users to sort the results by A-Z, Z-A, price, category and rating.
-- The filter allows users to display recipes under the categories set out using django admin.
+- The filter allows users to display products under the categories set out using django admin.
 
 ### Help Us
 - Volunteering roles as well as Donation options as defined through django admin are listed on this page along with links to the relevant pages of the Phibsboro Cat Rescue website.
@@ -296,6 +296,7 @@ The footer features:
 - [Stripe payments](https://stripe.com/docs) - Stripe offers payment processing software and application programming interfaces for e-commerce websites and mobile applications.
 - [Gitpod](https://code.visualstudio.com/) - Code Editor used to create the site.
 - [GitHub](https://github.com/) - Used to host repos for the site.
+- [Autopep](https://pypi.org/project/autopep8/) - Used to aid python validation.
 - [Screen Recorder](https://chrome.google.com/webstore/detail/screen-recorder/hniebljpgcogalllopnjokppmgbhaden?hl=en) - Used to make GIFs for README.
 - [Chrome/Firefox/Bing DevTools](https://developers.google.com/web/tools/chrome-devtools) - Regularly used to test the site (Primarily Chrome).
 - [W3C Markup Validation Service](https://validator.w3.org/https://jigsaw.w3.org/) - Used to test code for errors.
@@ -305,7 +306,7 @@ The footer features:
 - [Croppola](https://croppola.com/) - Used to crop images.
 - [Randomkeygen](https://randomkeygen.com/) - Used to generate random keys.
 - [Kaffeine](https://kaffeine.herokuapp.com/) - Used to keep Heroku app from falling asleep.
-- [Elfsight](https://elfsight.com/instagram-feed-instashow/) - Used to provide an instagram widget on the homepage.
+- [Elfsight](https://elfsight.com/instagram-feed-instashow/) - Used to provide an instagram widget on the homepage (omitted).
 - [Google Maps](https://developers.google.com/maps) - Used to provide a map in the contact page.
 
 ### Libraries
@@ -323,7 +324,7 @@ The footer features:
 
 - [Git](https://git-scm.com/) - used for version control
 
-- Branches were used to experiment with ...
+- Branches were used to experiment with autopep.
 
 ---
 
@@ -332,7 +333,7 @@ The footer features:
 ### Semantics
 
 - HTML5 Semantics used throughout (header, nav, main etc...)
-- Titles used throughout ( etc...)
+- Titles used throughout
 - Language is set to english (`<html lang="en">`)
 
 ### Labels
@@ -553,47 +554,256 @@ The structure of the Product and Checkout apps are guided by the Code Institute'
 
 # Deployment
 
+#### Local Deployment
 1. This repository may be cloned directly into an editor by pasting the following command into the terminal:   
-`git clone https://github.com/Sean-Mc-Mahon/inner-purr`    
+    ````
+    git clone https://github.com/Sean-Mc-Mahon/inner-purr
+
 Alternatively, you can save a copy of this repository by clicking the green button "Clone or download" , then "Download Zip" button, and after extract the Zip file to your folder.
+
 2. In the terminal window change directory (CD) to the correct file location (directory that you have just created).
-3. Set up environment variables:
-    - Create **.env** file in the root directory.
-    - On the top of the file add `import os` to set the environment variables in the operating system.
-    - Set the connection to your MongoDB database(MONGO_URI) and a SECRET_KEY with the following syntax:
-    `os.environ["SECRET_KEY"] = "YourSecretKey"`   
-    `os.environ["MONGO_URI"] = "YourMongoURI"`  
-    .
-4. Install all requirements from the **requirements.txt** file putting this command into your terminal:   
-`pip3 install -r requirements.txt`  
+
+3. Install all requirements from the **requirements.txt** file putting this command into your terminal:
+    ```
+    pip3 install -r requirements.txt
+    ```
+
 *Note: GitPod does not require `sudo`, so if you use another IDE, you will need to include `sudo` in the beginning of the command: `sudo pip3 install -r requirements.txt`.*
 
-7. You will now be able to run the application using the following command `python3 run.py`. 
+4. Set up the following environment variables to use the full functionality of the site.
 
-### Heroku Deployment
-To deploy the project to [Heroku](https://heroku.com/) the following steps need to be completed:
-1. Create a **requirement.txt** file, which contains a list of the dependencies, using the following command in the terminal:  
-`pip3 freeze > requirements.txt`
-2. Create a **Procfile**, in order to tell Heroku how to run the project, using the following command in the terminal:   
-`echo web: python run.py > Procfile`
-3. `git add`, `git commit` and `git push` these files to GitHub repository
-4. Create a **new app** in Heroku, assigning a name (must be unique) and set a region (for my project I set Europe)
-5. From the Heroku dashboard link the new Heroku app to your GitHub repository:    
-    - "Deploy" -> "Deployment method" -> "GitHub"
-    - then "Enable automatic deployment"
-6. To start the web process, put the following command into the terminal: `heroku ps:scale web=1` to scale dynos
-7. In the **Settings** tab of the new Heroku app, click on "Reveal Config Vars" and set the following config vars:
-    - **IP** : 0.0.0.0
-    - **PORT** : 8080
-    - **MONGO_URI** : `<link to your MongoDB database>`
-    - **SECRET_KEY** : `<your secret key>`
-    - **DEBUG**: **FALSE**  
-*Note: your MONGO_URI and SECRET_KEY must match the ones you entered in .env.py file*
+      - DANGO_SECRET_KEY = your secret key.
+      - STRIPE_PUBLIC_KEY = your stripe public key.
+      - STRIPE_SECRET_KEY = your stripe secret key.
+      - STRIPE_WEBHOOK_SECRET = your stripe webhook secret.
+      - IN_DEVELOPMENT = True
 
-8. The app will be deployed and ready to run. Click "Open App" to view the app.   
+      - Your stripe variables can be found on your stripe dashboard.
+      - You can generate a Django secret key here. [Django Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/)
+5. Then migrate:
+    ```
+    $ python manage.py migrate
+    ```
+6. Populate the products, cats, contact, home, help apps with relavant fixtures:
+    ```
+    $ python manage.py loaddata fixtures/<filename>.json
+    ```
+7. Create a superuser:
 
-**Note**: if you have not linked GitHub and Heroku following step **5**, alternatively as the last step of deployment, you can put the following command into your terminal:   
- `heroku login`, after a successful log in `git push heroku master` - to push the app to Heroku, and finally click "Open App" in Heroku dashboard to view the app.
+    ```
+    $ python manage.py createsuperuser
+    ```
+
+8. You will now be able to run the application using the following command 
+
+    ```
+    $ python3 manage.py runserver
+    ```
+
+#### Deployment to Heroku
+
+  The app may be deployed to Heroku using the following ste:
+
+- **Create an app on the Heroku website.**
+    - Click on the new button.
+    - Click on the create a new app.
+    - Give the app a name and chose current region.
+    - Select create app.
+
+- **Set up Postgres Database**
+  - Heroku
+    - In the app resources search for Postgres
+    - Add to the project and, choosing the free plan.
+    - To use Postgres install 2 dependencies.
+        - dj_database_url
+        - psycopg2
+
+  - **In Project.**
+    - Install the two packages needed 
+        ``` 
+            pip3 install dj_database_url
+        ```
+    
+        ```
+            pip3 install psycopg2_binary
+        ```
+    - Add them to the requirements.txt file
+        ```
+        pip3 freeze > requirements.txt
+        ```
+    - In settings.py import dj_database_url
+        ``` python
+        import dj_database_url
+        ```
+    - Comment out the current database settings.
+    - Replace them with the settings for the Postgres database.
+        ``` python
+            DATABASES = {
+                'default': dj_database_url.parse('DATABASE_URL')
+            }
+        ```
+    - Get database URL from app config settings. (I haven't shown it above as its and environmental variable and shouldn't be shown in version control)
+
+    - Then migrate:
+        ```
+        $ python manage.py migrate
+        ```
+
+    - Populate the products, cats, contact, home, help apps with relavant fixtures:
+        ```
+        $ python manage.py loaddata fixtures/<filename>.json
+        ```
+
+    - Create a superuser:
+        ```
+        $ python manage.py createsuperuser
+        ```
+    
+    - Commit changes making sure to remove my database URL beforehand so it isn't saved in version control.
+
+    - Create an if-else statement in the settings.py to use Postgres if the DATABASE_URL variable is available and if not use the default database
+        ``` python
+            if "DATABASE_URL" in os.environ:
+                DATABASES = {
+                    "default": dj_database_url.parse(os.environ.get('DATABASE_URL'))
+                }
+            else:
+                DATABASES = {
+                    'default': {
+                        'ENGINE': 'django.db.backends.sqlite3',
+                        'NAME': BASE_DIR / 'db.sqlite3',
+                    }
+                }
+        ```
+    
+    - The Postgres database is now ready for use.
+
+  - **Gunicorn**
+    - For the app to work install Greenunicorn.
+    - To install:
+        ```
+        pip3 install Gunicorn
+        ```
+    - Create a Procfile to let Heroku know how to run the app:
+        ``` 
+            touch Procfile
+        ```
+    - Then in Procfile place the following code:
+        ```
+            web: gunicorn <app name>.wsgi:application
+        ```
+
+  - **Heroku in the command line.**
+    - Log into Heroku using the terminal.
+        ```
+            heroku login -i
+        ```
+    - Temporarily disable the static files until they have been set up on Amazon Aws.
+        ```
+            heroku config:set DISABLE_COLLECTSTATIC=1 --app <app name>
+        ```
+        - Use the --app command if you have more than one Heroku app.
+    - Then in settings I added Heroku into allowed hosts, and localhost so my project can still be run locally.
+        ``` python
+            ALLOWED_HOSTS = ["<heroku app name>.herokuapp.com", "localhost"]
+        ```
+    - Commit changes to Github.
+    - Then set up pushing to Heroku
+        ```
+            heroku git:remote -a <heroku app name>
+        ```
+    - Then push the project to Heroku
+        ```
+            git push heroku master
+        ```
+
+    - Heroku will now build your app.
+
+  - **Heroku Website**
+
+    - Connect app to GitHub by opening the Deploy section.
+    - Searched for the repository.
+    - Connect and then enabled Automatic Deploys.
+    - This now means that any changes pushed to GitHub will be automatically pushed to Heroku as well.
+
+- #### Amazon AWS
+
+  - Amazon AWS was used to store both static files and media files.
+  - Firstly create an AWS account and work through the sign-up process. Once account is set up set the project up on AWS.
+
+  - **Create a bucket.**
+
+    - Create the bucket
+        - Create a new bucket on the AWS S3 service.
+        - From the main dashboard search for S3 and then click to get started.
+        - Click on the Create bucket button.
+        - Give the bucket a name and select region.
+        - Then uncheck the block public access and acknowledge that the bucket will now be public.
+        - Then click create bucket.
+    
+    - Bucket settings.
+        - Properties
+            - Navigate to the bucket properties settings.
+            - Turn on static website hosting.
+            - In the index and error add index.html and error.html.
+            - Click Save.
+        - Permissions
+            - Click on the buckets Permissions tabs.
+            - Firstly paste in the following cors config.
+                ```
+                [
+                    {
+                        "AllowedHeaders": [
+                            "Authorization"
+                        ],
+                        "AllowedMethods": [
+                            "GET"
+                        ],
+                        "AllowedOrigins": [
+                            "*"
+                        ],
+                        "ExposeHeaders": []
+                    }
+                    ]
+                ```
+            - Then in the bucket policy tap, click on generate policy.
+            - Policy
+            - Select S3 bucket policy
+            - Add * to the principal field to select all principals
+            - Set the action to get object.
+            - Paste in your ARN which is available on the previous page.
+            - Click, add statement
+            - Then click, generate policy.
+            - Now copy and paste your new policy into the bucket policy.
+            - Add /* onto the end of the resources key
+            - Click Save.
+        - Access control list
+        - In the access control list tab set the list objects permission to everyone.
+    
+   - **Create a User.**
+
+     - To create a user for the bucket search for IAM and select it.
+     
+     - Create a Group.
+       - Firstly create a group to put user in.
+       - Click create a new group and name it.
+       - Click through to the end and save the group.
+       - Create a policy.
+         - In the group click, policy and then, create policy.
+         - Select the JSON tab and then import managed policies.
+         - Search S3 and select AmazonS3FullAccess and import.
+         - In the resources section paste in the arn from before.
+         - click through to review the policy.
+         - Fill in name and description and then click generate policy.
+       - Back in your group click permission and then attach the policy.
+       - Find the policy you've just created and attach it.
+    
+     - Create the User.
+       - Select Users from the sidebar and then click, add user.
+       - Create a user name and select programmatic access then click next.
+       - Then select the group to add user to.
+       - Click through to the end and then click create user.
+       - ** Make sure to now download the CSV file as it contains the users keys needed to access from our app.**
 
 ---
 
@@ -609,7 +819,6 @@ To deploy the project to [Heroku](https://heroku.com/) the following steps need 
 
 4.  Button icons sourced from [Fontawesome](https://fontawesome.com/)
 
- 
 
 ### Acknowledgements
 

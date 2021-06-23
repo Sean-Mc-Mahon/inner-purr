@@ -1,6 +1,6 @@
 # Testing
 
-[return to README.md](https://github.com/Sean-Mc-Mahon/McTasticRecipes)
+[return to README.md](https://github.com/Sean-Mc-Mahon/inner-purr)
 
 
 **<details><summary>Testing</summary>**
@@ -48,7 +48,7 @@
 ![Details](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/product-details.JPG)
 
 -  purchase products and see my actions throughout the process, review my order at checkout, make secure payments & receive email confirmation of my order:
-    Users can add products to a bag, see totals accumulate as items are added and have toasts pop up to give users feedback on their actions. Payments are securely made using Stripe. An email is sent after a purchase is complete.
+    Users can add products to a bag, see totals accumulate as items are added and have toasts pop up to give users feedback on their actions. Item may have quantites updated in the bag or removed entirely. Payments are securely made using Stripe. An email is sent after a purchase is complete.
 
 ![Purchase](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/purchase.gif)
 
@@ -87,7 +87,7 @@
 
 ![Admin](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/admin.gif)
 
-    Products can also be added using a form in the product management section of the site
+- Products can also be added using a form in the product management section of the site
 
 ![Products](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/product-add.JPG)
 
@@ -119,10 +119,10 @@
 2. **Lighthouse:** A number of issues were resolved using lighthouse.
 
     **Performance**
-    - Some inages compressed to improve performance, as the site heavily involves user input I have chosen not to compress all images as this may not reflect how the site may be used in the future. This partly explains why lighthouse performance scores are comparitvely low.
+    - Some images compressed to improve performance, as the site heavily involves user input I have chosen not to compress all images as this may not reflect how the site may be used in the future. This partly explains why lighthouse performance scores are comparitvely low.
 
     **Accessability**
-    - Contrast: Alpha level on .blank-image was set to 0.6 which did not offer sufficient contrast with white text. Alpah level rasied to 0.8.
+    - Contrast: Alpha level on .overlay was set to 0.5 which did not offer sufficient contrast with white text. Alpah level rasied to 0.7.
     - Aria labels: Aria labels added to buttons such as increment and decrement quatity buttons in bag.
     - Alt Text: Alt text added to images such as home page full slider images.
     
@@ -137,9 +137,9 @@
     ------------ | --------------- | --------- | --------- | ---------
     **home** |82|100|100|99
     **login** |92|90|100|100
-    **logout** |87|98|100|100
-    **register** |94|98|100|100
-    **reset password** |95|98|100|100
+    **logout** |87|100|100|100
+    **register** |94|100|100|100
+    **reset password** |95|100|100|100
     **reset password sent** |94|98|100|100
     **view_profile** |57|100|93|99
     **All Products** |82|90|100|100
@@ -164,6 +164,40 @@ action taken | expected result | pass/fail
 
 
 ---
+
+## Defensive Programming and Security
+
+- Security
+    - Environmental variables
+        - For security reasons I have followed standard practices and used os to declare the environmental variables for any sensitive information.
+        - For Development, these variables are declared in the settings section of gitpod.
+        - In doing this it means that sensitive information such as passwords and secret keys aren't put in a public place.
+        - To deploy on Heroku these environmental variables are also placed into the settings, config variables section.
+
+    - Users passwords.
+        - I have used Django all auth to handle the user's login and signup.
+        - This stores the users pass as a hashed key for security.
+        - It also makes the users confirm their emails as an extra security step.
+    
+    - ### Defensive Programming.
+        
+        - I have used code in my project to make sure actions cannot occur by placing URLs into the browser. 
+
+        - If for instance the user types in the URL to edit a product the application has been programmed prompt the user to sign in. 
+            ```
+            @login_required
+            def edit_product(request, product_id):
+            ```
+        - If the user then signs in but is not a superuser they will be directed to the homepage with a message informing them that this feature is only available to superusers.
+            ```
+            if not request.user.is_superuser:
+            messages.error(request, 'Sorry, only store owners can do that.')
+            return redirect(reverse('home'))
+            ```
+
+        - I have tested this by typing the URLs into the browser it has worked as expected
+
+        ![Defense](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/defense.JPG)
 
 # Problems and Solutions
 
