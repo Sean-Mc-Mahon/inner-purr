@@ -5,9 +5,10 @@
 
 **<details><summary>Testing</summary>**
 * [**_User Testing_**](#user-testing)
-* [**_Problems and Solutions_**](#problems-and-solutions)
-* [**_Validators_**](#validators)
 * [**_Manual Testing_**](#manual-testing)
+* [**_Python Testing_**](#python-testing)
+* [**_Validators_**](#validators)
+* [**_Problems and Solutions_**](#problems-and-solutions)
 </details>
 
 ---
@@ -110,6 +111,9 @@
     by checking the relevant boxes cats can be placed in the Resident Cat Gallery, the Cats for adoption gallery or the adopted cat gallery as appropriate as well as the carousel of Resident Cats on the home page.
 
 ![Status](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/status.gif)
+
+##### back to [top](#testing)
+
 ---
 
 # Manual Testing
@@ -153,92 +157,6 @@
 4. **amiresponsive:** [Am I Responsive](http://ami.responsivedesign.is/) Used to test responsiveness across a range of devices.
 
 5. **Friends and family:** I asked for feedback from friends and family in order to get a users perspective.
-
-## Functionality
-
-### Header and Footer
-#### base.html
-
-action taken | expected result | pass/fail
------------- | --------------- | ---------    
-
-
----
-
-## Defensive Programming and Security
-
-- Security
-    - Environmental variables
-        - For security reasons I have followed standard practices and used os to declare the environmental variables for any sensitive information.
-        - For Development, these variables are declared in the settings section of gitpod.
-        - In doing this it means that sensitive information such as passwords and secret keys aren't put in a public place.
-        - To deploy on Heroku these environmental variables are also placed into the settings, config variables section.
-
-    - Users passwords.
-        - I have used Django all auth to handle the user's login and signup.
-        - This stores the users pass as a hashed key for security.
-        - It also makes the users confirm their emails as an extra security step.
-    
-    - ### Defensive Programming.
-        
-        - I have used code in my project to make sure actions cannot occur by placing URLs into the browser. 
-
-        - If for instance the user types in the URL to edit a product the application has been programmed prompt the user to sign in. 
-            ```
-            @login_required
-            def edit_product(request, product_id):
-            ```
-        - If the user then signs in but is not a superuser they will be directed to the homepage with a message informing them that this feature is only available to superusers.
-            ```
-            if not request.user.is_superuser:
-            messages.error(request, 'Sorry, only store owners can do that.')
-            return redirect(reverse('home'))
-            ```
-
-        - I have tested this by typing the URLs into the browser it has worked as expected
-
-        ![Defense](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/defense.JPG)
-
-# Problems and Solutions
-
-#### URL Issue
-- Problem: url not found for checkouts although all urls seemed in order in the checkouts url file.
-- Solution: A typo in the project level urls which was also copied and pasted into the stripe endpoints was the source of the problem.
-
-#### Database Migrations
-- Problem: Database would not migrate to Postgres
-- Solution: Dumping old orders with a full country name prior to installing CountryField was causing an issue as the model was expecting two chareacters. I instead dumped data only for the models I required (products/cats etc...) and the migrations performed as expected.
-
-#### Media Files not displaying on Deployed Site
-- Problem: Some media files not displaying on deployed site
-- Solution: Syntax corrected in src attribute for images in index.html file from '..media/example.jpg' '{{ MEDIA_URL }}example.jpg'
-
-#### Media Files not displaying on Deployed Site
-- Problem: After adding additional models to apps a server 500 error was displayed on deployed site.
-- Solution: Running migrations and performing a data dump solved the issue.
-
-
-### Currently Unsolved Problems
-
-#### Login Form Checkbox
-- Problem: Unable to locate form used in login template.
-- Solution:
-
-#### Materialize Toast Function
-- Problem: Console error triggered by Materialize 'M' function.
-- Solution:
----
-
-# Validators
-
-1. **HTML:** [W3C HTML Validator](https://validator.w3.org/) Used to identify HTML errors
-
-2. **CSS:** [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) Used to identify CSS errors
-
-3. **Javascript:** [JSHint](https://jshint.com/) Used to identify Javascript errors.
-
-4. **Python:** [Pep8](http://pep8online.com/) Used to check that python files are PEP8 compliant
----
 
 ## Functionality
 
@@ -385,4 +303,112 @@ action taken | expected result | pass/fail
 ------------ | --------------- | ---------
 Form edited | Details altered accordingly |pass
 
+##### back to [top](#testing)
+
+---
+
+# Python Testing
+
+#### How to run Python tests
+
+To run the existing Python tests:
+1. Activate your virtual environment.
+2. In the terminal enter the following command:
+```
+python3 manage.py test
+```
+3. If you wish to run the tests within a specific app only you can specify with: 
+```
+python3 manage.py test <app name here>
+```
+4. The test results will be shown within the terminal.
+
+### A note about TDD
+
+This project did not utilise test driven development. Tests cover views only and mostly were carried out at the end of the project. With more comfort in using Django I will endaevour to furhter implement Test Driven Development.
+
+##### back to [top](#testing)
+
+---
+
+# Defensive Programming and Security
+
+- ### Security
+    - Environmental variables
+        - For security reasons I have followed standard practices and used os to declare the environmental variables for any sensitive information.
+        - For Development, these variables are declared in the settings section of gitpod.
+        - In doing this it means that sensitive information such as passwords and secret keys aren't put in a public place.
+        - To deploy on Heroku these environmental variables are also placed into the settings, config variables section.
+
+    - Users passwords.
+        - I have used Django all auth to handle the user's login and signup.
+        - This stores the users pass as a hashed key for security.
+        - It also makes the users confirm their emails as an extra security step.
+    
+- ### Defensive Programming.
+        
+    - I have used code in my project to make sure actions cannot occur by placing URLs into the browser. 
+
+    - If for instance the user types in the URL to edit a product the application has been programmed prompt the user to sign in. 
+        ```
+        @login_required
+        def edit_product(request, product_id):
+        ```
+    - If the user then signs in but is not a superuser they will be directed to the homepage with a message informing them that this feature is only available to superusers.
+        ```
+        if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+        ```
+
+    - I have tested this by typing the URLs into the browser it has worked as expected
+
+    ![Defense](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/defense.JPG)
+
+##### back to [top](#testing)
+
+---
+
+# Validators
+
+1. **HTML:** [W3C HTML Validator](https://validator.w3.org/) Used to identify HTML errors
+
+2. **CSS:** [W3C CSS Validator](https://jigsaw.w3.org/css-validator/) Used to identify CSS errors
+
+3. **Javascript:** [JSHint](https://jshint.com/) Used to identify Javascript errors.
+
+4. **Python:** [Pep8](http://pep8online.com/) Used to check that python files are PEP8 compliant
+
+##### back to [top](#testing)
+
+---
+
+##### back to [top](#testing)
+
+# Problems and Solutions
+
+#### URL Issue
+- Problem: url not found for checkouts although all urls seemed in order in the checkouts url file.
+- Solution: A typo in the project level urls which was also copied and pasted into the stripe endpoints was the source of the problem.
+
+#### Database Migrations
+- Problem: Database would not migrate to Postgres
+- Solution: Dumping old orders with a full country name prior to installing CountryField was causing an issue as the model was expecting two chareacters. I instead dumped data only for the models I required (products/cats etc...) and the migrations performed as expected.
+
+#### Media Files not displaying on Deployed Site
+- Problem: Some media files not displaying on deployed site
+- Solution: Syntax corrected in src attribute for images in index.html file from '..media/example.jpg' '{{ MEDIA_URL }}example.jpg'
+
+#### Media Files not displaying on Deployed Site
+- Problem: After adding additional models to apps a server 500 error was displayed on deployed site.
+- Solution: Running migrations and performing a data dump solved the issue.
+
+
+### Currently Unsolved Problems
+
+#### Materialize Toast Function
+- Problem: Console error triggered by toasts:
+    `Uncaught ReferenceError: M is not defined`
+- Workthrough: 'M' is a Mateialize specified syntax for calling toasts. The toasts function as expected. I have raised the issue with tutor support and we were unable to find a solution. 
+---
 ##### back to [top](#testing)
