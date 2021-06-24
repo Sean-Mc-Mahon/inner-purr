@@ -776,10 +776,12 @@ input[id=emailaddress]:not(.browser-default):focus::placeholder{
   opacity: 0.5;
   transition: 0.3s;
 }
-#emailaddress .plane {
-padding: 0 1rem;
+.plane {
+padding: 0 0.75rem;
 background-color: var(--cream);
 color: var(--text);
+height: 100%;
+width: 100%
 }
 #emailaddress {
 padding: 0 0.5rem;
@@ -790,6 +792,7 @@ margin: 0;
 border: none;
 }
 #plane {
+  cursor: pointer;
   border: none;
   margin-right: 0.5rem;
 }
