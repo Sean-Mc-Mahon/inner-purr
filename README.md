@@ -25,7 +25,6 @@ The Inner Purr is a Milestone 4 project, it is part of the Fullstack Software De
 **<details><summary>Project overview</summary>**
 * [**_Project overview_**](#project-overview)
 * [**_User Stories_**](#user-stories)
-* [**_Admin Stories_**](#admin-stories)
 </details>
 
 **<details><summary>UX</summary>**
@@ -189,7 +188,7 @@ Colors are kept to a minimum and reflect the existing branding of the Phibsboro 
 
 #### Media
 
-Home page slider and parallax images were sourced from Pexels. All other images are the authors own unless uploaded by users. Logos are also produced by the author using Affinity Design using the existing Phibsboro Cat Rescue Logo as a template.
+Home page slider and parallax images were sourced from Pexels. All other images are the authors own unless uploaded by users. Logo and favicon are also produced by the author using Affinity Design using the existing Phibsboro Cat Rescue Logo as a template.
 
 
 - [Affinity Designer Logo Process](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/head.png)
@@ -272,13 +271,18 @@ The footer features:
 - Volunteering roles as well as Donation options as defined through django admin are listed on this page along with links to the relevant pages of the Phibsboro Cat Rescue website.
 
 ### Contact
-- Various email addresses as set out using django admin are listed on this page along with a map outlining the location of the Inner Purr using the PCR logo as the pin.
+- Various email addresses as set out using django admin are listed on this page along with a map outlining the location of the Inner Purr using the PCR logo as the pin. The map is API key is restricted to the deployed site.
 
 ### My Profile
 - A form allows users to update their personal details and an order history section lists previous orders.
 
 ### Bag
 - The bag page gives information on the products in a user's bag as well as details on the grand total and shipping, links bring users back to the products page or the checkout page.
+
+## Features Left to Implement
+
+### Color Select
+- In the future I would like to allow users to select different colors for products where available.
 
 ##### back to [top](#table-of-contents)
 
@@ -811,13 +815,19 @@ Alternatively, you can save a copy of this repository by clicking the green butt
 
 ### Content
 
-1.  Google Fonts for font styles; https://fonts.google.com/
+1. Google Fonts for font styles; https://fonts.google.com/
 
-2.  Youtube; Various resources for Materialize taken from [The Net Ninja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff)
+2. Youtube; Various resources for Materialize taken from [The Net Ninja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gGrbtvASEZSlFEYBnPkmff)
 
-3.  Github; Format of README modified from [AJGreaves](https://github.com/AJGreaves/thehouseofmouse)
+3. Button icons sourced from [Fontawesome](https://fontawesome.com/)
 
-4.  Button icons sourced from [Fontawesome](https://fontawesome.com/)
+4. Code for eyes and paws following mouse in header modified from [Daily Dev Tips](https://daily-dev-tips.com/posts/javascript-mouse-tracking-eyes-%F0%9F%91%80/)
+
+5. Square image code for various images modified from Youtibe tutorial by [Tyler Potts](https://youtu.be/mVIVjhNAGog)
+
+5. This project is based on an existing charity, as such much of the text is taken with permission from [Phibsboro Cat Rescue](http://www.phibsborocatrescue.ie/)
+
+6. Images for home page slider and parallaxes taken sourced from [Pexels](https://www.pexels.com/)
 
 
 ### Acknowledgements
