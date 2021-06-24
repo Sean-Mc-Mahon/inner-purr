@@ -139,9 +139,9 @@
 
     Page | Performance | Accessability | Best Practices | SEO
     ------------ | --------------- | --------- | --------- | ---------
-    **home** |82|100|100|99
-    **login** |92|90|100|100
-    **logout** |87|100|100|100
+    **home** |82|98|93|100
+    **login** |88|100|100|100
+    **logout** |87|100|100|98
     **register** |94|100|100|100
     **reset password** |95|100|100|100
     **reset password sent** |94|98|100|100
@@ -150,7 +150,7 @@
     **product details** |66|98|100|100
     **bag** |64|96|100|100
     **help** |91|98|100|100
-    **contact** ||||
+    **contact** |55|97|100|98
 
 3. **Mobile Devices:** I used my Google Pixel 3a phone and Amazon Fire tablet to test the site.
 
@@ -363,7 +363,7 @@ This project did not utilise test driven development. Tests cover views only and
 
     - I have tested this by typing the URLs into the browser it has worked as expected
 
-    ![Defense](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/user-stories/defense.JPG)
+    ![Defense](https://github.com/Sean-Mc-Mahon/inner-purr/blob/main/wireframes/defense.JPG)
 
 ##### back to [top](#testing)
 
