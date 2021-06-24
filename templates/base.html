@@ -189,8 +189,8 @@
         <footer class="page-footer p1">
             <div class="row container">
                 <!-- Newsletter -->
-                <!-- <div class="col s12 l4 mb1 center">
-                    <h5 class="white-title">Newsletter Sign-up</h5>
+                <div class="col s12 l4 mb1 center">
+                    <h5 class="white-title mv-half">Newsletter Sign-up</h5>
                     <p class="grey-text text-lighten-4 mv-half text-newsletter">
                         Enter your email address to recieve out monthly newsletter.
                     </p>
@@ -202,9 +202,9 @@
                             </button>
                         </label>
                     </form>
-                </div> -->
+                </div>
                 <!-- Address and Hours -->
-                <div class="col s12 m6 mb1 center">
+                <div class="col s12 m4 mb1 center">
                     <div class="mb1">
                         <h5 class="text-shadow-2 mv-half white-title">The Inner Purr</h5>
                         <h6 class="text-shadow-2 large white-title">Saving Cats & Serving Coffee</h6>
@@ -214,14 +214,14 @@
                     <p class="bold">Sat-Sun 11am 5pm</p>
                 </div>
                 <!-- Social Links -->
-                <div class="col s12 m6 mb1">
+                <div class="col s12 m4 mb1">
                     <ul class="social-links mb-half">
-                        <li>
+                        <li class="mv-half">
                             <a rel="noopener" target="_blank" href="https://www.instagram.com/phibsborocatrescue/?hl=en" title="Instagram" >
                                 <i aria-label="Instagram" class="fab fa-instagram-square"></i>
                             </a>
                         </li>
-                        <li>
+                        <li class="mv-half">
                             <a rel="noopener" target="_blank" href="https://www.facebook.com/phibscatrescue/" title="Facebook" >
                                 <i aria-label="facebook" class="fab fa-facebook-square"></i>
                             </a>
@@ -244,13 +244,13 @@
             <!--STRIPE included in base to enable some fraud detection features-->
             <script src="https://js.stripe.com/v3/"></script>
             <!--EMAILJS used for newsletter signup-->
-            <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-            <script type="text/javascript">
+            <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+            <script>
             (function() {
             emailjs.init("user_phcTljyBItI7OTOrLNHqx");
             })();
-            </script> -->
-            <!--Sweet alert used for alerts upon form submission https://sweetalert.js.org/-->
+            </script>
+            Sweet alert used for alerts upon form submission https://sweetalert.js.org/
             <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         {% endblock %}
 
