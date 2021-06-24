@@ -64,44 +64,48 @@
                 </p>
             </div>
 
-            <div class="row">
+            <section class="row">
                 {% for product in products %}
                     <div class="col s12 m6 l4 xl3 p1">
                         <div class="gallery-item">
-                                <div class="square">
-                                    <div class="gallery-image content">
-                                        {% if product.image %}
-                                            <a href="{% url 'product_detail' product.id %}">
-                                                <img class="" src="{{ product.image.url }}" alt="{{ product.name }}">
-                                            </a>
-                                        {% elif product.image_url %}
-                                            <a href="{% url 'product_detail' product.id %}">
-                                                <img class="" src="{{ product.image_url }}" alt="{{ product.name }}">
-                                            </a>
-                                        {% else %}
-                                            <a href="{% url 'product_detail' product.id %}">
-                                                <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                                            </a>
-                                        {% endif %}
-                                    </div>
-                                </div>
-                                <div class="name-desc">
-                                    <div class="mv-half">
+                            <!--Image-->
+                            <div class="square">
+                                <div class="gallery-image content">
+                                    {% if product.image %}
                                         <a href="{% url 'product_detail' product.id %}">
-                                            <div class="bold small product-name">
-                                                {{ product.name }}
-                                            </div>
-                                            <div class="small product-description dark">
-                                                {{ product.description }}
-                                            </div>
+                                            <img class="" src="{{ product.image.url }}" alt="{{ product.name }}">
                                         </a>
-                                    </div>
+                                    {% elif product.image_url %}
+                                        <a href="{% url 'product_detail' product.id %}">
+                                            <img class="" src="{{ product.image_url }}" alt="{{ product.name }}">
+                                        </a>
+                                    {% else %}
+                                        <a href="{% url 'product_detail' product.id %}">
+                                            <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                        </a>
+                                    {% endif %}
                                 </div>
-                                <p class="mv-half">
-                                    €{{ product.price }}
-                                </p>
-                            
-                            <div class="flex-space mb1">    
+                            </div>
+                            <!--Description-->
+                            <div class="name-desc">
+                                <div class="mv-half">
+                                    <a href="{% url 'product_detail' product.id %}">
+                                        <div class="bold small product-name">
+                                            {{ product.name }}
+                                        </div>
+                                        <div class="small product-description dark">
+                                            {{ product.description }}
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <!--Price-->
+                            <p class="mv-half">
+                                €{{ product.price }}
+                            </p>
+                            <!--Category and Rating-->
+                            <div class="flex-space mb1">
+                                <!--Category-->    
                                 {% if product.category %}
                                     <p class="small">
                                         <a class="small" href="{% url 'products' %}?category={{ product.category.name}}">
@@ -109,6 +113,7 @@
                                         </a>
                                     </p>
                                 {% endif %}
+                                <!--Rating-->
                                 <p class="small">
                                 {% if product.rating %}
                                     <small class="rating">
@@ -122,6 +127,7 @@
                                 {% endif %}
                                 </p>
                             </div>
+                            <!--Edit and Delete-->
                             {% if request.user.is_superuser %}
                                 <small>
                                     <a href="{% url 'edit_product' product.id %}">Edit</a> | 
@@ -130,6 +136,7 @@
                             {% endif %}                           
                         </div>  
                     </div>
+                    <!--Dividers-->
                     {% if forloop.counter|divisibleby:1 %}
                         <div class="col s12 hide-on-med-and-up">
                             <div class="divider center m-auto"></div>
@@ -157,7 +164,7 @@
                     </div>
                     {% endif %}
                 {% endfor %} 
-            </div>
+            </section>
         </div>
     </div>
     

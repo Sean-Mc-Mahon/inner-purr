@@ -6,7 +6,7 @@
 {% block content %}
 <div class="container">
     <div class="white-overlay">
-        <div class="row mt1">
+        <section class="row mt1">
             <!-- Details -->
             <div class="col s12 m4 xl5 grey lighten-2 mb1 p0">
                 <!-- Image -->
@@ -68,23 +68,23 @@
                 </div>
                 <!-- More detailed Info for super users -->
                 {% if request.user.is_superuser %}
-                <div class="divider mb-half"></div>
-                <!-- Status -->
-                <div class="ph-half">
-                    <span class="bold">Status:</span> {{ cat.status }}
-                </div>
-                <div class="divider mb-half"></div>
-                <!-- Microchipped -->
-                <div class="ph-half">
-                    <span class="bold">Microchipped:</span>
-                    {% if cat.microchipped %} Yes {% else %} No {% endif %}
-                </div>
-                <div class="divider mb-half"></div>
-                <!-- Health checked -->
-                <div class="ph-half">
-                    <span class="bold">Health checked:</span> 
-                    {% if cat.health_checked %} Yes {% else %} No {% endif %}
-                </div>
+                    <div class="divider mb-half"></div>
+                    <!-- Status -->
+                    <div class="ph-half">
+                        <span class="bold">Status:</span> {{ cat.status }}
+                    </div>
+                    <div class="divider mb-half"></div>
+                    <!-- Microchipped -->
+                    <div class="ph-half">
+                        <span class="bold">Microchipped:</span>
+                        {% if cat.microchipped %} Yes {% else %} No {% endif %}
+                    </div>
+                    <div class="divider mb-half"></div>
+                    <!-- Health checked -->
+                    <div class="ph-half">
+                        <span class="bold">Health checked:</span> 
+                        {% if cat.health_checked %} Yes {% else %} No {% endif %}
+                    </div>
                 {% endif %}
             </div>
             <!-- Bio -->
@@ -93,11 +93,11 @@
                 <h2 class="cursive mt0 mb-half">
                     {{ cat.name }}
                 </h2>
-                <div class="">
+                <div>
                     {{ cat.profile|safe }}
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 </div>
     

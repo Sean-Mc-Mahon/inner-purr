@@ -7,26 +7,22 @@
 
 <div class="container">
     <div class="white-overlay p1">
-
-        
         <!-- Resident Cats -->
-        <div class="row w-100">
-            <h5 class="cursive center">Our Resident Kitties</h5>
+        <section class="row w-100">
+            <h5 class="cursive center larger-header">Our Resident Kitties</h5>
             <div class="slider">
-                <div class="overlayed">
-                </div>
                   <ul id="cat-slides" class="slides">
                     {% for cat in cats %}
                         {% if cat.resident == True %}
                             <li>
                                 <a class="link-cover" href="{% url 'cat_detail' cat.id %}">
-                                        {% if cat.image %}
-                                            <img class="" src="{{ cat.image.url }}" alt="{{ cat.name }}">
-                                        {% elif cat.image_url %}
-                                            <img class="" src="{{ cat.image_url }}" alt="{{ cat.name }}">
-                                        {% else %}
-                                            <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ cat.name }}">
-                                        {% endif %}
+                                    {% if cat.image %}
+                                        <img class="" src="{{ cat.image.url }}" alt="{{ cat.name }}">
+                                    {% elif cat.image_url %}
+                                        <img class="" src="{{ cat.image_url }}" alt="{{ cat.name }}">
+                                    {% else %}
+                                        <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ cat.name }}">
+                                    {% endif %}
                                     <div class="cat-caption ph-half left-align">
                                         <h4 class="white-title m0">{{ cat.name }}</h4>
                                         <h6 class="white-title m0">{{ cat.tagline }}</h6>
@@ -35,19 +31,18 @@
                             </li>
                         {% endif %} 
                     {% endfor %}
-                  </ul>
-              </div>
-        </div>
+                </ul>
+            </div>
+        </section>
         <!-- Cats for adoption -->
-        <div class="container center row">
-            <h5 class="larger-header">Kitties for Adoption</h5>
+        <section class="container center row">
+            <h5 class="cursive center larger-header">Kitties for Adoption</h5>
             <div class="larger container">
                 <p class="mb1">A kitty cat makes a wonderful addition to any household and we are always delighted to talk with people who are interested in offering a kitty a loving home. 
                 </p>
                 <p class="mb1">All of our cats are fostered by The Phibsboro Cat Rescue. If you are looking to adopt a feline friend, you can learn more from the <a class="bold" title="Adopt" target="_blank" rel="noopener" href="http://www.phibsborocatrescue.ie/adopting-a-cat/">PCR Adoptions page</a>.
                 </p>
-            </div>
-            
+            </div> 
             {% for cat in cats %}
                 {% if cat.adopted == False %}
                     <div class="col s12 m6 l4 xl3 mt1">
@@ -56,11 +51,11 @@
                                 <div class="square">
                                     <div class="gallery-image content">
                                         {% if cat.image %}
-                                            <img class="" src="{{ cat.image.url }}" alt="{{ cat.name }}">
+                                            <img src="{{ cat.image.url }}" alt="{{ cat.name }}">
                                         {% elif cat.image_url %}
-                                            <img class="" src="{{ cat.image_url }}" alt="{{ cat.name }}">
+                                            <img src="{{ cat.image_url }}" alt="{{ cat.name }}">
                                         {% else %}
-                                            <img class="" src="{{ MEDIA_URL }}noimage.png" alt="{{ cat.name }}">
+                                            <img src="{{ MEDIA_URL }}noimage.png" alt="{{ cat.name }}">
                                         {% endif %}
                                     </div>
                                 </div>
@@ -75,9 +70,9 @@
                     </div>
                 {% endif %} 
             {% endfor %} 
-        </div>
+        </section>
         <!-- Adopted Cats -->
-        <div class="container center row mt2">
+        <section class="container center row mt2">
             <h5 class="cursive larger-header">Kitties who have found their new home</h5>
             <div class="container larger">
                 <p class="mb1">Since forming  in August 2014, we have TNR’d over 1,500 feral cats and we have rescued, tamed and found loving forever homes for over 2,000 cats and kittens. We have provided veterinary treatment for many more and we have rehomed a number of domestic cats who have been surrendered to us by their humans for a variety of reasons. 
@@ -109,8 +104,7 @@
                     </div>
                 {% endif %} 
             {% endfor %}
-            
-        </div>
+        </section>
     </div>
 </div>
     
